@@ -34,26 +34,40 @@ function openLink(event) {
     var ssPreloader = function() {
 
         $("html").addClass('ss-preload');
-
+    
+        // Set a variable to track if the page is loaded
+        var pageLoaded = false;
+    
+        // Function to hide preloader
+        var hidePreloader = function() {
+            $("#loader").fadeOut("slow", function() {
+                // will fade out the whole DIV that covers the website.
+                $("#preloader").delay(300).fadeOut("slow");
+            });
+        };
+    
+        // Show preloader for the first 3 seconds
+        setTimeout(function() {
+            if (!pageLoaded) {
+                hidePreloader();
+            }
+        }, 3000); // Set the delay time to 3000ms (3 seconds)
+    
+        // Check if the page is loaded before the 3-second timeout
         $WIN.on('load', function() {
-
+            pageLoaded = true;
+            hidePreloader();
+    
             // force page scroll position to top at page refresh
             // $('html, body').animate({ scrollTop: 0 }, 'normal');
-
-            // Show preloader for the first 1.5 seconds
-            setTimeout(function() {
-                $("#loader").fadeOut("slow", function() {
-                    // will fade out the whole DIV that covers the website.
-                    $("#preloader").delay(300).fadeOut("slow");
-                });
-            }, 1500); // Set the delay time to 1500ms (1.5 seconds)
-            
-            // for hero content animations 
+    
+            // for hero content animations
             $("html").removeClass('ss-preload');
             $("html").addClass('ss-loaded');
-        
+    
         });
     };
+    
 
 
     /* pretty print
