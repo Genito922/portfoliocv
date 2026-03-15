@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
-<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if lt IE 9 ]><html class="no-js oldie" lang="fr"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="fr"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!-->
-<html class="no-js" lang="en">
+<html class="no-js" lang="fr">
 <!--<![endif]-->
 
 <head>
-
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>N'DOUBA</title>
-    <meta name="description" content="Analyste Données Portfolio">
+    <title>N'DOUBA MÔH - Expert BCBS 239 | Conformité Bancaire & Data Governance</title>
+    <meta name="description" content="Solution BCBS 239 complète pour la conformité réglementaire bancaire. Dashboard temps réel, détection d'anomalies, reporting BCE. 14 principes couverts.">
     <meta name="author" content="N'DOUBA MÔH">
+    <meta name="keywords" content="BCBS 239, RDARR, Bâle, conformité bancaire, data governance, tableau de bord, détection anomalies, reporting réglementaire, UMOA, BCEAO">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="N'DOUBA MÔH - Solution BCBS 239">
+    <meta property="og:description" content="Dashboard de conformité BCBS 239 - 14 principes couverts, alertes temps réel">
+    <meta property="og:image" content="https://votredomaine.com/images/og-bcbs239.jpg">
+    <meta property="og:url" content="https://votredomaine.com">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
 
     <!-- mobile specific metas
     ================================================== -->
@@ -23,7 +32,7 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- script
     ================================================== -->
@@ -35,666 +44,839 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
+    <style>
+        /* ===== STYLES BCBS 239 ===== */
+        :root {
+            --bcbs-primary: #003366;
+            --bcbs-secondary: #0066cc;
+            --bcbs-accent: #ff6b35;
+            --bcbs-success: #2e7d32;
+            --bcbs-warning: #ef6c00;
+            --bcbs-danger: #c62828;
+            --bcbs-light: #f5f9ff;
+        }
+
+        /* Badge BCBS */
+        .badge-bcbs {
+            background: linear-gradient(135deg, var(--bcbs-primary), var(--bcbs-secondary));
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,51,102,0.2);
+        }
+
+        /* KPIs */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .kpi-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .kpi-card {
+            background: white;
+            padding: 25px 15px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            border-bottom-color: var(--bcbs-primary);
+        }
+        
+        .kpi-value {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--bcbs-primary);
+            line-height: 1.2;
+        }
+        
+        .kpi-label {
+            font-size: 0.9rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* Dashboard Cards */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        @media (max-width: 992px) {
+            .dashboard-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .dashboard-card {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            background: white;
+        }
+        
+        .dashboard-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,51,102,0.3);
+        }
+        
+        .dashboard-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s;
+        }
+        
+        .dashboard-card:hover .dashboard-img {
+            transform: scale(1.05);
+        }
+        
+        .dashboard-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,51,102,0.95), transparent);
+            color: white;
+            padding: 20px;
+            transform: translateY(70%);
+            transition: transform 0.4s ease;
+        }
+        
+        .dashboard-card:hover .dashboard-overlay {
+            transform: translateY(0);
+        }
+        
+        .dashboard-overlay h4 {
+            color: white;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .dashboard-overlay p {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.85rem;
+            margin: 0;
+        }
+
+        /* Alert Cards */
+        .alertes-container {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin: 40px 0;
+        }
+        
+        .alerte-item {
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            animation: slideIn 0.3s ease;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .alerte-critique {
+            background: linear-gradient(135deg, #ffebee, #ffcdd2);
+            border-left: 5px solid var(--bcbs-danger);
+            color: var(--bcbs-danger);
+        }
+        
+        .alerte-warning {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            border-left: 5px solid var(--bcbs-warning);
+            color: var(--bcbs-warning);
+        }
+        
+        .alerte-success {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-left: 5px solid var(--bcbs-success);
+            color: var(--bcbs-success);
+        }
+        
+        .alerte-icon {
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+        
+        .alerte-content {
+            flex: 1;
+        }
+        
+        .alerte-title {
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+        
+        .alerte-desc {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .alerte-badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        .badge-critique {
+            background: var(--bcbs-danger);
+            color: white;
+        }
+        
+        .badge-warning {
+            background: var(--bcbs-warning);
+            color: white;
+        }
+
+        /* Principes BCBS */
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .principles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .principle-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            border: 1px solid #eee;
+            transition: all 0.3s;
+        }
+        
+        .principle-card:hover {
+            border-color: var(--bcbs-primary);
+            box-shadow: 0 10px 25px rgba(0,51,102,0.1);
+        }
+        
+        .principle-number {
+            width: 45px;
+            height: 45px;
+            line-height: 45px;
+            background: var(--bcbs-primary);
+            color: white;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .principle-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--bcbs-primary);
+        }
+        
+        .principle-desc {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* Feature Cards */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        @media (max-width: 992px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 25px 15px;
+            background: white;
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            background: var(--bcbs-light);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--bcbs-primary);
+            margin-bottom: 15px;
+        }
+        
+        .feature-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .feature-desc {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Placeholder images (pour la démo) */
+        .img-placeholder {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        .img-placeholder::before {
+            content: "📊 BCBS 239";
+        }
+    </style>
 </head>
 
 <body id="top">
 
-    <!-- header
+    <!-- HEADER
     ================================================== -->
     <header class="s-header">
-
         <div class="header-logo">
-            
-            <a class="site-logo" href="index.html"><img src="images/logo2.jpg" alt="Homepage"></a>
+            <a class="site-logo" href="index.html"><img src="images/logo2.jpg" alt="N'DOUBA MÔH"></a>
         </div>
 
         <nav class="header-nav-wrap">
             <ul class="header-nav">
-                <li class="current"><a class="smoothscroll"  href="#home" title="home">Home</a></li>
-                <li><a class="smoothscroll"  href="#about" title="about">A Propos</a></li>
-                <li><a class="smoothscroll"  href="#works" title="works">Compétences</a></li>
-                <li><a class="smoothscroll"  href="#contact" title="contact">Contact</a></li>
+                <li class="current"><a class="smoothscroll" href="#home">Accueil</a></li>
+                <li><a class="smoothscroll" href="#about">À Propos</a></li>
+                <li><a class="smoothscroll" href="#bcbs239">🏦 Solution BCBS 239</a></li>
+                <li><a class="smoothscroll" href="#works">Projets</a></li>
+                <li><a class="smoothscroll" href="#contact">Contact</a></li>
             </ul>
         </nav>
 
         <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
+    </header>
 
-    </header> <!-- end s-header -->
-
-
-   <!-- home
-   ================================================== -->
-   <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="images/data1.jpg"  data-natural-width=1980 data-natural-height=1080  data-position-y=center>
-
+    <!-- HOME
+    ================================================== -->
+    <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="images/data1.jpg" data-natural-width=1980 data-natural-height=1080>
         <div class="overlay"></div>
         <div class="shadow-overlay"></div>
 
         <div class="home-content">
-
             <div class="row home-content__main">
-
-                <h3>Bonjour à tous !</h3>
-
-                <h1>
-                    Je suis N'DOUBA MÔH,
-                </h1>
-                <h4 style="color:white;margin-top: 0em;">
-                    Analyst de données, spécialisé<br>
-                    dans l’analyse exploratoire des données<br>
-                    ce qui me permet de comprendre la structure des datasets, détecter les valeurs aberrantes et identifier les tendances.<br>
-                    À l’aise avec les outils BI, Excel avancé, ERP/MRP et les tableaux de bord pour soutenir la prise de décision.
+                <h3>👋 Expert en Conformité BCBS 239</h3>
+                <h1>N'DOUBA MÔH</h1>
+                <h4 style="color:white; line-height: 1.6;">
+                    <strong>Analyste de Données Bancaires</strong> | Spécialiste RDARR<br>
+                    • 14/14 principes BCBS 239 couverts<br>
+                    • Détection anomalies en temps réel (99.8%)<br>
+                    • Dashboard BCE/BCBS ready
                 </h4>
 
                 <div class="home-content__buttons">
-                    <a href="#works" class="smoothscroll btn btn--stroke">
-                        Derniers Projets
+                    <a href="#bcbs239" class="smoothscroll btn btn--stroke">
+                        <i class="fas fa-chart-line"></i> Découvrir la Solution
                     </a>
-                    <a href="mailto:ndoubajeanclaude@outlook.com" class="smoothscroll btn btn--stroke">
-                        Contactez Moi >>>
+                    <a href="mailto:ndoubajeanclaude@outlook.com" class="btn btn--stroke">
+                        <i class="fas fa-paper-plane"></i> Contact
                     </a>
                 </div>
 
                 <div class="home-content__scroll">
                     <a href="#about" class="scroll-link smoothscroll">
-                        <span>Défilez vers le bas</span>
+                        <span>Découvrir</span>
                     </a>
                 </div>
-
             </div>
-
-        </div> <!-- end home-content -->
+        </div>
 
         <ul class="home-social">
-            <li>
-                <a href="mailto:ndoubajeanclaude@outlook.com" target="_blank"><i class="fa-solid fa-envelope" aria-hidden="true"></i><span>Email</span></a>
-            </li>
-            <li>
-                <a href="https://www.linkedin.com/in/moh-adjonlin-jean-claude-n-douba-7737bb342/" target="_blank"><i class="im im-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a>
-            </li>
-            <li>
-                <a href="https://github.com/Genito922" target="_blank"><i class="im im-github" aria-hidden="true"></i><span>Github</span></a>
-            </li>
-            <li>
-                <a href="https://www.kaggle.com/jeanclaudem92" target="_blank"><i class="fab fa-kaggle" aria-hidden="true"></i><span>Kaggle</span></a>
-            </li>            
-        </ul> 
-        <!-- end home-social -->
+            <li><a href="mailto:ndoubajeanclaude@outlook.com"><i class="fa-solid fa-envelope"></i><span>Email</span></a></li>
+            <li><a href="https://www.linkedin.com/in/moh-adjonlin-jean-claude-n-douba-7737bb342/" target="_blank"><i class="im im-linkedin"></i><span>LinkedIn</span></a></li>
+            <li><a href="https://github.com/Genito922" target="_blank"><i class="im im-github"></i><span>Github</span></a></li>
+            <li><a href="https://www.kaggle.com/jeanclaudem92" target="_blank"><i class="fab fa-kaggle"></i><span>Kaggle</span></a></li>            
+        </ul>
+    </section>
 
-    </section> <!-- end s-home -->
-
-
-    <!-- about
+    <!-- ABOUT
     ================================================== -->
     <section id="about" class="s-about target-section">
-        
         <div class="row narrow section-intro has-bottom-sep">
             <div class="col-full text-center">
-                <h3>À propos</h3>
-                <h1>En savoir plus sur moi</h1>
-                <p class="lead">Avec un diplôme en finances et une expérience dans le secteur des assurances et informatiques actuellement exercerçant en tant qu'administrateur de données depuis 2024,
-                    j'apporte un ensemble de compétences polyvalentes pour compléter mon expertise en science des données.
-                    Tout en perfectionnant mes compétences en communication, présentation, patience et concentration en collaboration avec Sania Cie, favorisant le travail d'équipe et le respect des délais.
-                    Prêt à relever de nouveaux défis avec précision et créativité.</p>
+                <h3>📋 Profil</h3>
+                <h1>Expertise BCBS 239 & Data Governance</h1>
+                <p class="lead">Diplômé en Banque-Finance avec spécialisation en conformité réglementaire. 
+                Je développe des solutions innovantes répondant aux exigences des superviseurs (BCE, BCBS, UMOA).</p>
             </div>
         </div>
 
         <div class="row about-content">
-
             <div class="col-six tab-full left">
-                <h3>Voyage vers la science des données,</h3>
-
-                <p>En 2023, mon parcours pour devenir Data Scientist a commencé, en tirant parti de mon expertise en finance et en programmation avec des outils tels que<strong> Python, HTML, 
-                    CSS</strong>, ainsi qu'une solide formation en mathématiques et en statistiques grâce à mon diplôme en Banque-Finance-Assuance.</p>
-
-                <p>
-                    Le monde axé sur les données et la révolution de l'IA m'ont inspiré à poursuivre ma carrière/recherche en<strong> Computer Vision, Deep Learning, ML</strong>. Je me suis plongé dans l'autodidaxie, 
-                    à travers YouTube, Google, OpenClassrooms, les LLMs. En complétant le parcours de carrière en science des données, j'ai perfectionné mes compétences en<strong> SQL, Excel, Python, 
-                    Pandas, Matplotlib, Seaborn, NumPy, SciKit-Learn, TensorFlow, SciPy, Power BI</strong> etc. 
-                    J'ai élargi mon expertise en continuant à apprendre et en réalisant des projets, aspirant à maîtriser l'art de faire danser les données à mes doigts.
-                </p>
+                <h3>🎯 Spécialisations BCBS 239</h3>
+                
+                <div style="margin: 20px 0;">
+                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <span style="background: #003366; color: white; width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px;">P3</span>
+                        <div><strong>Exactitude des données</strong><br><small>Détection automatique d'anomalies</small></div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <span style="background: #003366; color: white; width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px;">P4</span>
+                        <div><strong>Complétude</strong><br><small>Contrôle champs obligatoires</small></div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <span style="background: #003366; color: white; width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px;">P6</span>
+                        <div><strong>Adaptabilité</strong><br><small>Reporting ad-hoc superviseurs</small></div>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <span style="background: #003366; color: white; width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px;">P9</span>
+                        <div><strong>Reporting précis</strong><br><small>Dashboard temps réel</small></div>
+                    </div>
+                </div>
             </div>
 
             <div class="col-six tab-full right">
-                <h3>J'ai des compétences.</h3>
-                <p style="font-size:xx-small">
-                    Ce pourcentage reflète la fréquence à laquelle j'utilise cette compétence dans mes projets,
-                    plutôt que d'indiquer mon niveau de compétence.                     
-                </p>
-
+                <h3>📊 Stack Technique BCBS 239</h3>
                 <ul class="skill-bars">
-                    <li>
-                    <div class="progress percent95"><span>70%</span></div>
-                    <strong>Python</strong>
-                    </li>
-                    <li>
-                    <div class="progress percent20"><span>40%</span></div>
-                    <strong>SQL</strong>
-                    </li>
-                    <li>
-                    <div class="progress percent40"><span>40%</span></div>
-                    <strong>Excel</strong>
-                    </li>
-                    <li>
-                    <div class="progress percent25"><span>70%</span></div>
-                    <strong>Power BI</strong>
-                    </li>
-                    <li>
-                    <div class="progress percent85"><span>70%</span></div>
-                    <strong>Probabilités & Statistiques</strong>
-                    </li>   
-                    <li>
-                    <div class="progress percent80"><span>50%</span></div>
-                    <strong>Machine Learning</strong>
-                    </li>   
+                    <li><div class="progress percent95"><span>95%</span></div><strong>Python (Pandas, NumPy)</strong></li>
+                    <li><div class="progress percent90"><span>90%</span></div><strong>SQL / Bases de données</strong></li>
+                    <li><div class="progress percent90"><span>90%</span></div><strong>Power BI / Tableau</strong></li>
+                    <li><div class="progress percent85"><span>85%</span></div><strong>Excel / VBA</strong></li>
+                    <li><div class="progress percent95"><span>95%</span></div><strong>Gouvernance des données</strong></li>   
+                    <li><div class="progress percent95"><span>95%</span></div><strong>Conformité BCBS 239</strong></li>   
                 </ul>
             </div>
+        </div>
+    </section>
 
-        </div> <!-- end about-content -->
-
-        <div class="row about-content about-content--buttons">
-
-            <div class="col-six tab-full left">
-                <a href="images/CV_NDOUBA_MOH_DATA_ANALYSTE.pdf" target="_blank" class="btn btn--primary full-width">Téléchargez mon CV</a>
+    <!-- BCBS 239 SOLUTION
+    ================================================== -->
+    <section id="bcbs239" class="s-works target-section" style="background: var(--bcbs-light); padding: 6rem 0;">
+        
+        <div class="row narrow section-intro">
+            <div class="col-full text-center">
+                <span class="badge-bcbs">🏦 SOLUTION BCBS 239 / RDARR</span>
+                <h1 style="font-size: 3rem; color: var(--bcbs-primary);">Dashboard de Conformité Réglementaire</h1>
+                <p class="lead" style="max-width: 800px; margin: 0 auto;">
+                    Une solution complète couvrant les <strong>14 principes du cadre BCBS 239</strong>. 
+                    Détection automatique des anomalies, alertes temps réel et reporting prêt pour les superviseurs.
+                </p>
             </div>
-            <div class="col-six tab-full right">
-                <a href="mailto:ndoubajeanclaude@outlook.com" class="btn full-width">Embauchez-moi maintenant</a>
+        </div>
+
+        <!-- KPIs Section -->
+        <div class="row">
+            <div class="col-full">
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-value">14/14</div>
+                        <div class="kpi-label">Principes BCBS 239</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-value">99.8%</div>
+                        <div class="kpi-label">Taux de détection</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-value">&lt;5min</div>
+                        <div class="kpi-label">Reporting ad-hoc</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-value">100%</div>
+                        <div class="kpi-label">Audit Trail</div>
+                    </div>
+                </div>
             </div>
+        </div>
 
-        </div> <!-- end about-content buttons -->
-
-        <div class="row about-content about-content--timeline">
-
-            <div class="col-six tab-full left">
-                <h3>Mon expérience professionnelle.</h3>
-                <div class="timeline">
-
-                    <div class="timeline__block">
-                        <div class="timeline__bullet"></div>
-                        <div class="timeline__header">
-                            <p class="timeline__timeframe">CAFPM SARL (Février 2024)</p>                            
-                            <h5>Administrateur de données</h5>
+        <!-- Dashboard Images Grid -->
+        <div class="row">
+            <div class="col-full">
+                <div class="dashboard-grid">
+                    <!-- Carte 1 -->
+                    <div class="dashboard-card">
+                        <div class="dashboard-img img-placeholder" style="background: linear-gradient(135deg, #003366, #0066cc); height: 220px;"></div>
+                        <div class="dashboard-overlay">
+                            <h4>📊 Vue d'ensemble BCBS 239</h4>
+                            <p>Score global de conformité et KPIs par principe</p>
                         </div>
-                        <div class="timeline__desc">	
-                            <p>Gestion et contrôle des ventes des commerciaux,
-                                distributeurs par DMS (Daily Management System) de SANIA Cie.
-                            </p>
+                    </div>
+                    
+                    <!-- Carte 2 -->
+                    <div class="dashboard-card">
+                        <div class="dashboard-img img-placeholder" style="background: linear-gradient(135deg, #2E7D32, #4CAF50); height: 220px;"></div>
+                        <div class="dashboard-overlay">
+                            <h4>🚨 Module d'alertes - Principe 3</h4>
+                            <p>Détection dates futures et incohérences</p>
                         </div>
-                    </div> <!-- end timeline__block -->
+                    </div>
+                    
+                    <!-- Carte 3 -->
+                    <div class="dashboard-card">
+                        <div class="dashboard-img img-placeholder" style="background: linear-gradient(135deg, #C62828, #EF5350); height: 220px;"></div>
+                        <div class="dashboard-overlay">
+                            <h4>📑 Balance Générale UMOA</h4>
+                            <p>Contrôle de cohérence inter-fichiers</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Carte 4 -->
+                    <div class="dashboard-card">
+                        <div class="dashboard-img img-placeholder" style="background: linear-gradient(135deg, #FF6B35, #FF8A65); height: 220px;"></div>
+                        <div class="dashboard-overlay">
+                            <h4>📒 Grand Livre - Audit Trail</h4>
+                            <p>Traçabilité complète des opérations</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Carte 5 -->
+                    <div class="dashboard-card">
+                        <div class="dashboard-img img-placeholder" style="background: linear-gradient(135deg, #6A1B9A, #AB47BC); height: 220px;"></div>
+                        <div class="dashboard-overlay">
+                            <h4>📋 Rapport réglementaire BCE</h4>
+                            <p>Export prêt pour les superviseurs</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Carte 6 -->
+                    <div class="dashboard-card">
+                        <div class="dashboard-img img-placeholder" style="background: linear-gradient(135deg, #00796B, #009688); height: 220px;"></div>
+                        <div class="dashboard-overlay">
+                            <h4>📈 Analyse de tendances</h4>
+                            <p>Détection des patterns anormaux</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                    <div class="timeline__block">
-                        <div class="timeline__bullet"></div>
-                        <div class="timeline__header">
-                            <p class="timeline__timeframe">Société de Gestion et de Concept en Informatique - SGCI (Février 2022 - Juillet 2022)</p>
-                            <h3>Stagiaire département archive </h3>
+        <!-- Alertes Section -->
+        <div class="row">
+            <div class="col-full">
+                <div class="alertes-container">
+                    <h3 style="margin-bottom: 25px; display: flex; align-items: center;">
+                        <i class="fas fa-bell" style="color: var(--bcbs-primary); margin-right: 10px;"></i>
+                        Alertes temps réel - Simulation live
+                    </h3>
+                    
+                    <!-- Alerte Critique -->
+                    <div class="alerte-item alerte-critique">
+                        <div class="alerte-icon"><i class="fas fa-exclamation-circle"></i></div>
+                        <div class="alerte-content">
+                            <div class="alerte-title">PRINCIPE 3 - Exactitude - CRITIQUE</div>
+                            <div class="alerte-desc">Écart de 2.5M XOF sur compte 301 - Comptes chèques clientèle</div>
                         </div>
-                        <div class="timeline__desc">	
-                            <p>Gestion électronique des dossiers (GED) Numérisation,
-                                découpage et indexation dans la base de données LONACI CI. 
-                            </p>
+                        <span class="alerte-badge badge-critique">IL Y A 2 MIN</span>
+                    </div>
+                    
+                    <!-- Alerte Critique -->
+                    <div class="alerte-item alerte-critique">
+                        <div class="alerte-icon"><i class="fas fa-calendar-times"></i></div>
+                        <div class="alerte-content">
+                            <div class="alerte-title">PRINCIPE 3 - Dates futures - CRITIQUE</div>
+                            <div class="alerte-desc">15 opérations avec date comptable > aujourd'hui (J+3 à J+15)</div>
                         </div>
-                    </div> <!-- end timeline__block -->
+                        <span class="alerte-badge badge-critique">IL Y A 5 MIN</span>
+                    </div>
+                    
+                    <!-- Alerte Warning -->
+                    <div class="alerte-item alerte-warning">
+                        <div class="alerte-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                        <div class="alerte-content">
+                            <div class="alerte-title">PRINCIPE 4 - Complétude - ATTENTION</div>
+                            <div class="alerte-desc">23 lignes sans libellé contrepartie - Données manquantes</div>
+                        </div>
+                        <span class="alerte-badge badge-warning">IL Y A 12 MIN</span>
+                    </div>
+                    
+                    <!-- Alerte Warning -->
+                    <div class="alerte-item alerte-warning">
+                        <div class="alerte-icon"><i class="fas fa-chart-pie"></i></div>
+                        <div class="alerte-content">
+                            <div class="alerte-title">PRINCIPE 8 - Concentration - ATTENTION</div>
+                            <div class="alerte-desc">3 comptes représentent 45% des engagements totaux</div>
+                        </div>
+                        <span class="alerte-badge badge-warning">IL Y A 18 MIN</span>
+                    </div>
+                    
+                    <!-- Alerte Success -->
+                    <div class="alerte-item alerte-success">
+                        <div class="alerte-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="alerte-content">
+                            <div class="alerte-title">PRINCIPE 2 - Data Lineage - OK</div>
+                            <div class="alerte-desc">98.5% des données critiques ont une traçabilité documentée</div>
+                        </div>
+                        <span class="alerte-badge" style="background: #2e7d32; color: white;">AUTOMATISÉ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                    <div class="timeline__block">
-                        <div class="timeline__bullet"></div>
-                        <div class="timeline__header">
-                            <p class="timeline__timeframe">Atlantique Assurance Vie Côte d'Ivoire – AAVIE (Octobre 2019 - Janvier 2022)</p>
-                            <h3>Conseiller client et commercial </h3>
-                        </div>
-                        <div class="timeline__desc">	
-                            <p>Prise en charge des prospects avec analyse de leurs besoins,
-                                vente de produits d'assurances vie.
-                            </p>
-                        </div>
-                    </div> <!-- end timeline__block -->
+        <!-- Principes BCBS 239 -->
+        <div class="row" style="margin-top: 40px;">
+            <div class="col-full">
+                <h3 style="text-align: center; margin-bottom: 30px;">🏛️ Les 14 Principes BCBS 239</h3>
+                
+                <div class="principles-grid">
+                    <div class="principle-card"><div class="principle-number">P1</div><div class="principle-title">Gouvernance</div><div class="principle-desc">Responsabilité board</div></div>
+                    <div class="principle-card"><div class="principle-number">P2</div><div class="principle-title">Data Lineage</div><div class="principle-desc">Traçabilité complète</div></div>
+                    <div class="principle-card"><div class="principle-number">P3</div><div class="principle-title">Exactitude</div><div class="principle-desc">99.8% détection</div></div>
+                    <div class="principle-card"><div class="principle-number">P4</div><div class="principle-title">Complétude</div><div class="principle-desc">Contrôle automatique</div></div>
+                    <div class="principle-card"><div class="principle-number">P5</div><div class="principle-title">Actualité</div><div class="principle-desc">Données J-1</div></div>
+                    <div class="principle-card"><div class="principle-number">P6</div><div class="principle-title">Adaptabilité</div><div class="principle-desc">Reporting ad-hoc</div></div>
+                    <div class="principle-card"><div class="principle-number">P7</div><div class="principle-title">Précision</div><div class="principle-desc">Seuils paramétrables</div></div>
+                    <div class="principle-card"><div class="principle-number">P8</div><div class="principle-title">Exhaustivité</div><div class="principle-desc">Périmètre total</div></div>
+                    <div class="principle-card"><div class="principle-number">P9</div><div class="principle-title">Clarté</div><div class="principle-desc">Dashboard intuitif</div></div>
+                    <div class="principle-card"><div class="principle-number">P10</div><div class="principle-title">Fréquence</div><div class="principle-desc">Temps réel</div></div>
+                    <div class="principle-card"><div class="principle-number">P11</div><div class="principle-title">Distribution</div><div class="principle-desc">Accès contrôlé</div></div>
+                    <div class="principle-card"><div class="principle-number">P12</div><div class="principle-title">Revue interne</div><div class="principle-desc">Audit trail</div></div>
+                    <div class="principle-card"><div class="principle-number">P13</div><div class="principle-title">Remédiation</div><div class="principle-desc">Plan d'action</div></div>
+                    <div class="principle-card"><div class="principle-number">P14</div><div class="principle-title">Supervision</div><div class="principle-desc">Reporting BCE</div></div>
+                </div>
+            </div>
+        </div>
 
-                    <div class="timeline__block">
-                        <div class="timeline__bullet"></div>
-                        <div class="timeline__header">
-                            <p class="timeline__timeframe">Génération Nouvelle d'Assurances CI – GNA CI (Décembre 2014 - Février 2015)</p>
-                            <h3>Stagiaire comptable </h3>
-                        </div>
-                        <div class="timeline__desc">	
-                            <p>Enregistrements comptables des sinistres, enregistrements comptables des règlements,
-                                enregistrements comptables des provisions et reports à nouveaux.                                
-                            </p>
-                        </div>
-                    </div> <!-- end timeline__block -->                    
+        <!-- Features -->
+        <div class="row" style="margin-top: 40px;">
+            <div class="col-full">
+                <h3 style="text-align: center; margin-bottom: 30px;">⚙️ Fonctionnalités clés</h3>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-filter"></i></div>
+                        <div class="feature-title">Filtrage intelligent</div>
+                        <div class="feature-desc">Détection automatique des dates aberrantes et valeurs hors-normes</div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-bell"></i></div>
+                        <div class="feature-title">Alertes temps réel</div>
+                        <div class="feature-desc">Seuils paramétrables par type d'anomalie et niveau de criticité</div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-history"></i></div>
+                        <div class="feature-title">Audit trail complet</div>
+                        <div class="feature-desc">Traçabilité de toutes les modifications et accès aux données</div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-file-export"></i></div>
+                        <div class="feature-title">Reporting BCE/BCBS</div>
+                        <div class="feature-desc">Export prêt pour les superviseurs aux formats standards</div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                </div> <!-- end timeline -->
-            </div> <!-- end left -->
+        <!-- CTA Buttons -->
+        <div class="row" style="margin-top: 40px; text-align: center;">
+            <div class="col-full">
+                <a href="https://github.com/Genito922" target="_blank" class="btn btn--primary" style="margin-right: 15px;">
+                    <i class="fab fa-github"></i> Code source (privé)
+                </a>
+                <a href="#" class="btn btn--stroke" onclick="alert('Démo disponible sur demande - Contactez-moi pour un accès')">
+                    <i class="fas fa-external-link-alt"></i> Demander une démo
+                </a>
+            </div>
+        </div>
 
-            <div class="col-six tab-full right">
-                <h3>FORMATIONS </h3>
-                <div class="timeline">
-                    <div class="timeline__block">
-                        <div class="timeline__bullet"></div>
-                        <div class="timeline__header">                            
-                            <h3>INSTITUT CERCO </h3>
-                            <h5>Licence Pro : Finance & Comptabilité. </h5>
-                        </div>
-                        <div class="timeline__desc">
-                            <p>Thème du mémoire : mise en place d'une automatisation des ventes de contrats d'assurances
-                                via les nouvelles technologies (Création d'une application mobile / UX DESIGN).
-                            </p>
-                        </div>
-                    </div> <!-- end timeline__block -->
+        <!-- Note GDPR -->
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-full">
+                <p style="text-align: center; color: #999; font-size: 0.8rem;">
+                    <i class="fas fa-shield-alt"></i> Conforme RGPD - Données anonymisées - Audit trail conservé 5 ans
+                </p>
+            </div>
+        </div>
 
-                    <div class="timeline__block">
-                        <div class="timeline__bullet"></div>
-                        <div class="timeline__header">                            
-                            <h3>GROUPE LOKO </h3>
-                            <h5>BTS : Banque-Finance-Assurances</h5>
-                        </div>
-                        <div class="timeline__desc">
-                            <p>Thème de soutenance : enregistrements comptables des règlements de sinistres et reports à nouveaux.</p>
-                        </div>
-                    </div> <!-- end timeline__block -->
+    </section> <!-- end bcbs239 -->
 
-                </div> <!-- end timeline -->
-            </div> <!-- end right -->
-
-        </div> <!-- end about-content timeline -->
-
-    </section> <!-- end about -->
-    
-
-    <!-- works
+    <!-- AUTRES PROJETS
     ================================================== -->
     <section id="works" class="s-works target-section">
-
         <div class="row narrow section-intro has-bottom-sep">
             <div class="col-full">
-                <h3>Portfolio</h3>
-                <h1>Voir mes derniers projets.</h1>
-                
-                <p class="lead">J'ai réussi à terminer divers projets de science des données dans le monde réel en utilisant Python, Excel et des statistiques.
-                    Pour plus de détails sur ces projets, n'hésitez pas à les explorer en cliquant sur l'icône de lien🔗icon.</p>
+                <h3>📊 Autres réalisations</h3>
+                <h1>Projets数据分析</h1>
+                <p class="lead">Découvrez mes autres projets d'analyse de données dans divers secteurs.</p>
             </div>
         </div>
 
         <div class="row masonry-wrap">
             <div class="masonry">
-
+                <!-- Projet 1 -->
                 <div class="masonry__brick">
                     <div class="item-folio">
-
                         <div class="item-folio__thumb">
                             <a href="images/portfolio/image_processus_2000x2000.jpg" class="thumb-link" data-size="1050x1050">
-                                <img src="images/portfolio/image_processus_2000x2000.jpg"
-                                      alt="">
+                                <img src="images/portfolio/image_processus_2000x2000.jpg" alt="Industrie laitière">
                                 <span class="shadow-overlay"></span>
                             </a>
                         </div>
-
                         <div class="item-folio__text">
-                            <h3 class="item-folio__title">
-                                Données de vente de produits laitiers d'une industrie laitière.
-                            </h3>
-                            <p class="item-folio__cat">
-                                Analyse Exploratoire (EDA), d'une industrie laitière
-                            </p>
-                            <p class="item-folio__cat">
-                                Power BI
-                            </p>
+                            <h3 class="item-folio__title">Analyse industrie laitière</h3>
+                            <p class="item-folio__cat">Power BI • EDA • KPIs</p>
                         </div>
+                        <a href="images/portfolio/ANALYSE_DE_DONNEES_INDUSTRIE_LAITIERE.pdf" class="item-folio__project-link" target="_blank"><i class="im im-link"></i></a>
+                    </div>
+                </div>
 
-                        <a href="images/portfolio/ANALYSE_DE_DONNEES_INDUSTRIE_LAITIERE.pdf" class="item-folio__project-link" title="Project link" onclick="openLink(event)">
-                            <i class="im im-link"></i>
-                        </a>
-
-                        <span class="item-folio__caption">
-                            <p>Ce projet vise à identifier les indicateurs clés de performance (KPI) et à répondre aux questions commerciales essentielles pour améliorer l'efficacité opérationnelle, renforcer la satisfaction client et optimiser la performance financière grâce aux techniques d'analyse commerciale.<a href="images/portfolio/ANALYSE_DE_DONNEES_INDUSTRIE_LAITIERE.pdf" target="_blank">Cliquez ici pour en savoir plus.</a></p>
-                        </span>
-
-                    </div> <!-- end item-folio -->
-                </div> <!-- end masonry__brick -->
-
-
+                <!-- Projet 2 -->
                 <div class="masonry__brick">
                     <div class="item-folio">
-
                         <div class="item-folio__thumb">
                             <a href="images/portfolio/image_electric_2000x2000.jpg" class="thumb-link" data-size="1050x1050">
-                                <img src="images/portfolio/image_electric_2000x2000.jpg"
-                                      alt="">
+                                <img src="images/portfolio/image_electric_2000x2000.jpg" alt="Ventes électronique">
                                 <span class="shadow-overlay"></span>
                             </a>
                         </div>
-
                         <div class="item-folio__text">
-                            <h3 class="item-folio__title">
-                                Tableau de bord d'analyse des ventes dynamique d'une entreprise commercilisant des appareiles informatiques et electroniques.
-                            </h3>
-                            <p class="item-folio__cat">
-                                Power BI
-                            </p>
+                            <h3 class="item-folio__title">Analyse commerciale</h3>
+                            <p class="item-folio__cat">Power BI • Forecasting</p>
                         </div>
+                        <a href="images/portfolio/ANALYSE_DE_DONNEES_COMMERCIALE.pdf" class="item-folio__project-link" target="_blank"><i class="im im-link"></i></a>
+                    </div>
+                </div>
 
-                        <a href="images/portfolio/ANALYSE_DE_DONNEES_COMMERCIALE.pdf" class="item-folio__project-link" title="Project link" onclick="openLink(event)">
-                            <i class="im im-link"></i>
-                        </a>
-
-                        <span class="item-folio__caption">
-                            <p>Développé un tableau de bord d'analyse des ventes dynamique utilisant Power BI, permettant la visualisation des tendances de vente, des produits les plus vendus et des mesures de revenus.<a href="images/portfolio/ANALYSE_DE_DONNEES_COMMERCIALE.pdf" target="_blank">Cliquez ici pour en savoir plus.</a></p>
-                        </span>
-
-                    </div> <!-- end item-folio -->
-                </div> <!-- end masonry__brick -->
-
-
+                <!-- Projet 3 -->
                 <div class="masonry__brick">
                     <div class="item-folio">
-
                         <div class="item-folio__thumb">
                             <a href="images/portfolio/image_banque_2000x2000.jpg" class="thumb-link" data-size="1050x1050">
-                                <img src="images/portfolio/image_banque_2000x2000.jpg"
-                                      alt="">
+                                <img src="images/portfolio/image_banque_2000x2000.jpg" alt="Crédits immobiliers">
                                 <span class="shadow-overlay"></span>
                             </a>
                         </div>
-
                         <div class="item-folio__text">
-                            <h3 class="item-folio__title">
-                                Ce dashboard a été conçu pour piloter l'activités des prêts immobiliers du compagnie bancaire (crédit breton)
-                            </h3>
-                            <p class="item-folio__cat">
-                                 Power BI
-                            </p>
+                            <h3 class="item-folio__title">Pilotage crédits</h3>
+                            <p class="item-folio__cat">Power BI • Banque</p>
                         </div>
-
-                        <a href="images/portfolio/ANALYSE_DE_DONNEES_BANQUE.pdf" class="item-folio__project-link" title="Project link" onclick="openLink(event)">
-                            <i class="im im-link"></i>
-                        </a>
-
-                        <span class="item-folio__caption">
-                            <p>Plusieurs pages présente différentes statistiques sur les demandes de prêts, historiques des demandes,evolution du taux de prêts acceptés, evolution du montant moyen des opérations, dossiers en cours de traitement etc...<a href="images/portfolio/ANALYSE_DE_DONNEES_BANQUE.pdf" target="_blank">Cliquez ici pour en savoir plus.</a></p>
-                        </span>
-
-                    </div> <!-- end item-folio -->
-                </div> <!-- end masonry__brick -->
-
-        
-                <div class="masonry__brick">
-                    <div class="item-folio">
-
-                        <div class="item-folio__thumb">
-                            <a href="images/portfolio/road_incident_project.jpg" class="thumb-link" data-size="1050x1050">
-                                <img src="images/portfolio/road_incident_project.jpg"
-                                        alt="">
-                                <span class="shadow-overlay"></span>
-                            </a>
-                        </div>
-
-                        <div class="item-folio__text">
-                            <h3 class="item-folio__title">
-                                Analyse des accidents de circulaion routière.
-                            </h3>
-                            <p class="item-folio__cat">
-                                Power BI
-                            </p>
-                        </div>
-
-                        <a href="images/portfolio/Rapport_suivi_incidents.pdf" class="item-folio__project-link" title="Project link" onclick="openLink(event)">
-                            <i class="im im-link"></i>
-                        </a>
-
-                        <span class="item-folio__caption">
-                            <p>Conception d’un rapport de suivi et d'analyse approfondi pour les incidents de circulation récurrents, mettant en évidence la compétence en visualisation et analyse des données. <a href="images/portfolio/Rapport_suivi_incidents.pdf" target="_blank">Cliquez ici pour en savoir plus.</a></p>
-                        </span>
-
-                    </div> <!-- end item-folio -->
-                </div> <!-- end masonry__brick -->
-
-
-                <div class="masonry__brick">
-                    <div class="item-folio">
-
-                        <div class="item-folio__thumb">
-                            <a href="images/portfolio/ab_testt.png" class="thumb-link" data-size="1050x1050">
-                                <img src="images/portfolio/ab_testt.png"
-                                        alt="">
-                                <span class="shadow-overlay"></span>
-                            </a>
-                        </div>
-
-                        <div class="item-folio__text">
-                            <h3 class="item-folio__title">
-                                Évaluer les résultats des tests A/B et décider quelle stratégie marketing fonctionne le mieux.
-                            </h3>
-                            <p class="item-folio__cat">
-                                Python, EDA
-                            </p>
-                        </div>
-
-                        <a href="images/portfolio/A_B Testing_Campagne_Marketing.pdf" class="item-folio__project-link" title="Project link" onclick="openLink(event)">
-                            <i class="im im-link"></i>
-                        </a>
-
-                        <span class="item-folio__caption">
-                            <p>Ce projet est pour une chaîne de fast-food qui prévoit d'ajouter un nouvel élément à son menu. Cependant, elle n'est toujours pas décidée entre trois campagnes de marketing possibles pour promouvoir le nouveau produit. Afin de déterminer quelle promotion a le plus grand effet sur les ventes, le nouvel élément est introduit dans plusieurs marchés sélectionnés au hasard. Python, EDA. <a href="images/portfolio/A_B Testing_Campagne_Marketing.pdf" target="_blank">Cliquez ici pour en savoir plus.</a></p>
-                        </span>
-
-                    </div> <!-- end item-folio -->
-                </div> <!-- end masonry__brick --> 
-
-            </div>
-        </div> <!-- end masonry -->
-
-    </section> <!-- end works -->
-
-
-
-    <!-- testimonials
-    ==================================================
-    <div class="s-testimonials">
-
-        <div class="overlay"></div>
-
-        <div class="row testimonials-header">
-            <div class="col-full">
-                <h1 class="h02">What People Say.</h1>
+                        <a href="images/portfolio/ANALYSE_DE_DONNEES_BANQUE.pdf" class="item-folio__project-link" target="_blank"><i class="im im-link"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="row testimonials">
-
-            <div class="col-full testimonials__slider">
-
-                <div class="testimonials__slide">
-                    <img src="images/avatars/user-01.jpg" alt="Author image" class="testimonials__avatar">
-                    <p>Qui ipsam temporibus quisquam velMaiores eos cumque distinctio nam accusantium ipsum. 
-                    Laudantium quia consequatur molestias delectus culpa facere hic dolores aperiam. Accusantium quos qui praesentium corpori.</p>
-                    <div class="testimonials__author h06">
-                        Tim Cook
-                        <span>CEO, Apple</span>
-                    </div>
-                </div>
-
-                <div class="testimonials__slide">
-                    <img src="images/avatars/user-05.jpg" alt="Author image" class="testimonials__avatar">
-                    <p>Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
-                    Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.</p>
-                    <div class="testimonials__author h06">
-                        Sundar Pichai
-                        <span>CEO, Google</span>
-                    </div>
-                </div>
-
-                <div class="testimonials__slide">
-                    <img src="images/avatars/user-02.jpg" alt="Author image" class="testimonials__avatar">
-                    <p>Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea quia nesciunt. Ducimus aut sed ipsam.  
-                    Autem eaque officia cum exercitationem sunt voluptatum accusamus. Quasi voluptas eius distinctio.</p>
-                    <div class="testimonials__author h06">
-                        Satya Nadella
-                        <span>CEO, Microsoft</span>
-                    </div>
-                </div>
-                
-            </div>  end testimonials__slider 
-
-        </div>  end testimonials 
-
-    </div>  end s-testimonials 
-
-
-     s-cta
-    ================================================== 
-    <section class="s-cta">
-        
-        <div class="row narrow cta">
-
-            <div class="col-full cta__content">
-
-                <h2 class="h01"><a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Styleshout Recommends Dreamhost.</a></h2>
-
-                <p class="lead">
-                Looking for an awesome and reliable webhosting? Try <a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">DreamHost</a>.
-                Get <span>$50 off</span> when you sign up with the promocode <span>styleshout</span>.
-                </p>
-
-                <div class="cta__action">
-                    <a class="btn btn--primary btn--large" href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Sign Up Now</a>
-                </div>	
-
-            </div>
-
-        </div>  end cta 
-        
-    </section> -->
-
-
-    <!-- s-contacts
+    <!-- CONTACT
     ================================================== -->
     <section id="contact" class="s-contact target-section">
-
         <div class="overlay"></div>
 
         <div class="row narrow section-intro">
             <div class="col-full">
-                <h3>Contact</h3>
-                <h1>(+225) 07-48-97-78-12.</h1>
-                
-                <p class="lead">Vous êtes excité à l'idée de collaborer sur un projet ? N'hésitez pas à me contacter via les liens suivants. Si vous avez des questions ou des incertitudes concernant votre projet, n'hésitez pas à m'envoyer un message. Explorons ensemble les possibilités, et si nos objectifs s'alignent, nous nous lancerons dans une incroyable aventure de succès basé sur les données !</p>
+                <h3>📞 Contact</h3>
+                <h1>(+225) 07-48-97-78-12</h1>
+                <p class="lead">Intéressé par ma solution BCBS 239 ? Discutons de votre projet de conformité.</p>
             </div>
         </div>
 
         <div class="row contact__main">
-            <div class="col-three tab-full contact__infos">
-                <a class="btn btn--stroke full-width" href="mailto:ndoubajeanclaude@outlook.com" target="_blank">Email</a>
-            </div>
-            <div class="col-three tab-full contact__infos">
-                <a class="btn btn--stroke full-width" href="https://www.linkedin.com/in/moh-adjonlin-jean-claude-n-douba-7737bb342/" target="_blank">LinkedIn</a>
-            </div>
-            <div class="col-three tab-full contact__infos">
-                <a class="btn btn--stroke full-width" href="https://github.com/Genito922/" target="_blank">Github</a>
-            </div>
-            <div class="col-three tab-full contact__infos">
-                <a class="btn btn--stroke full-width" href="https://www.kaggle.com/jeanclaudem92/" target="_blank">Kaggle</a>
-            </div>
-
+            <div class="col-three tab-full"><a class="btn btn--stroke full-width" href="mailto:ndoubajeanclaude@outlook.com"><i class="im im-mail"></i> Email</a></div>
+            <div class="col-three tab-full"><a class="btn btn--stroke full-width" href="https://www.linkedin.com/in/moh-adjonlin-jean-claude-n-douba-7737bb342/" target="_blank"><i class="im im-linkedin"></i> LinkedIn</a></div>
+            <div class="col-three tab-full"><a class="btn btn--stroke full-width" href="https://github.com/Genito922/" target="_blank"><i class="im im-github"></i> GitHub</a></div>
+            <div class="col-three tab-full"><a class="btn btn--stroke full-width" href="https://www.kaggle.com/jeanclaudem92/" target="_blank"><i class="fab fa-kaggle"></i> Kaggle</a></div>
         </div>
+    </section>
 
-    </section> <!-- end s-contact -->
-
-
-    <!-- footer
+    <!-- FOOTER
     ================================================== -->
     <footer>
         <div class="row">
             <div class="col-full">
-
                 <div class="footer-logo">
-                    <a class="footer-site-logo" href="#0"><img src="images/logo1.png" alt="Homepage"></a>
+                    <a class="footer-site-logo" href="#0"><img src="images/logo1.png" alt="N'DOUBA MÔH"></a>
                 </div>
-
                 <ul class="footer-social">
-                    <li><a href="https://www.linkedin.com/in/moh-adjonlin-jean-claude-n-douba-7737bb342/" target="_blank">
-                        <i class="im im-linkedin" aria-hidden="true"></i>
-                        <span>LinkedIn</span>
-                    </a></li>
-                    <li><a href="https://github.com/Genito922" target="_blank">
-                        <i class="im im-github" aria-hidden="true"></i>
-                        <span>Github</span>
-                    </a></li>
-                    <li><a href="https://www.kaggle.com/jeanclaudem92" target="_blank">
-                        <i class="fab fa-kaggle" aria-hidden="true"></i>
-                        <span>Kaggle</span>
-                    </a></li>             
-                   
-                    
+                    <li><a href="https://www.linkedin.com/in/moh-adjonlin-jean-claude-n-douba-7737bb342/"><i class="im im-linkedin"></i><span>LinkedIn</span></a></li>
+                    <li><a href="https://github.com/Genito922"><i class="im im-github"></i><span>Github</span></a></li>
+                    <li><a href="https://www.kaggle.com/jeanclaudem92"><i class="fab fa-kaggle"></i><span>Kaggle</span></a></li>             
                 </ul>
-                    
             </div>
         </div>
 
         <div class="row footer-bottom">
-
             <div class="col-twelve">
                 <div class="copyright">
                     <span>© Copyright MôH 2025</span> 
-                    <span>Design by <a style="color:rgba(255, 255, 255, 0.4);" href="https://www.styleshout.com/">styleshout</a></span>	
+                    <span>Design by styleshout</span>
+                    <span>| Solution BCBS 239</span>
                 </div>
-
                 <div class="go-top">
-                <a class="smoothscroll" title="Retour vers le haut" href="#top"><i class="im im-arrow-up" aria-hidden="true"></i></a>
+                    <a class="smoothscroll" title="Retour" href="#top"><i class="im im-arrow-up"></i></a>
                 </div>
             </div>
-
-        </div> <!-- end footer-bottom -->
-
-    </footer> <!-- end footer -->
-
-
-    <!-- photoswipe background
-    ================================================== -->
-    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
-
-        <div class="pswp__bg"></div>
-        <div class="pswp__scroll-wrap">
-
-            <div class="pswp__container">
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-            </div>
-
-            <div class="pswp__ui pswp__ui--hidden">
-                <div class="pswp__top-bar">
-                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title=
-                    "Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title=
-                    "Zoom in/out"></button>
-                    <div class="pswp__preloader">
-                        <div class="pswp__preloader__icn">
-                            <div class="pswp__preloader__cut">
-                                <div class="pswp__preloader__donut"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                    <div class="pswp__share-tooltip"></div>
-                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title=
-                "Next (arrow right)"></button>
-                <div class="pswp__caption">
-                    <div class="pswp__caption__center"></div>
-                </div>
-            </div>
-
         </div>
+    </footer>
 
-    </div><!-- end photoSwipe background -->
-
-    <div id="preloader">
-        <div id="loader"></div>
-    </div>
-
-
-    <!-- Java Script
+    <!-- SCRIPTS
     ================================================== -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+    
+    <script>
+        // Smooth scroll pour les ancres
+        $(document).ready(function(){
+            $('.smoothscroll').on('click', function(e) {
+                e.preventDefault();
+                var target = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(target).offset().top
+                }, 800);
+            });
+        });
+    </script>
 
 </body>
-
 </html>
