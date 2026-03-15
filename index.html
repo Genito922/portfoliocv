@@ -9,15 +9,15 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>N'DOUBA MÔH - Expert en Analyse Financière & Data Governance</title>
-    <meta name="description" content="Expert en analyse financière, gestion des risques et conformité réglementaire. Solutions pour banques, assurances, régulateurs et agences de notation.">
+    <title>N'DOUBA MÔH - Expert BCBS 239 | Conformité Bancaire & Data Governance</title>
+    <meta name="description" content="Solution BCBS 239 complète pour la conformité réglementaire bancaire. Dashboard temps réel, détection d'anomalies, reporting BCE. 14 principes couverts.">
     <meta name="author" content="N'DOUBA MÔH">
-    <meta name="keywords" content="analyse financière, gestion des risques, conformité, Solvabilité II, Bâle III, IFRS 17, Bâle IV, BCBS 239, RDARR, stress tests, agence notation, régulateur financier, ACPR, BCE, AMF">
+    <meta name="keywords" content="BCBS 239, RDARR, Bâle, conformité bancaire, data governance, tableau de bord, détection anomalies, reporting réglementaire, UMOA, BCEAO">
     
     <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="N'DOUBA MÔH - Expert Finance & Risques">
-    <meta property="og:description" content="Solutions d'analyse financière pour institutions financières et régulateurs">
-    <meta property="og:image" content="https://votredomaine.com/images/og-finance.jpg">
+    <meta property="og:title" content="N'DOUBA MÔH - Solution BCBS 239">
+    <meta property="og:description" content="Dashboard de conformité BCBS 239 - 14 principes couverts, alertes temps réel">
+    <meta property="og:image" content="https://votredomaine.com/images/og-bcbs239.jpg">
     <meta property="og:url" content="https://votredomaine.com">
     
     <!-- Twitter Card -->
@@ -45,99 +45,77 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <style>
-        /* ===== STYLES FINANCIERS ===== */
+        /* ===== STYLES BCBS 239 ===== */
         :root {
-            --finance-primary: #0A2342;  /* Bleu nuit professionnel */
-            --finance-secondary: #2A4E77; /* Bleu profond */
-            --finance-accent: #C99700;    /* Or/Bronze pour accents */
-            --finance-success: #1E7920;   /* Vert sobre */
-            --finance-warning: #B45F06;   /* Orange terreux */
-            --finance-danger: #9A1B1B;    /* Bordeaux */
-            --finance-light: #F5F7FA;      /* Fond clair */
-            --finance-dark: #1E2A36;       /* Gris anthracite */
+            --bcbs-primary: #003366;
+            --bcbs-secondary: #0066cc;
+            --bcbs-accent: #ff6b35;
+            --bcbs-success: #2e7d32;
+            --bcbs-warning: #ef6c00;
+            --bcbs-danger: #c62828;
+            --bcbs-light: #f5f9ff;
         }
 
-        /* Badge secteur */
-        .badge-sector {
-            background: linear-gradient(135deg, var(--finance-primary), var(--finance-secondary));
+        /* Badge BCBS */
+        .badge-bcbs {
+            background: linear-gradient(135deg, var(--bcbs-primary), var(--bcbs-secondary));
             color: white;
-            padding: 6px 18px;
+            padding: 8px 20px;
             border-radius: 30px;
-            font-size: 0.8rem;
-            font-weight: 500;
+            font-size: 0.9rem;
+            font-weight: 600;
             letter-spacing: 1px;
             display: inline-block;
-            margin-right: 8px;
-            margin-bottom: 8px;
-            border: 1px solid rgba(255,255,255,0.2);
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,51,102,0.2);
         }
 
-        /* Badge institution */
-        .institution-badge {
-            background: white;
-            color: var(--finance-primary);
-            padding: 4px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            border: 1px solid var(--finance-primary);
-            display: inline-block;
-            margin: 0 5px 5px 0;
-        }
-
-        /* KPIs financiers */
-        .kpi-finance-grid {
+        /* KPIs */
+        .kpi-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
+            gap: 20px;
             margin: 40px 0;
         }
         
         @media (max-width: 768px) {
-            .kpi-finance-grid {
+            .kpi-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
         
-        .kpi-finance-card {
+        .kpi-card {
             background: white;
-            padding: 25px 20px;
-            border-radius: 10px;
+            padding: 25px 15px;
+            border-radius: 15px;
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
-            border: 1px solid #eef2f6;
-            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border-bottom: 3px solid transparent;
         }
         
-        .kpi-finance-card:hover {
-            transform: translateY(-3px);
-            border-color: var(--finance-accent);
-            box-shadow: 0 10px 30px rgba(10,35,66,0.08);
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            border-bottom-color: var(--bcbs-primary);
         }
         
-        .kpi-finance-value {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--finance-primary);
+        .kpi-value {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--bcbs-primary);
             line-height: 1.2;
         }
         
-        .kpi-finance-label {
-            font-size: 0.85rem;
-            color: #5a6a7a;
+        .kpi-label {
+            font-size: 0.9rem;
+            color: #666;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
             font-weight: 500;
         }
-        
-        .kpi-finance-subs {
-            font-size: 0.75rem;
-            color: #8a9aa8;
-            margin-top: 5px;
-        }
 
-        /* Cartes secteur */
-        .sector-grid {
+        /* Dashboard Cards - Version cliquable */
+        .dashboard-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 25px;
@@ -145,231 +123,309 @@
         }
         
         @media (max-width: 992px) {
-            .sector-grid {
+            .dashboard-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
         
         @media (max-width: 576px) {
-            .sector-grid {
+            .dashboard-grid {
                 grid-template-columns: 1fr;
             }
         }
         
-        .sector-card {
-            background: white;
-            border-radius: 12px;
+        .dashboard-card {
+            position: relative;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            border: 1px solid #eef2f6;
-            transition: all 0.3s;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            background: white;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            cursor: pointer;
         }
         
-        .sector-card:hover {
-            box-shadow: 0 15px 40px rgba(10,35,66,0.1);
-            transform: translateY(-5px);
+        .dashboard-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,51,102,0.3);
         }
         
-        .sector-header {
-            padding: 25px 20px 15px;
-            border-bottom: 1px solid #eef2f6;
-            display: flex;
-            align-items: center;
+        .dashboard-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s;
         }
         
-        .sector-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--finance-light);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            color: var(--finance-primary);
-            font-size: 1.8rem;
+        .dashboard-card:hover .dashboard-img {
+            transform: scale(1.05);
         }
         
-        .sector-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--finance-primary);
-            margin: 0;
-        }
-        
-        .sector-sub {
-            color: #6a7a8a;
-            font-size: 0.85rem;
-        }
-        
-        .sector-body {
+        .dashboard-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,51,102,0.95), transparent);
+            color: white;
             padding: 20px;
+            transform: translateY(70%);
+            transition: transform 0.4s ease;
         }
         
-        .sector-list {
-            list-style: none;
-            padding: 0;
+        .dashboard-card:hover .dashboard-overlay {
+            transform: translateY(0);
+        }
+        
+        .dashboard-overlay h4 {
+            color: white;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .dashboard-overlay p {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.85rem;
             margin: 0;
-        }
-        
-        .sector-list li {
-            padding: 8px 0;
-            border-bottom: 1px dashed #eef2f6;
-            display: flex;
-            align-items: center;
-            font-size: 0.95rem;
-        }
-        
-        .sector-list li i {
-            color: var(--finance-accent);
-            width: 20px;
-            margin-right: 10px;
-            font-size: 0.8rem;
         }
 
-        /* Réglementation cards */
-        .reg-grid {
+        /* Badge "Cliquez pour voir" */
+        .click-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255,255,255,0.9);
+            color: var(--bcbs-primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            z-index: 10;
+            opacity: 0;
+            transition: opacity 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .dashboard-card:hover .click-badge {
+            opacity: 1;
+        }
+
+        /* Alert Cards */
+        .alertes-container {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin: 40px 0;
+        }
+        
+        .alerte-item {
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            animation: slideIn 0.3s ease;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .alerte-critique {
+            background: linear-gradient(135deg, #ffebee, #ffcdd2);
+            border-left: 5px solid var(--bcbs-danger);
+            color: var(--bcbs-danger);
+        }
+        
+        .alerte-warning {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            border-left: 5px solid var(--bcbs-warning);
+            color: var(--bcbs-warning);
+        }
+        
+        .alerte-success {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-left: 5px solid var(--bcbs-success);
+            color: var(--bcbs-success);
+        }
+        
+        .alerte-icon {
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+        
+        .alerte-content {
+            flex: 1;
+        }
+        
+        .alerte-title {
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+        
+        .alerte-desc {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .alerte-badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        .badge-critique {
+            background: var(--bcbs-danger);
+            color: white;
+        }
+        
+        .badge-warning {
+            background: var(--bcbs-warning);
+            color: white;
+        }
+
+        /* Principes BCBS */
+        .principles-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             margin: 30px 0;
         }
         
-        @media (max-width: 992px) {
-            .reg-grid {
+        @media (max-width: 768px) {
+            .principles-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
         
-        .reg-card {
+        .principle-card {
             background: white;
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 15px;
             text-align: center;
-            border: 1px solid #eef2f6;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            border: 1px solid #eee;
+            transition: all 0.3s;
         }
         
-        .reg-card h4 {
-            color: var(--finance-primary);
-            margin: 10px 0 5px;
-            font-size: 1.1rem;
+        .principle-card:hover {
+            border-color: var(--bcbs-primary);
+            box-shadow: 0 10px 25px rgba(0,51,102,0.1);
         }
         
-        .reg-card p {
-            color: #6a7a8a;
-            font-size: 0.8rem;
-            margin: 0;
+        .principle-number {
+            width: 45px;
+            height: 45px;
+            line-height: 45px;
+            background: var(--bcbs-primary);
+            color: white;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .principle-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--bcbs-primary);
+        }
+        
+        .principle-desc {
+            font-size: 0.85rem;
+            color: #666;
         }
 
-        /* Alertes simulation */
-        .alert-simulation {
+        /* Feature Cards */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        @media (max-width: 992px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 25px 15px;
             background: white;
             border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            margin: 30px 0;
+            transition: all 0.3s;
         }
         
-        .alert-item {
-            padding: 15px 20px;
-            margin-bottom: 12px;
-            border-radius: 8px;
+        .feature-card:hover {
+            background: var(--bcbs-light);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--bcbs-primary);
+            margin-bottom: 15px;
+        }
+        
+        .feature-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .feature-desc {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Placeholder images (pour la démo) */
+        .img-placeholder {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
             display: flex;
             align-items: center;
-            border-left: 4px solid transparent;
-        }
-        
-        .alert-rouge {
-            background: #fef2f2;
-            border-left-color: var(--finance-danger);
-        }
-        
-        .alert-orange {
-            background: #fef7ed;
-            border-left-color: var(--finance-warning);
-        }
-        
-        .alert-vert {
-            background: #f0f7f0;
-            border-left-color: var(--finance-success);
-        }
-
-        /* Timeline formations */
-        .finance-timeline {
+            justify-content: center;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
             position: relative;
-            padding-left: 30px;
         }
         
-        .finance-timeline-item {
-            position: relative;
-            padding-bottom: 30px;
-        }
-        
-        .finance-timeline-item:before {
-            content: '';
-            position: absolute;
-            left: -30px;
-            top: 5px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--finance-accent);
-            border: 2px solid white;
-            box-shadow: 0 0 0 2px var(--finance-primary);
-        }
-        
-        .finance-timeline-item:after {
-            content: '';
-            position: absolute;
-            left: -25px;
-            top: 20px;
-            bottom: -5px;
-            width: 2px;
-            background: #e0e7ed;
-        }
-        
-        .finance-timeline-item:last-child:after {
-            display: none;
-        }
-
-        /* Suppression de l'image statique */
-        .no-static-image {
-            background: none !important;
-        }
-        
-        /* Hero sans image */
-        .s-home {
-            background: linear-gradient(135deg, var(--finance-primary), var(--finance-secondary)) !important;
-        }
-        
-        .s-home .overlay {
-            display: none;
-        }
-        
-        .shadow-overlay {
-            display: none;
+        .img-placeholder::before {
+            content: "📊 BCBS 239";
         }
     </style>
 </head>
 
 <body id="top">
 
-    <!-- HEADER - Navigation inchangée mais sans image
+    <!-- HEADER
     ================================================== -->
     <header class="s-header">
         <div class="header-logo">
-            <a class="site-logo" href="index.html">
-                <!-- Logo texte au lieu d'image -->
-                <span style="color: white; font-weight: 700; font-size: 1.5rem;">N'DOUBA MÔH</span>
-            </a>
+            <a class="site-logo" href="index.html"><img src="images/logo2.jpg" alt="N'DOUBA MÔH"></a>
         </div>
 
         <nav class="header-nav-wrap">
             <ul class="header-nav">
                 <li class="current"><a class="smoothscroll" href="#home">Accueil</a></li>
-                <li><a class="smoothscroll" href="#about">Expertise</a></li>
-                <li><a class="smoothscroll" href="#solutions">Solutions</a></li>
-                <li><a class="smoothscroll" href="#realisations">Réalisations</a></li>
+                <li><a class="smoothscroll" href="#about">À Propos</a></li>
+                <li><a class="smoothscroll" href="#bcbs239">🏦 Solution BCBS 239</a></li>
+                <li><a class="smoothscroll" href="#works">Projets</a></li>
                 <li><a class="smoothscroll" href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -377,46 +433,40 @@
         <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
     </header>
 
-    <!-- HOME - Sans image statique, dégradé pur
+    <!-- HOME
     ================================================== -->
-    <section id="home" class="s-home page-hero target-section" style="background: linear-gradient(135deg, #0A2342, #2A4E77);">
+    <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="images/data1.jpg" data-natural-width=1980 data-natural-height=1080>
+        <div class="overlay"></div>
+        <div class="shadow-overlay"></div>
+
         <div class="home-content">
             <div class="row home-content__main">
-                <h3 style="color: rgba(255,255,255,0.8);">👋 Expert en Analyse Financière</h3>
-                <h1 style="color: white; font-size: 3.5rem;">N'DOUBA MÔH</h1>
-                
-                <!-- Badges secteurs -->
-                <div style="margin: 20px 0;">
-                    <span class="badge-sector">🏦 Banque</span>
-                    <span class="badge-sector">📋 Assurance</span>
-                    <span class="badge-sector">🏛️ Régulateur</span>
-                    <span class="badge-sector">📊 Agence de notation</span>
-                </div>
-                
-                <h4 style="color: rgba(255,255,255,0.9); line-height: 1.6; max-width: 800px;">
-                    <strong>Data Analyst & Spécialiste en Gestion des Risques</strong><br>
-                    • Bâle III/IV • Solvabilité II • IFRS 17 • BCBS 239/RDARR • Stress Tests<br>
-                    • Reporting réglementaire (ACPR, BCE, AMF) • Modélisation financière
+                <h3>👋 Expert en Conformité BCBS 239</h3>
+                <h1>N'DOUBA MÔH</h1>
+                <h4 style="color:white; line-height: 1.6;">
+                    <strong>Analyste de Données Bancaires</strong> | Spécialiste RDARR<br>
+                    • 14/14 principes BCBS 239 couverts<br>
+                    • Détection anomalies en temps réel (99.8%)<br>
+                    • Dashboard BCE/BCBS ready
                 </h4>
 
-                <div class="home-content__buttons" style="margin-top: 30px;">
-                    <a href="#solutions" class="smoothscroll btn btn--stroke" style="background: rgba(255,255,255,0.1); border-color: white; color: white;">
-                        <i class="fas fa-chart-line"></i> Découvrir mes solutions
+                <div class="home-content__buttons">
+                    <a href="#bcbs239" class="smoothscroll btn btn--stroke">
+                        <i class="fas fa-chart-line"></i> Découvrir la Solution
                     </a>
-                    <a href="#contact" class="smoothscroll btn btn--stroke" style="border-color: white; color: white;">
-                        <i class="fas fa-paper-plane"></i> Échanger sur un projet
+                    <a href="mailto:ndoubajeanclaude@outlook.com" class="btn btn--stroke">
+                        <i class="fas fa-paper-plane"></i> Contact
                     </a>
                 </div>
 
                 <div class="home-content__scroll">
-                    <a href="#about" class="scroll-link smoothscroll" style="color: white;">
-                        <span>Découvrir mon expertise</span>
+                    <a href="#about" class="scroll-link smoothscroll">
+                        <span>Découvrir</span>
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- Réseaux sociaux -->
         <ul class="home-social">
             <li><a href="mailto:ndoubajeanclaude@outlook.com"><i class="fa-solid fa-envelope"></i><span>Email</span></a></li>
             <li><a href="https://www.linkedin.com/in/moh-adjonlin-jean-claude-n-douba-7737bb342/" target="_blank"><i class="im im-linkedin"></i><span>LinkedIn</span></a></li>
@@ -425,336 +475,377 @@
         </ul>
     </section>
 
-    <!-- ABOUT - Expertise financière
+    <!-- ABOUT
     ================================================== -->
     <section id="about" class="s-about target-section">
         <div class="row narrow section-intro has-bottom-sep">
             <div class="col-full text-center">
-                <h3>📋 Expertise financière</h3>
-                <h1>Banque • Assurance • Régulation • Notation</h1>
-                <p class="lead">Formation en Banque-Finance-Assurance et expérience en analyse de données au service des institutions financières et des régulateurs.</p>
+                <h3>📋 Profil</h3>
+                <h1>Expertise BCBS 239 & Data Governance</h1>
+                <p class="lead">Diplômé en Banque-Finance avec spécialisation en conformité réglementaire. 
+                Je développe des solutions innovantes répondant aux exigences des superviseurs (BCE, BCBS, UMOA).</p>
             </div>
         </div>
 
-        <!-- KPIs financiers -->
-        <div class="row">
-            <div class="col-full">
-                <div class="kpi-finance-grid">
-                    <div class="kpi-finance-card">
-                        <div class="kpi-finance-value">8+</div>
-                        <div class="kpi-finance-label">Années expérience</div>
-                        <div class="kpi-finance-subs">Finance & Assurance</div>
-                    </div>
-                    <div class="kpi-finance-card">
-                        <div class="kpi-finance-value">4</div>
-                        <div class="kpi-finance-label">Secteurs couverts</div>
-                        <div class="kpi-finance-subs">Banque, Assurance, Régulateur, Notation</div>
-                    </div>
-                    <div class="kpi-finance-card">
-                        <div class="kpi-finance-value">5+</div>
-                        <div class="kpi-finance-label">Normes maîtrisées</div>
-                        <div class="kpi-finance-subs">Bâle, Solvabilité II, IFRS, BCBS</div>
-                    </div>
-                    <div class="kpi-finance-card">
-                        <div class="kpi-finance-value">100%</div>
-                        <div class="kpi-finance-label">Conformité</div>
-                        <div class="kpi-finance-subs">Reporting réglementaire</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Formation et parcours -->
-        <div class="row about-content" style="margin-top: 20px;">
+        <div class="row about-content">
             <div class="col-six tab-full left">
-                <h3>🎓 Formation financière</h3>
+                <h3>🎯 Spécialisations BCBS 239</h3>
                 
-                <div class="finance-timeline">
-                    <div class="finance-timeline-item">
-                        <h5>Licence Professionnelle Finance & Comptabilité</h5>
-                        <p class="timeline__timeframe">INSTITUT CERCO</p>
-                        <p>Mémoire : Automatisation des ventes de contrats d'assurances via nouvelles technologies</p>
+                <div style="margin: 20px 0;">
+                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <span style="background: #003366; color: white; width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px;">P3</span>
+                        <div><strong>Exactitude des données</strong><br><small>Détection automatique d'anomalies</small></div>
                     </div>
-                    
-                    <div class="finance-timeline-item">
-                        <h5>BTS Banque-Finance-Assurances</h5>
-                        <p class="timeline__timeframe">GROUPE LOKO</p>
-                        <p>Soutenance : Enregistrements comptables des règlements de sinistres et reports à nouveaux</p>
+                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <span style="background: #003366; color: white; width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px;">P4</span>
+                        <div><strong>Complétude</strong><br><small>Contrôle champs obligatoires</small></div>
                     </div>
-                </div>
-                
-                <h3 style="margin-top: 30px;">📜 Certifications</h3>
-                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;">
-                    <span class="institution-badge">BCBS 239</span>
-                    <span class="institution-badge">Bâle III/IV</span>
-                    <span class="institution-badge">Solvabilité II</span>
-                    <span class="institution-badge">IFRS 9/17</span>
-                    <span class="institution-badge">Gestion des risques</span>
-                    <span class="institution-badge">Data Governance</span>
+                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <span style="background: #003366; color: white; width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px;">P6</span>
+                        <div><strong>Adaptabilité</strong><br><small>Reporting ad-hoc superviseurs</small></div>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <span style="background: #003366; color: white; width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px;">P9</span>
+                        <div><strong>Reporting précis</strong><br><small>Dashboard temps réel</small></div>
+                    </div>
                 </div>
             </div>
 
             <div class="col-six tab-full right">
-                <h3>📊 Compétences sectorielles</h3>
-                
-                <h4 style="margin: 20px 0 10px;">🏦 Banque</h4>
-                <ul style="list-style: none; padding-left: 0;">
-                    <li><i class="fas fa-check" style="color: var(--finance-accent); margin-right: 10px;"></i> Bâle III/IV - Calcul des ratios</li>
-                    <li><i class="fas fa-check" style="color: var(--finance-accent); margin-right: 10px;"></i> BCBS 239 - Gouvernance des données</li>
-                    <li><i class="fas fa-check" style="color: var(--finance-accent); margin-right: 10px;"></i> ICAAP/ILAAP - Stress tests</li>
-                </ul>
-                
-                <h4 style="margin: 20px 0 10px;">📋 Assurance</h4>
-                <ul style="list-style: none; padding-left: 0;">
-                    <li><i class="fas fa-check" style="color: var(--finance-accent); margin-right: 10px;"></i> Solvabilité II - Pilier 1,2,3</li>
-                    <li><i class="fas fa-check" style="color: var(--finance-accent); margin-right: 10px;"></i> IFRS 17 - Comptabilisation contrats</li>
-                    <li><i class="fas fa-check" style="color: var(--finance-accent); margin-right: 10px;"></i> ORSA - Own Risk Assessment</li>
-                </ul>
-                
-                <h4 style="margin: 20px 0 10px;">🏛️ Régulateur / Notation</h4>
-                <ul style="list-style: none; padding-left: 0;">
-                    <li><i class="fas fa-check" style="color: var(--finance-accent); margin-right: 10px;"></i> Reporting ACPR/BCE</li>
-                    <li><i class="fas fa-check" style="color: var(--finance-accent); margin-right: 10px;"></i> Stress tests réglementaires</li>
-                    <li><i class="fas fa-check" style="color: var(--finance-accent); margin-right: 10px;"></i> Analyse de notations financières</li>
+                <h3>📊 Stack Technique BCBS 239</h3>
+                <ul class="skill-bars">
+                    <li><div class="progress percent95"><span>95%</span></div><strong>Python (Pandas, NumPy)</strong></li>
+                    <li><div class="progress percent90"><span>90%</span></div><strong>SQL / Bases de données</strong></li>
+                    <li><div class="progress percent90"><span>90%</span></div><strong>Power BI / Tableau</strong></li>
+                    <li><div class="progress percent85"><span>85%</span></div><strong>Excel / VBA</strong></li>
+                    <li><div class="progress percent95"><span>95%</span></div><strong>Gouvernance des données</strong></li>   
+                    <li><div class="progress percent95"><span>95%</span></div><strong>Conformité BCBS 239</strong></li>   
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- SOLUTIONS par secteur
+    <!-- BCBS 239 SOLUTION
     ================================================== -->
-    <section id="solutions" class="s-works target-section" style="background: var(--finance-light); padding: 6rem 0;">
+    <section id="bcbs239" class="s-works target-section" style="background: var(--bcbs-light); padding: 6rem 0;">
         
         <div class="row narrow section-intro">
             <div class="col-full text-center">
-                <h3 style="color: var(--finance-primary);">💡 SOLUTIONS PAR SECTEUR</h3>
-                <h1 style="font-size: 2.8rem; color: var(--finance-primary);">Des solutions adaptées à chaque institution</h1>
+                <span class="badge-bcbs">🏦 SOLUTION BCBS 239 / RDARR</span>
+                <h1 style="font-size: 3rem; color: var(--bcbs-primary);">Dashboard de Conformité Réglementaire</h1>
+                <p class="lead" style="max-width: 800px; margin: 0 auto;">
+                    Une solution complète couvrant les <strong>14 principes du cadre BCBS 239</strong>. 
+                    Détection automatique des anomalies, alertes temps réel et reporting prêt pour les superviseurs.
+                    <br><span style="font-size: 0.9rem; color: var(--bcbs-secondary);">👆 Cliquez sur les images pour accéder au portfolio spécialisé</span>
+                </p>
             </div>
         </div>
 
-        <!-- Grille par secteur -->
+        <!-- KPIs Section -->
         <div class="row">
             <div class="col-full">
-                <div class="sector-grid">
-                    
-                    <!-- Carte Banque -->
-                    <div class="sector-card">
-                        <div class="sector-header">
-                            <div class="sector-icon"><i class="fas fa-university"></i></div>
-                            <div>
-                                <h3 class="sector-title">Banque</h3>
-                                <div class="sector-sub">Bâle III/IV • BCBS 239</div>
-                            </div>
-                        </div>
-                        <div class="sector-body">
-                            <ul class="sector-list">
-                                <li><i class="fas fa-chevron-right"></i> Calcul ratios de solvabilité (CET1, Tier 1, Total Capital)</li>
-                                <li><i class="fas fa-chevron-right"></i> Dashboard BCBS 239 - 14 principes couverts</li>
-                                <li><i class="fas fa-chevron-right"></i> Stress tests LCR/NSFR (Liquidité)</li>
-                                <li><i class="fas fa-chevron-right"></i> Reporting ACPR/BCE automatisé</li>
-                                <li><i class="fas fa-chevron-right"></i> Détection anomalies comptables en temps réel</li>
-                                <li><i class="fas fa-chevron-right"></i> Data lineage et audit trail</li>
-                            </ul>
-                        </div>
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-value">14/14</div>
+                        <div class="kpi-label">Principes BCBS 239</div>
                     </div>
-                    
-                    <!-- Carte Assurance -->
-                    <div class="sector-card">
-                        <div class="sector-header">
-                            <div class="sector-icon"><i class="fas fa-shield-alt"></i></div>
-                            <div>
-                                <h3 class="sector-title">Assurance</h3>
-                                <div class="sector-sub">Solvabilité II • IFRS 17</div>
-                            </div>
-                        </div>
-                        <div class="sector-body">
-                            <ul class="sector-list">
-                                <li><i class="fas fa-chevron-right"></i> Calcul SCR/MCR (Solvabilité II)</li>
-                                <li><i class="fas fa-chevron-right"></i> Modélisation IFRS 17 - Building blocks</li>
-                                <li><i class="fas fa-chevron-right"></i> Rapport ORSA (Own Risk Assessment)</li>
-                                <li><i class="fas fa-chevron-right"></i> Analyse des provisions techniques</li>
-                                <li><i class="fas fa-chevron-right"></i> Backtesting et validation des modèles</li>
-                                <li><i class="fas fa-chevron-right"></i> Reporting ACPR (Situation trimestrielle)</li>
-                            </ul>
-                        </div>
+                    <div class="kpi-card">
+                        <div class="kpi-value">99.8%</div>
+                        <div class="kpi-label">Taux de détection</div>
                     </div>
-                    
-                    <!-- Carte Régulateur -->
-                    <div class="sector-card">
-                        <div class="sector-header">
-                            <div class="sector-icon"><i class="fas fa-gavel"></i></div>
-                            <div>
-                                <h3 class="sector-title">Régulateur</h3>
-                                <div class="sector-sub">ACPR • BCE • AMF • BCEAO</div>
-                            </div>
-                        </div>
-                        <div class="sector-body">
-                            <ul class="sector-list">
-                                <li><i class="fas fa-chevron-right"></i> Contrôle qualité des données supervisées</li>
-                                <li><i class="fas fa-chevron-right"></i> Détection anomalies réglementaires</li>
-                                <li><i class="fas fa-chevron-right"></i> Stress tests macro-prudentiels</li>
-                                <li><i class="fas fa-chevron-right"></i> Analyse de concentrations et risques systémiques</li>
-                                <li><i class="fas fa-chevron-right"></i> Reporting SREP (Supervisory Review Process)</li>
-                                <li><i class="fas fa-chevron-right"></i> Validation des modèles internes</li>
-                            </ul>
-                        </div>
+                    <div class="kpi-card">
+                        <div class="kpi-value">&lt;5min</div>
+                        <div class="kpi-label">Reporting ad-hoc</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-value">100%</div>
+                        <div class="kpi-label">Audit Trail</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- KPIs par secteur -->
-        <div class="row" style="margin-top: 40px;">
-            <div class="col-four tab-full" style="text-align: center; padding: 20px;">
-                <div style="font-size: 2.5rem; font-weight: 700; color: var(--finance-primary);">14/14</div>
-                <div style="font-weight: 500;">Principes BCBS 239</div>
-                <div style="font-size: 0.8rem; color: #6a7a8a;">Banque - Conformité totale</div>
-            </div>
-            <div class="col-four tab-full" style="text-align: center; padding: 20px;">
-                <div style="font-size: 2.5rem; font-weight: 700; color: var(--finance-primary);">99.8%</div>
-                <div style="font-weight: 500;">SCR calculé</div>
-                <div style="font-size: 0.8rem; color: #6a7a8a;">Assurance - Solvabilité II</div>
-            </div>
-            <div class="col-four tab-full" style="text-align: center; padding: 20px;">
-                <div style="font-size: 2.5rem; font-weight: 700; color: var(--finance-primary);">100%</div>
-                <div style="font-weight: 500;">Conformité ACPR</div>
-                <div style="font-size: 0.8rem; color: #6a7a8a;">Reporting réglementaire</div>
+        <!-- Dashboard Images Grid - Version cliquable -->
+        <div class="row">
+            <div class="col-full">
+                <div class="dashboard-grid">
+                    <!-- Carte 1 - Lien vers portfolio BCBS 239 -->
+                    <a href="https://votredomaine.com/bcbs239-portfolio" target="_blank" class="dashboard-card">
+                        <span class="click-badge"><i class="fas fa-external-link-alt"></i> Voir le portfolio</span>
+                        <div class="dashboard-img img-placeholder" style="background: linear-gradient(135deg, #003366, #0066cc); height: 220px;"></div>
+                        <div class="dashboard-overlay">
+                            <h4>📊 Vue d'ensemble BCBS 239</h4>
+                            <p>Score global de conformité et KPIs par principe</p>
+                        </div>
+                    </a>
+                    
+                    <!-- Carte 2 - Lien vers portfolio BCBS 239 -->
+                    <a href="https://votredomaine.com/bcbs239-portfolio" target="_blank" class="dashboard-card">
+                        <span class="click-badge"><i class="fas fa-external-link-alt"></i> Voir le portfolio</span>
+                        <div class="dashboard-img img-placeholder" style="background: linear-gradient(135deg, #2E7D32, #4CAF50); height: 220px;"></div>
+                        <div class="dashboard-overlay">
+                            <h4>🚨 Module d'alertes - Principe 3</h4>
+                            <p>Détection dates futures et incohérences</p>
+                        </div>
+                    </a>
+                    
+                    <!-- Carte 3 - Lien vers portfolio BCBS 239 -->
+                    <a href="https://votredomaine.com/bcbs239-portfolio" target="_blank" class="dashboard-card">
+                        <span class="click-badge"><i class="fas fa-external-link-alt"></i> Voir le portfolio</span>
+                        <div class="dashboard-img img-placeholder" style="background: linear-gradient(135deg, #C62828, #EF5350); height: 220px;"></div>
+                        <div class="dashboard-overlay">
+                            <h4>📑 Balance Générale UMOA</h4>
+                            <p>Contrôle de cohérence inter-fichiers</p>
+                        </div>
+                    </a>
+                    
+                    <!-- Carte 4 - Lien vers portfolio BCBS 239 -->
+                    <a href="https://votredomaine.com/bcbs239-portfolio" target="_blank" class="dashboard-card">
+                        <span class="click-badge"><i class="fas fa-external-link-alt"></i> Voir le portfolio</span>
+                        <div class="dashboard-img img-placeholder" style="background: linear-gradient(135deg, #FF6B35, #FF8A65); height: 220px;"></div>
+                        <div class="dashboard-overlay">
+                            <h4>📒 Grand Livre - Audit Trail</h4>
+                            <p>Traçabilité complète des opérations</p>
+                        </div>
+                    </a>
+                    
+                    <!-- Carte 5 - Lien vers portfolio BCBS 239 -->
+                    <a href="https://votredomaine.com/bcbs239-portfolio" target="_blank" class="dashboard-card">
+                        <span class="click-badge"><i class="fas fa-external-link-alt"></i> Voir le portfolio</span>
+                        <div class="dashboard-img img-placeholder" style="background: linear-gradient(135deg, #6A1B9A, #AB47BC); height: 220px;"></div>
+                        <div class="dashboard-overlay">
+                            <h4>📋 Rapport réglementaire BCE</h4>
+                            <p>Export prêt pour les superviseurs</p>
+                        </div>
+                    </a>
+                    
+                    <!-- Carte 6 - Lien vers portfolio BCBS 239 -->
+                    <a href="https://votredomaine.com/bcbs239-portfolio" target="_blank" class="dashboard-card">
+                        <span class="click-badge"><i class="fas fa-external-link-alt"></i> Voir le portfolio</span>
+                        <div class="dashboard-img img-placeholder" style="background: linear-gradient(135deg, #00796B, #009688); height: 220px;"></div>
+                        <div class="dashboard-overlay">
+                            <h4>📈 Analyse de tendances</h4>
+                            <p>Détection des patterns anormaux</p>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
 
-        <!-- Simulation d'alertes par secteur -->
+        <!-- Bannière cliquable supplémentaire -->
+        <div class="row" style="margin-top: 20px; text-align: center;">
+            <div class="col-full">
+                <a href="https://votredomaine.com/bcbs239-portfolio" target="_blank" style="display: inline-block; background: var(--bcbs-primary); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; box-shadow: 0 5px 15px rgba(0,51,102,0.3); transition: all 0.3s;">
+                    <i class="fas fa-external-link-alt"></i> Accéder au portfolio BCBS 239 complet
+                    <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+                </a>
+                <p style="margin-top: 10px; color: #666; font-size: 0.8rem;">Explorez les 14 principes, les démonstrations interactives et la documentation technique</p>
+            </div>
+        </div>
+
+        <!-- Alertes Section -->
         <div class="row">
             <div class="col-full">
-                <div class="alert-simulation">
+                <div class="alertes-container">
                     <h3 style="margin-bottom: 25px; display: flex; align-items: center;">
-                        <i class="fas fa-bell" style="color: var(--finance-primary); margin-right: 10px;"></i>
-                        Simulation d'alertes - Contexte financier
+                        <i class="fas fa-bell" style="color: var(--bcbs-primary); margin-right: 10px;"></i>
+                        Alertes temps réel - Simulation live
                     </h3>
                     
-                    <div class="alert-item alert-rouge">
-                        <i class="fas fa-exclamation-circle" style="margin-right: 15px; font-size: 1.3rem;"></i>
-                        <div style="flex:1;">
-                            <strong style="font-size: 0.9rem;">BANQUE - Ratio CET1 sous seuil réglementaire</strong><br>
-                            <span style="font-size: 0.85rem;">CET1 calculé à 4.2% (seuil minimum 4.5%) - Action corrective requise</span>
+                    <!-- Alerte Critique -->
+                    <div class="alerte-item alerte-critique">
+                        <div class="alerte-icon"><i class="fas fa-exclamation-circle"></i></div>
+                        <div class="alerte-content">
+                            <div class="alerte-title">PRINCIPE 3 - Exactitude - CRITIQUE</div>
+                            <div class="alerte-desc">Écart de 2.5M XOF sur compte 301 - Comptes chèques clientèle</div>
                         </div>
-                        <span style="background: var(--finance-danger); color: white; padding: 3px 10px; border-radius: 15px; font-size: 0.7rem;">CRITIQUE</span>
+                        <span class="alerte-badge badge-critique">IL Y A 2 MIN</span>
                     </div>
                     
-                    <div class="alert-item alert-rouge">
-                        <i class="fas fa-calendar-times" style="margin-right: 15px; font-size: 1.3rem;"></i>
-                        <div style="flex:1;">
-                            <strong style="font-size: 0.9rem;">ASSURANCE - Non-conformité IFRS 17</strong><br>
-                            <span style="font-size: 0.85rem;">8 contrats sans allocation correcte des CSM (Contractual Service Margin)</span>
+                    <!-- Alerte Critique -->
+                    <div class="alerte-item alerte-critique">
+                        <div class="alerte-icon"><i class="fas fa-calendar-times"></i></div>
+                        <div class="alerte-content">
+                            <div class="alerte-title">PRINCIPE 3 - Dates futures - CRITIQUE</div>
+                            <div class="alerte-desc">15 opérations avec date comptable > aujourd'hui (J+3 à J+15)</div>
                         </div>
-                        <span style="background: var(--finance-danger); color: white; padding: 3px 10px; border-radius: 15px; font-size: 0.7rem;">CRITIQUE</span>
+                        <span class="alerte-badge badge-critique">IL Y A 5 MIN</span>
                     </div>
                     
-                    <div class="alert-item alert-orange">
-                        <i class="fas fa-exclamation-triangle" style="margin-right: 15px; font-size: 1.3rem;"></i>
-                        <div style="flex:1;">
-                            <strong style="font-size: 0.9rem;">RÉGULATEUR - Concentration excessive</strong><br>
-                            <span style="font-size: 0.85rem;">3 contreparties représentent 45% des engagements - Risque systémique potentiel</span>
+                    <!-- Alerte Warning -->
+                    <div class="alerte-item alerte-warning">
+                        <div class="alerte-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                        <div class="alerte-content">
+                            <div class="alerte-title">PRINCIPE 4 - Complétude - ATTENTION</div>
+                            <div class="alerte-desc">23 lignes sans libellé contrepartie - Données manquantes</div>
                         </div>
-                        <span style="background: var(--finance-warning); color: white; padding: 3px 10px; border-radius: 15px; font-size: 0.7rem;">ATTENTION</span>
+                        <span class="alerte-badge badge-warning">IL Y A 12 MIN</span>
                     </div>
                     
-                    <div class="alert-item alert-vert">
-                        <i class="fas fa-check-circle" style="margin-right: 15px; font-size: 1.3rem;"></i>
-                        <div style="flex:1;">
-                            <strong style="font-size: 0.9rem;">AGENCE NOTATION - Stabilité notation</strong><br>
-                            <span style="font-size: 0.85rem;">Tous les covenants respectés - Perspective stable confirmée</span>
+                    <!-- Alerte Warning -->
+                    <div class="alerte-item alerte-warning">
+                        <div class="alerte-icon"><i class="fas fa-chart-pie"></i></div>
+                        <div class="alerte-content">
+                            <div class="alerte-title">PRINCIPE 8 - Concentration - ATTENTION</div>
+                            <div class="alerte-desc">3 comptes représentent 45% des engagements totaux</div>
                         </div>
-                        <span style="background: var(--finance-success); color: white; padding: 3px 10px; border-radius: 15px; font-size: 0.7rem;">OK</span>
+                        <span class="alerte-badge badge-warning">IL Y A 18 MIN</span>
+                    </div>
+                    
+                    <!-- Alerte Success -->
+                    <div class="alerte-item alerte-success">
+                        <div class="alerte-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="alerte-content">
+                            <div class="alerte-title">PRINCIPE 2 - Data Lineage - OK</div>
+                            <div class="alerte-desc">98.5% des données critiques ont une traçabilité documentée</div>
+                        </div>
+                        <span class="alerte-badge" style="background: #2e7d32; color: white;">AUTOMATISÉ</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Références réglementaires -->
+        <!-- Principes BCBS 239 -->
+        <div class="row" style="margin-top: 40px;">
+            <div class="col-full">
+                <h3 style="text-align: center; margin-bottom: 30px;">🏛️ Les 14 Principes BCBS 239</h3>
+                
+                <div class="principles-grid">
+                    <div class="principle-card"><div class="principle-number">P1</div><div class="principle-title">Gouvernance</div><div class="principle-desc">Responsabilité board</div></div>
+                    <div class="principle-card"><div class="principle-number">P2</div><div class="principle-title">Data Lineage</div><div class="principle-desc">Traçabilité complète</div></div>
+                    <div class="principle-card"><div class="principle-number">P3</div><div class="principle-title">Exactitude</div><div class="principle-desc">99.8% détection</div></div>
+                    <div class="principle-card"><div class="principle-number">P4</div><div class="principle-title">Complétude</div><div class="principle-desc">Contrôle automatique</div></div>
+                    <div class="principle-card"><div class="principle-number">P5</div><div class="principle-title">Actualité</div><div class="principle-desc">Données J-1</div></div>
+                    <div class="principle-card"><div class="principle-number">P6</div><div class="principle-title">Adaptabilité</div><div class="principle-desc">Reporting ad-hoc</div></div>
+                    <div class="principle-card"><div class="principle-number">P7</div><div class="principle-title">Précision</div><div class="principle-desc">Seuils paramétrables</div></div>
+                    <div class="principle-card"><div class="principle-number">P8</div><div class="principle-title">Exhaustivité</div><div class="principle-desc">Périmètre total</div></div>
+                    <div class="principle-card"><div class="principle-number">P9</div><div class="principle-title">Clarté</div><div class="principle-desc">Dashboard intuitif</div></div>
+                    <div class="principle-card"><div class="principle-number">P10</div><div class="principle-title">Fréquence</div><div class="principle-desc">Temps réel</div></div>
+                    <div class="principle-card"><div class="principle-number">P11</div><div class="principle-title">Distribution</div><div class="principle-desc">Accès contrôlé</div></div>
+                    <div class="principle-card"><div class="principle-number">P12</div><div class="principle-title">Revue interne</div><div class="principle-desc">Audit trail</div></div>
+                    <div class="principle-card"><div class="principle-number">P13</div><div class="principle-title">Remédiation</div><div class="principle-desc">Plan d'action</div></div>
+                    <div class="principle-card"><div class="principle-number">P14</div><div class="principle-title">Supervision</div><div class="principle-desc">Reporting BCE</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="row" style="margin-top: 40px;">
+            <div class="col-full">
+                <h3 style="text-align: center; margin-bottom: 30px;">⚙️ Fonctionnalités clés</h3>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-filter"></i></div>
+                        <div class="feature-title">Filtrage intelligent</div>
+                        <div class="feature-desc">Détection automatique des dates aberrantes et valeurs hors-normes</div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-bell"></i></div>
+                        <div class="feature-title">Alertes temps réel</div>
+                        <div class="feature-desc">Seuils paramétrables par type d'anomalie et niveau de criticité</div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-history"></i></div>
+                        <div class="feature-title">Audit trail complet</div>
+                        <div class="feature-desc">Traçabilité de toutes les modifications et accès aux données</div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-file-export"></i></div>
+                        <div class="feature-title">Reporting BCE/BCBS</div>
+                        <div class="feature-desc">Export prêt pour les superviseurs aux formats standards</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="row" style="margin-top: 40px; text-align: center;">
+            <div class="col-full">
+                <a href="https://github.com/Genito922" target="_blank" class="btn btn--primary" style="margin-right: 15px;">
+                    <i class="fab fa-github"></i> Code source (privé)
+                </a>
+                <a href="#" class="btn btn--stroke" onclick="window.open('https://votredomaine.com/bcbs239-portfolio', '_blank')">
+                    <i class="fas fa-external-link-alt"></i> Portfolio BCBS 239
+                </a>
+            </div>
+        </div>
+
+        <!-- Note GDPR -->
         <div class="row" style="margin-top: 30px;">
             <div class="col-full">
-                <h3 style="text-align: center; margin-bottom: 20px;">📚 Normes et réglementations maîtrisées</h3>
-                
-                <div class="reg-grid">
-                    <div class="reg-card"><h4>Bâle III/IV</h4><p>CET1, Tier 1, LCR, NSFR</p></div>
-                    <div class="reg-card"><h4>BCBS 239</h4><p>14 principes RDARR</p></div>
-                    <div class="reg-card"><h4>Solvabilité II</h4><p>Pilier 1,2,3 - SCR, MCR</p></div>
-                    <div class="reg-card"><h4>IFRS 9/17</h4><p>Instruments financiers, contrats</p></div>
-                    <div class="reg-card"><h4>CRD V/CRR II</h4><p>Capital Requirements</p></div>
-                    <div class="reg-card"><h4>MIFID II</h4><p>Marchés financiers</p></div>
-                    <div class="reg-card"><h4>EMIR</h4><p>Dérivés</p></div>
-                    <div class="reg-card"><h4>GDPR</h4><p>Protection données</p></div>
-                </div>
+                <p style="text-align: center; color: #999; font-size: 0.8rem;">
+                    <i class="fas fa-shield-alt"></i> Conforme RGPD - Données anonymisées - Audit trail conservé 5 ans
+                </p>
             </div>
         </div>
 
-    </section>
+    </section> <!-- end bcbs239 -->
 
-    <!-- RÉALISATIONS
+    <!-- AUTRES PROJETS
     ================================================== -->
-    <section id="realisations" class="s-works target-section">
+    <section id="works" class="s-works target-section">
         <div class="row narrow section-intro has-bottom-sep">
             <div class="col-full">
-                <h3>📊 Réalisations</h3>
-                <h1>Projets financiers</h1>
-                <p class="lead">Applications concrètes dans les secteurs bancaire, assurantiel et réglementaire.</p>
+                <h3>📊 Autres réalisations</h3>
+                <h1>Projets数据分析</h1>
+                <p class="lead">Découvrez mes autres projets d'analyse de données dans divers secteurs.</p>
             </div>
         </div>
 
         <div class="row masonry-wrap">
             <div class="masonry">
-                
-                <!-- Projet Banque -->
-                <div class="masonry__brick">
-                    <div class="item-folio">
-                        <div class="item-folio__thumb">
-                            <a href="images/portfolio/image_banque_2000x2000.jpg" class="thumb-link" data-size="1050x1050">
-                                <img src="images/portfolio/image_banque_2000x2000.jpg" alt="BCBS 239">
-                                <span class="shadow-overlay"></span>
-                            </a>
-                        </div>
-                        <div class="item-folio__text">
-                            <h3 class="item-folio__title">Dashboard BCBS 239</h3>
-                            <p class="item-folio__cat">Banque • Conformité • 14 principes</p>
-                        </div>
-                        <a href="images/portfolio/ANALYSE_DE_DONNEES_BANQUE.pdf" class="item-folio__project-link" target="_blank"><i class="im im-link"></i></a>
-                        <span class="item-folio__caption">
-                            <p>Solution complète de gouvernance des données répondant aux exigences Bâle III/IV.</p>
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Projet Assurance -->
+                <!-- Projet 1 -->
                 <div class="masonry__brick">
                     <div class="item-folio">
                         <div class="item-folio__thumb">
                             <a href="images/portfolio/image_processus_2000x2000.jpg" class="thumb-link" data-size="1050x1050">
-                                <img src="images/portfolio/image_processus_2000x2000.jpg" alt="Solvabilité II">
+                                <img src="images/portfolio/image_processus_2000x2000.jpg" alt="Industrie laitière">
                                 <span class="shadow-overlay"></span>
                             </a>
                         </div>
                         <div class="item-folio__text">
-                            <h3 class="item-folio__title">Calcul SCR Solvabilité II</h3>
-                            <p class="item-folio__cat">Assurance • Risques • ORSA</p>
+                            <h3 class="item-folio__title">Analyse industrie laitière</h3>
+                            <p class="item-folio__cat">Power BI • EDA • KPIs</p>
                         </div>
                         <a href="images/portfolio/ANALYSE_DE_DONNEES_INDUSTRIE_LAITIERE.pdf" class="item-folio__project-link" target="_blank"><i class="im im-link"></i></a>
                     </div>
                 </div>
 
-                <!-- Projet Régulateur -->
+                <!-- Projet 2 -->
                 <div class="masonry__brick">
                     <div class="item-folio">
                         <div class="item-folio__thumb">
                             <a href="images/portfolio/image_electric_2000x2000.jpg" class="thumb-link" data-size="1050x1050">
-                                <img src="images/portfolio/image_electric_2000x2000.jpg" alt="Reporting ACPR">
+                                <img src="images/portfolio/image_electric_2000x2000.jpg" alt="Ventes électronique">
                                 <span class="shadow-overlay"></span>
                             </a>
                         </div>
                         <div class="item-folio__text">
-                            <h3 class="item-folio__title">Reporting ACPR automatisé</h3>
-                            <p class="item-folio__cat">Régulateur • Conformité • Contrôle</p>
+                            <h3 class="item-folio__title">Analyse commerciale</h3>
+                            <p class="item-folio__cat">Power BI • Forecasting</p>
                         </div>
                         <a href="images/portfolio/ANALYSE_DE_DONNEES_COMMERCIALE.pdf" class="item-folio__project-link" target="_blank"><i class="im im-link"></i></a>
+                    </div>
+                </div>
+
+                <!-- Projet 3 -->
+                <div class="masonry__brick">
+                    <div class="item-folio">
+                        <div class="item-folio__thumb">
+                            <a href="images/portfolio/image_banque_2000x2000.jpg" class="thumb-link" data-size="1050x1050">
+                                <img src="images/portfolio/image_banque_2000x2000.jpg" alt="Crédits immobiliers">
+                                <span class="shadow-overlay"></span>
+                            </a>
+                        </div>
+                        <div class="item-folio__text">
+                            <h3 class="item-folio__title">Pilotage crédits</h3>
+                            <p class="item-folio__cat">Power BI • Banque</p>
+                        </div>
+                        <a href="images/portfolio/ANALYSE_DE_DONNEES_BANQUE.pdf" class="item-folio__project-link" target="_blank"><i class="im im-link"></i></a>
                     </div>
                 </div>
             </div>
@@ -763,32 +854,32 @@
 
     <!-- CONTACT
     ================================================== -->
-    <section id="contact" class="s-contact target-section" style="background: linear-gradient(135deg, #0A2342, #2A4E77);">
-        <div class="overlay" style="display: none;"></div>
+    <section id="contact" class="s-contact target-section">
+        <div class="overlay"></div>
 
         <div class="row narrow section-intro">
-            <div class="col-full text-center">
-                <h3 style="color: white;">📞 Contact</h3>
-                <h1 style="color: white;">(+225) 07-48-97-78-12</h1>
-                <p class="lead" style="color: rgba(255,255,255,0.8);">Étudions ensemble votre projet financier et réglementaire.</p>
+            <div class="col-full">
+                <h3>📞 Contact</h3>
+                <h1>(+225) 07-48-97-78-12</h1>
+                <p class="lead">Intéressé par ma solution BCBS 239 ? Discutons de votre projet de conformité.</p>
             </div>
         </div>
 
-        <div class="row contact__main" style="margin-top: 30px;">
-            <div class="col-three tab-full"><a class="btn btn--stroke full-width" href="mailto:ndoubajeanclaude@outlook.com" style="border-color: white; color: white;"><i class="im im-mail"></i> Email</a></div>
-            <div class="col-three tab-full"><a class="btn btn--stroke full-width" href="https://www.linkedin.com/in/moh-adjonlin-jean-claude-n-douba-7737bb342/" target="_blank" style="border-color: white; color: white;"><i class="im im-linkedin"></i> LinkedIn</a></div>
-            <div class="col-three tab-full"><a class="btn btn--stroke full-width" href="https://github.com/Genito922/" target="_blank" style="border-color: white; color: white;"><i class="im im-github"></i> GitHub</a></div>
-            <div class="col-three tab-full"><a class="btn btn--stroke full-width" href="https://www.kaggle.com/jeanclaudem92/" target="_blank" style="border-color: white; color: white;"><i class="fab fa-kaggle"></i> Kaggle</a></div>
+        <div class="row contact__main">
+            <div class="col-three tab-full"><a class="btn btn--stroke full-width" href="mailto:ndoubajeanclaude@outlook.com"><i class="im im-mail"></i> Email</a></div>
+            <div class="col-three tab-full"><a class="btn btn--stroke full-width" href="https://www.linkedin.com/in/moh-adjonlin-jean-claude-n-douba-7737bb342/" target="_blank"><i class="im im-linkedin"></i> LinkedIn</a></div>
+            <div class="col-three tab-full"><a class="btn btn--stroke full-width" href="https://github.com/Genito922/" target="_blank"><i class="im im-github"></i> GitHub</a></div>
+            <div class="col-three tab-full"><a class="btn btn--stroke full-width" href="https://www.kaggle.com/jeanclaudem92/" target="_blank"><i class="fab fa-kaggle"></i> Kaggle</a></div>
         </div>
     </section>
 
     <!-- FOOTER
     ================================================== -->
-    <footer style="background: var(--finance-dark);">
+    <footer>
         <div class="row">
             <div class="col-full">
                 <div class="footer-logo">
-                    <span style="color: white; font-weight: 700; font-size: 1.5rem;">N'DOUBA MÔH</span>
+                    <a class="footer-site-logo" href="#0"><img src="images/logo1.png" alt="N'DOUBA MÔH"></a>
                 </div>
                 <ul class="footer-social">
                     <li><a href="https://www.linkedin.com/in/moh-adjonlin-jean-claude-n-douba-7737bb342/"><i class="im im-linkedin"></i><span>LinkedIn</span></a></li>
@@ -800,18 +891,19 @@
 
         <div class="row footer-bottom">
             <div class="col-twelve">
-                <div class="copyright" style="color: #8a9aa8;">
-                    <span>© Copyright N'DOUBA MÔH 2025</span> 
-                    <span>Expertise : Banque • Assurance • Régulation • Notation</span>
+                <div class="copyright">
+                    <span>© Copyright MôH 2025</span> 
+                    <span>Design by styleshout</span>
+                    <span>| <a href="https://votredomaine.com/bcbs239-portfolio" style="color: rgba(255,255,255,0.4);">Solution BCBS 239</a></span>
                 </div>
                 <div class="go-top">
-                    <a class="smoothscroll" title="Retour" href="#top"><i class="im im-arrow-up" style="color: white;"></i></a>
+                    <a class="smoothscroll" title="Retour" href="#top"><i class="im im-arrow-up"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts
+    <!-- SCRIPTS
     ================================================== -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
