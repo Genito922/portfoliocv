@@ -2,39 +2,30 @@
 <html class="no-js" lang="fr">
 <head>
     <meta charset="utf-8">
-    <title>N'DOUBA MÔH — Éditeur Logiciel Bancaire | Sentinel LCC v3.0 | BCBS 239</title>
-    <meta name="description" content="Créateur de Sentinel LCC v3.0 — plateforme AML On-Premise certifiée BCBS239 et BCEAO. Expert conformité bancaire UEMOA.">
+    <title>N'DOUBA MÔH — Éditeur Logiciel Bancaire | Sentinel LCC v3.1 | BCBS 239</title>
+    <meta name="description" content="Créateur de Sentinel LCC v3.1 — plateforme AML On-Premise certifiée BCBS239 et BCEAO. Market Intelligence UEMOA. Expert conformité bancaire.">
     <meta name="author" content="N'DOUBA MÔH">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
     <style>
         :root {
-            --ink:      #0A0F1E;
-            --ink2:     #1C2540;
-            --blue:     #1565C0;
-            --blue-lt:  #E3F0FF;
-            --gold:     #C9A84C;
-            --gold-lt:  #FBF5E6;
-            --green:    #2FA572;
-            --red:      #C62828;
-            --muted:    #64748B;
-            --surface:  #F8FAFF;
-            --white:    #FFFFFF;
-            --border:   rgba(21,101,192,0.12);
+            --ink:     #0A0F1E;
+            --ink2:    #1C2540;
+            --blue:    #1565C0;
+            --blue-lt: #E3F0FF;
+            --gold:    #C9A84C;
+            --gold-lt: #FBF5E6;
+            --green:   #2FA572;
+            --red:     #C62828;
+            --muted:   #64748B;
+            --surface: #F8FAFF;
+            --white:   #FFFFFF;
+            --border:  rgba(21,101,192,0.12);
         }
-
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
         html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Outfit', sans-serif;
-            background: var(--white);
-            color: var(--ink);
-            overflow-x: hidden;
-        }
+        body { font-family: 'Outfit', sans-serif; background: var(--white); color: var(--ink); overflow-x: hidden; }
 
         /* ── TYPOGRAPHY ── */
         .serif { font-family: 'DM Serif Display', serif; }
@@ -42,483 +33,173 @@
 
         /* ── NAV ── */
         .s-header {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 1000;
-            background: rgba(10,15,30,0.97);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: rgba(10,15,30,0.97); backdrop-filter: blur(16px);
             border-bottom: 1px solid rgba(255,255,255,0.06);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 3rem;
-            height: 64px;
-            transition: all 0.3s;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 3rem; height: 64px; transition: all 0.3s;
         }
-        .nav-brand {
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.15rem;
-            color: var(--white);
-            text-decoration: none;
-            letter-spacing: 0.03em;
-            flex-shrink: 0;
-        }
+        .nav-brand { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--white); text-decoration: none; letter-spacing: 0.03em; flex-shrink: 0; }
         .nav-brand span { color: var(--gold); }
-        .header-nav { display: flex; gap: 2rem; list-style: none; }
-        .header-nav a {
-            color: rgba(255,255,255,0.65);
-            text-decoration: none;
-            font-size: 0.82rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            transition: color 0.2s;
-            white-space: nowrap;
+        .version-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.35);
+            color: #F0D080; padding: 3px 10px; border-radius: 100px;
+            font-size: 0.68rem; font-weight: 700; font-family: 'DM Mono', monospace;
+            letter-spacing: 0.06em; margin-left: 0.6rem;
         }
+        .version-badge::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: #F0D080; animation: blink 2s infinite; }
+        @keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
+        .header-nav { display: flex; gap: 1.6rem; list-style: none; }
+        .header-nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; white-space: nowrap; }
         .header-nav a:hover, .header-nav .current a { color: var(--white); }
-
-        /* Mobile nav */
-        .header-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.4rem;
-            cursor: pointer;
-            padding: 8px;
-            z-index: 1001;
-        }
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 64px; left: 0; right: 0;
-            background: rgba(10,15,30,0.99);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            z-index: 999;
-            padding: 1rem 0;
-        }
+        .header-nav .bio-link a { color: #F0D080; }
+        .header-nav .bio-link a:hover { color: #FFE082; }
+        .header-menu-toggle { display: none; background: none; border: none; color: white; font-size: 1.4rem; cursor: pointer; padding: 8px; }
+        .mobile-nav { display: none; position: fixed; top: 64px; left: 0; right: 0; background: rgba(10,15,30,0.99); border-bottom: 1px solid rgba(255,255,255,0.08); z-index: 999; padding: 1rem 0; }
         .mobile-nav.open { display: block; }
         .mobile-nav ul { list-style: none; }
-        .mobile-nav ul li a {
-            display: block;
-            padding: 0.75rem 2rem;
-            color: rgba(255,255,255,0.75);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-            transition: color 0.2s, background 0.2s;
-        }
+        .mobile-nav ul li a { display: block; padding: 0.75rem 2rem; color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.04); transition: color 0.2s, background 0.2s; }
         .mobile-nav ul li a:hover { color: white; background: rgba(255,255,255,0.05); }
 
-        /* ── VERSION BADGE ── */
-        .version-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(201,168,76,0.15);
-            border: 1px solid rgba(201,168,76,0.35);
-            color: #F0D080;
-            padding: 4px 12px;
-            border-radius: 100px;
-            font-size: 0.72rem;
-            font-weight: 700;
-            font-family: 'DM Mono', monospace;
-            letter-spacing: 0.06em;
-            margin-left: 0.75rem;
-        }
-        .version-badge::before {
-            content: '';
-            width: 5px; height: 5px;
-            border-radius: 50%;
-            background: #F0D080;
-            animation: blink 2s infinite;
-        }
-        @keyframes blink {
-            0%,100% { opacity: 1; }
-            50% { opacity: 0.3; }
-        }
-
         /* ── HERO ── */
-        #home {
-            min-height: 100vh;
-            background: var(--ink);
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            padding-top: 64px;
-        }
-        .hero-grid {
-            position: absolute; inset: 0;
-            background-image:
-                linear-gradient(rgba(21,101,192,0.07) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(21,101,192,0.07) 1px, transparent 1px);
-            background-size: 60px 60px;
-        }
-        .hero-glow {
-            position: absolute; top: 10%; left: 55%;
-            width: 600px; height: 600px;
-            background: radial-gradient(ellipse, rgba(21,101,192,0.18) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .hero-glow-2 {
-            position: absolute; bottom: -100px; left: 10%;
-            width: 400px; height: 400px;
-            background: radial-gradient(ellipse, rgba(201,168,76,0.1) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .hero-content {
-            position: relative; z-index: 2;
-            max-width: 1200px; margin: 0 auto;
-            padding: 4rem 3rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            width: 100%;
-        }
-        .hero-eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(21,101,192,0.15);
-            border: 1px solid rgba(21,101,192,0.3);
-            color: #90CAF9;
-            padding: 6px 16px;
-            border-radius: 100px;
-            font-size: 0.78rem;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
-        }
-        .hero-eyebrow::before {
-            content: '';
-            width: 6px; height: 6px;
-            border-radius: 50%;
-            background: #4FC3F7;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(0.8); }
-        }
-        .hero-name {
-            font-family: 'DM Serif Display', serif;
-            font-size: clamp(2.5rem, 5vw, 5rem);
-            color: var(--white);
-            line-height: 1.05;
-            margin-bottom: 0.5rem;
-        }
+        #home { min-height: 100vh; background: var(--ink); display: flex; align-items: center; position: relative; overflow: hidden; padding-top: 64px; }
+        .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(21,101,192,0.07) 1px,transparent 1px), linear-gradient(90deg,rgba(21,101,192,0.07) 1px,transparent 1px); background-size: 60px 60px; }
+        .hero-glow { position: absolute; top: 10%; left: 55%; width: 600px; height: 600px; background: radial-gradient(ellipse,rgba(21,101,192,0.18) 0%,transparent 70%); pointer-events: none; }
+        .hero-glow-2 { position: absolute; bottom: -100px; left: 10%; width: 400px; height: 400px; background: radial-gradient(ellipse,rgba(201,168,76,0.1) 0%,transparent 70%); pointer-events: none; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 4rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; width: 100%; }
+        .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(21,101,192,0.15); border: 1px solid rgba(21,101,192,0.3); color: #90CAF9; padding: 6px 16px; border-radius: 100px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.5rem; }
+        .hero-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #4FC3F7; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.5; transform:scale(0.8); } }
+        .hero-name { font-family: 'DM Serif Display', serif; font-size: clamp(2.5rem,5vw,5rem); color: var(--white); line-height: 1.05; margin-bottom: 0.5rem; }
         .hero-name em { font-style: italic; color: var(--gold); }
-        .hero-title {
-            font-size: 1.05rem;
-            color: rgba(255,255,255,0.5);
-            font-weight: 400;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-        .hero-pills {
-            display: flex; flex-wrap: wrap; gap: 8px;
-            margin-bottom: 2.5rem;
-        }
-        .pill {
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.12);
-            color: rgba(255,255,255,0.75);
-            padding: 5px 14px;
-            border-radius: 100px;
-            font-size: 0.78rem;
-            font-weight: 500;
-        }
+        .hero-title { font-size: 1rem; color: rgba(255,255,255,0.5); font-weight: 400; margin-bottom: 1.5rem; line-height: 1.6; }
+        .hero-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2.5rem; }
+        .pill { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.75); padding: 5px 14px; border-radius: 100px; font-size: 0.78rem; font-weight: 500; }
+        .pill-gold { background: rgba(201,168,76,0.12); border-color: rgba(201,168,76,0.3); color: #F0D080; }
         .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
-        .btn-primary {
-            background: var(--blue); color: white;
-            padding: 12px 24px; border-radius: 8px;
-            font-size: 0.88rem; font-weight: 600;
-            text-decoration: none;
-            display: inline-flex; align-items: center; gap: 8px;
-            transition: all 0.2s; border: 2px solid var(--blue);
-        }
+        .btn-primary { background: var(--blue); color: white; padding: 12px 24px; border-radius: 8px; font-size: 0.88rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s; border: 2px solid var(--blue); }
         .btn-primary:hover { background: #1976D2; border-color: #1976D2; transform: translateY(-1px); }
-        .btn-outline {
-            background: transparent; color: rgba(255,255,255,0.8);
-            padding: 12px 24px; border-radius: 8px;
-            font-size: 0.88rem; font-weight: 600;
-            text-decoration: none;
-            display: inline-flex; align-items: center; gap: 8px;
-            border: 2px solid rgba(255,255,255,0.2); transition: all 0.2s;
-        }
+        .btn-outline { background: transparent; color: rgba(255,255,255,0.8); padding: 12px 24px; border-radius: 8px; font-size: 0.88rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: 2px solid rgba(255,255,255,0.2); transition: all 0.2s; }
         .btn-outline:hover { border-color: rgba(255,255,255,0.5); color: white; }
+        .btn-gold { background: rgba(201,168,76,0.15); color: #F0D080; border-color: rgba(201,168,76,0.4); }
+        .btn-gold:hover { background: rgba(201,168,76,0.25); color: #FFE082; }
 
         /* Hero card */
-        .hero-card {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 20px; padding: 2rem;
-            backdrop-filter: blur(10px);
-        }
+        .hero-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 2rem; backdrop-filter: blur(10px); }
         .hero-card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 1.5rem; }
-        .sentinel-badge {
-            width: 44px; height: 44px;
-            background: linear-gradient(135deg, #1565C0, #0D47A1);
-            border-radius: 12px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.3rem; flex-shrink: 0;
-        }
+        .sentinel-badge { width: 44px; height: 44px; background: linear-gradient(135deg,#1565C0,#0D47A1); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
         .hero-card-title { color: var(--white); font-weight: 700; font-size: 1rem; }
         .hero-card-sub { color: rgba(255,255,255,0.4); font-size: 0.75rem; }
-        .metric-row {
-            display: grid; grid-template-columns: repeat(2, 1fr);
-            gap: 10px; margin-bottom: 1rem;
-        }
-        .metric-box {
-            background: rgba(255,255,255,0.05); border-radius: 12px;
-            padding: 12px; text-align: center;
-        }
-        .metric-val {
-            font-family: 'DM Mono', monospace;
-            font-size: 1.4rem; font-weight: 500;
-            color: #4FC3F7; display: block;
-        }
+        .metric-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 1rem; }
+        .metric-box { background: rgba(255,255,255,0.05); border-radius: 12px; padding: 12px; text-align: center; }
+        .metric-val { font-family: 'DM Mono', monospace; font-size: 1.4rem; font-weight: 500; color: #4FC3F7; display: block; }
         .metric-lbl { font-size: 0.68rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.06em; }
         .status-row { display: flex; flex-direction: column; gap: 6px; }
-        .status-item {
-            display: flex; align-items: center;
-            justify-content: space-between;
-            background: rgba(255,255,255,0.03);
-            border-radius: 8px; padding: 7px 12px; font-size: 0.8rem;
-        }
+        .status-item { display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.03); border-radius: 8px; padding: 7px 12px; font-size: 0.8rem; }
         .status-item-label { color: rgba(255,255,255,0.55); }
-        .status-ok {
-            background: rgba(47,165,114,0.15); color: #6FCF97;
-            padding: 2px 10px; border-radius: 100px;
-            font-size: 0.7rem; font-weight: 600;
-            font-family: 'DM Mono', monospace; white-space: nowrap;
-        }
+        .status-ok { background: rgba(47,165,114,0.15); color: #6FCF97; padding: 2px 10px; border-radius: 100px; font-size: 0.7rem; font-weight: 600; font-family: 'DM Mono', monospace; white-space: nowrap; }
+        .status-gold { background: rgba(201,168,76,0.15); color: #F0D080; padding: 2px 10px; border-radius: 100px; font-size: 0.7rem; font-weight: 600; font-family: 'DM Mono', monospace; white-space: nowrap; }
 
         /* Social bar */
-        .home-social {
-            position: absolute; bottom: 2.5rem; left: 3rem;
-            z-index: 5; list-style: none;
-            display: flex; gap: 1rem;
-        }
+        .home-social { position: absolute; bottom: 2.5rem; left: 3rem; z-index: 5; list-style: none; display: flex; gap: 1rem; }
         .home-social a { color: rgba(255,255,255,0.4); font-size: 1.1rem; transition: color 0.2s; }
         .home-social a:hover { color: var(--white); }
-        .home-social span { display: none; }
 
         /* ── SECTIONS ── */
         .section-wrap { max-width: 1200px; margin: 0 auto; padding: 5rem 3rem; }
-        .section-eyebrow {
-            display: inline-flex; align-items: center; gap: 8px;
-            color: var(--blue); font-size: 0.75rem; font-weight: 700;
-            letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem;
-        }
-        .section-eyebrow::before {
-            content: ''; width: 24px; height: 2px;
-            background: var(--blue); border-radius: 2px;
-        }
-        .section-title {
-            font-family: 'DM Serif Display', serif;
-            font-size: clamp(1.8rem, 3.5vw, 3rem);
-            color: var(--ink); line-height: 1.15; margin-bottom: 1rem;
-        }
-        .section-title-white { color: var(--white); }
-        .section-lead {
-            font-size: 1rem; color: var(--muted);
-            line-height: 1.7; max-width: 640px;
-        }
+        .section-eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--blue); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; }
+        .section-eyebrow::before { content: ''; width: 24px; height: 2px; background: var(--blue); border-radius: 2px; }
+        .section-title { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem,3.5vw,3rem); color: var(--ink); line-height: 1.15; margin-bottom: 1rem; }
+        .section-lead { font-size: 1rem; color: var(--muted); line-height: 1.7; max-width: 640px; }
 
         /* ── SENTINEL SECTION ── */
         #sentinel { background: var(--ink); padding: 5rem 0; position: relative; overflow: hidden; }
-        #sentinel::before {
-            content: ''; position: absolute; inset: 0;
-            background-image:
-                linear-gradient(rgba(21,101,192,0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(21,101,192,0.05) 1px, transparent 1px);
-            background-size: 80px 80px;
-        }
+        #sentinel::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(21,101,192,0.05) 1px,transparent 1px), linear-gradient(90deg,rgba(21,101,192,0.05) 1px,transparent 1px); background-size: 80px 80px; }
         .sentinel-inner { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 3rem; }
         .sentinel-header { text-align: center; margin-bottom: 3.5rem; }
-        .sentinel-eyebrow {
-            display: inline-flex; align-items: center; gap: 10px;
-            background: rgba(21,101,192,0.15); border: 1px solid rgba(21,101,192,0.3);
-            color: #90CAF9; padding: 8px 20px; border-radius: 100px;
-            font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em;
-            text-transform: uppercase; margin-bottom: 1.5rem;
-        }
-        .sentinel-title {
-            font-family: 'DM Serif Display', serif;
-            font-size: clamp(2rem, 5vw, 4rem); color: var(--white); margin-bottom: 1rem;
-        }
+        .sentinel-eyebrow { display: inline-flex; align-items: center; gap: 10px; background: rgba(21,101,192,0.15); border: 1px solid rgba(21,101,192,0.3); color: #90CAF9; padding: 8px 20px; border-radius: 100px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem; }
+        .sentinel-title { font-family: 'DM Serif Display', serif; font-size: clamp(2rem,5vw,4rem); color: var(--white); margin-bottom: 1rem; }
         .sentinel-title em { font-style: italic; color: var(--gold); }
-        .sentinel-sub {
-            font-size: 1rem; color: rgba(255,255,255,0.5);
-            max-width: 680px; margin: 0 auto 2rem; line-height: 1.7;
-        }
+        .sentinel-sub { font-size: 1rem; color: rgba(255,255,255,0.5); max-width: 680px; margin: 0 auto 2rem; line-height: 1.7; }
 
         /* Changelog banner */
-        .changelog-banner {
-            background: rgba(201,168,76,0.08);
-            border: 1px solid rgba(201,168,76,0.25);
-            border-radius: 12px;
-            padding: 1rem 1.5rem;
-            margin-bottom: 2.5rem;
-            display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center;
-        }
-        .changelog-title {
-            color: #F0D080; font-weight: 700; font-size: 0.85rem;
-            font-family: 'DM Mono', monospace;
-        }
-        .changelog-item {
-            background: rgba(255,255,255,0.06);
-            color: rgba(255,255,255,0.6);
-            padding: 3px 10px; border-radius: 100px;
-            font-size: 0.72rem; font-family: 'DM Mono', monospace;
-        }
+        .changelog-banner { background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.25); border-radius: 12px; padding: 1rem 1.5rem; margin-bottom: 2.5rem; display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+        .changelog-title { color: #F0D080; font-weight: 700; font-size: 0.85rem; font-family: 'DM Mono', monospace; flex-shrink: 0; }
+        .changelog-item { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.6); padding: 3px 10px; border-radius: 100px; font-size: 0.72rem; font-family: 'DM Mono', monospace; }
+        .changelog-item-new { background: rgba(47,165,114,0.12); color: #6FCF97; border: 1px solid rgba(47,165,114,0.3); }
 
-        .sentinel-badges {
-            display: flex; justify-content: center; gap: 8px;
-            flex-wrap: wrap; margin-bottom: 2.5rem;
-        }
-        .s-badge {
-            padding: 5px 14px; border-radius: 100px;
-            font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em;
-        }
+        .sentinel-badges { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 2.5rem; }
+        .s-badge { padding: 5px 14px; border-radius: 100px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; }
         .s-badge-blue  { background: rgba(21,101,192,0.2);  color: #90CAF9; border: 1px solid rgba(21,101,192,0.4); }
         .s-badge-green { background: rgba(47,165,114,0.2);  color: #6FCF97; border: 1px solid rgba(47,165,114,0.4); }
         .s-badge-gold  { background: rgba(201,168,76,0.2);  color: #F0D080; border: 1px solid rgba(201,168,76,0.4); }
         .s-badge-dark  { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.12); }
 
         /* KPIs Sentinel */
-        .sentinel-kpis {
-            display: grid; grid-template-columns: repeat(4, 1fr);
-            gap: 1px; background: rgba(255,255,255,0.06);
-            border-radius: 16px; overflow: hidden; margin-bottom: 3rem;
-        }
-        .skpi {
-            background: rgba(255,255,255,0.03); padding: 1.75rem 1.5rem;
-            text-align: center; transition: background 0.2s;
-        }
+        .sentinel-kpis { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: rgba(255,255,255,0.06); border-radius: 16px; overflow: hidden; margin-bottom: 3rem; }
+        .skpi { background: rgba(255,255,255,0.03); padding: 1.5rem 1rem; text-align: center; transition: background 0.2s; }
         .skpi:hover { background: rgba(255,255,255,0.06); }
-        .skpi-val {
-            font-family: 'DM Serif Display', serif; font-size: 2.5rem;
-            color: var(--white); display: block; margin-bottom: 4px;
-        }
+        .skpi-val { font-family: 'DM Serif Display', serif; font-size: 2.2rem; color: var(--white); display: block; margin-bottom: 4px; }
         .skpi-val span { color: #4FC3F7; }
-        .skpi-lbl {
-            font-size: 0.72rem; color: rgba(255,255,255,0.4);
-            text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;
-        }
+        .skpi-val-gold span { color: #F0D080; }
+        .skpi-lbl { font-size: 0.68rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
 
         /* Architecture cards */
-        .arch-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr);
-            gap: 1.25rem; margin-bottom: 2.5rem;
-        }
-        .arch-card {
-            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 16px; padding: 1.5rem; transition: all 0.3s;
-        }
-        .arch-card:hover {
-            background: rgba(255,255,255,0.07); border-color: rgba(21,101,192,0.4);
-            transform: translateY(-4px);
-        }
-        .arch-icon {
-            width: 44px; height: 44px; border-radius: 12px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.3rem; margin-bottom: 1rem;
-        }
+        .arch-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-bottom: 2.5rem; }
+        .arch-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; transition: all 0.3s; }
+        .arch-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(21,101,192,0.4); transform: translateY(-4px); }
+        .arch-card-new { border-color: rgba(47,165,114,0.2); }
+        .arch-card-new:hover { border-color: rgba(47,165,114,0.5); }
+        .arch-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 1rem; }
         .arch-icon-blue  { background: rgba(21,101,192,0.2); }
         .arch-icon-green { background: rgba(47,165,114,0.2); }
         .arch-icon-gold  { background: rgba(201,168,76,0.2); }
-        .arch-card-title { color: var(--white); font-weight: 700; margin-bottom: 0.4rem; font-size: 0.95rem; }
-        .arch-card-desc  { color: rgba(255,255,255,0.45); font-size: 0.82rem; line-height: 1.6; }
+        .arch-icon-red   { background: rgba(198,40,40,0.2); }
+        .arch-card-title { color: var(--white); font-weight: 700; margin-bottom: 0.4rem; font-size: 0.9rem; }
+        .arch-card-desc  { color: rgba(255,255,255,0.45); font-size: 0.8rem; line-height: 1.6; }
         .arch-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 0.75rem; }
-        .arch-tag {
-            background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.5);
-            padding: 2px 8px; border-radius: 100px;
-            font-size: 0.68rem; font-family: 'DM Mono', monospace;
-        }
+        .arch-tag { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.5); padding: 2px 8px; border-radius: 100px; font-size: 0.68rem; font-family: 'DM Mono', monospace; }
+        .arch-tag-green { background: rgba(47,165,114,0.1); color: #6FCF97; }
+        .new-badge { display: inline-block; background: rgba(47,165,114,0.2); color: #6FCF97; border: 1px solid rgba(47,165,114,0.4); padding: 1px 7px; border-radius: 100px; font-size: 0.62rem; font-weight: 700; font-family: 'DM Mono', monospace; margin-left: 6px; vertical-align: middle; }
+
+        /* Market Intelligence sub-section */
+        .market-intel-box { background: rgba(47,165,114,0.05); border: 1px solid rgba(47,165,114,0.2); border-radius: 16px; padding: 2rem; margin-bottom: 2.5rem; }
+        .market-intel-title { color: #6FCF97; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 8px; }
+        .market-intel-title::before { content: ''; width: 20px; height: 1px; background: rgba(47,165,114,0.5); }
+        .market-cats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+        .market-cat { background: rgba(255,255,255,0.03); border-radius: 12px; padding: 1rem; }
+        .market-cat-title { color: rgba(255,255,255,0.7); font-size: 0.78rem; font-weight: 700; margin-bottom: 0.6rem; }
+        .market-cat-items { display: flex; flex-direction: column; gap: 4px; }
+        .market-item { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: rgba(255,255,255,0.45); font-family: 'DM Mono', monospace; }
+        .market-item::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: #4FC3F7; flex-shrink: 0; }
 
         /* Tech stack table */
-        .tech-stack {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 16px; overflow: hidden; margin-bottom: 2.5rem;
-        }
-        .tech-stack-title {
-            padding: 1rem 1.5rem;
-            color: rgba(255,255,255,0.6); font-size: 0.75rem;
-            font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
-        .tech-row {
-            display: grid; grid-template-columns: 160px 1fr auto;
-            gap: 1rem; padding: 0.85rem 1.5rem; align-items: center;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-            transition: background 0.15s;
-        }
+        .tech-stack { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; overflow: hidden; margin-bottom: 2.5rem; }
+        .tech-stack-title { padding: 1rem 1.5rem; color: rgba(255,255,255,0.6); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .tech-row { display: grid; grid-template-columns: 160px 1fr auto; gap: 1rem; padding: 0.85rem 1.5rem; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.04); transition: background 0.15s; }
         .tech-row:last-child { border-bottom: none; }
         .tech-row:hover { background: rgba(255,255,255,0.03); }
+        .tech-row-new { border-left: 2px solid rgba(47,165,114,0.4); }
         .tech-layer { color: rgba(255,255,255,0.4); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
         .tech-detail { color: rgba(255,255,255,0.7); font-size: 0.82rem; font-family: 'DM Mono', monospace; }
-        .tech-status {
-            background: rgba(47,165,114,0.15); color: #6FCF97;
-            padding: 2px 10px; border-radius: 100px;
-            font-size: 0.68rem; font-weight: 700; white-space: nowrap;
-        }
+        .tech-status { background: rgba(47,165,114,0.15); color: #6FCF97; padding: 2px 10px; border-radius: 100px; font-size: 0.68rem; font-weight: 700; white-space: nowrap; }
+        .tech-status-new { background: rgba(201,168,76,0.15); color: #F0D080; }
 
         /* Flow */
-        .sentinel-flow {
-            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 20px; padding: 2rem; margin-bottom: 2rem;
-        }
-        .flow-title {
-            color: rgba(255,255,255,0.6); font-size: 0.75rem; font-weight: 700;
-            letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem;
-            display: flex; align-items: center; gap: 8px;
-        }
+        .sentinel-flow { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 2rem; margin-bottom: 2rem; }
+        .flow-title { color: rgba(255,255,255,0.6); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 8px; }
         .flow-title::before { content: ''; width: 20px; height: 1px; background: rgba(255,255,255,0.3); }
-        .flow-steps {
-            display: grid; grid-template-columns: repeat(6, 1fr);
-            gap: 0; position: relative;
-        }
-        .flow-steps::before {
-            content: ''; position: absolute;
-            top: 20px; left: 8%; right: 8%; height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(21,101,192,0.4) 20%, rgba(21,101,192,0.4) 80%, transparent);
-        }
+        .flow-steps { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0; position: relative; }
+        .flow-steps::before { content: ''; position: absolute; top: 20px; left: 8%; right: 8%; height: 1px; background: linear-gradient(90deg,transparent,rgba(21,101,192,0.4) 20%,rgba(21,101,192,0.4) 80%,transparent); }
         .flow-step { text-align: center; position: relative; z-index: 2; }
-        .flow-step-num {
-            width: 40px; height: 40px;
-            background: rgba(21,101,192,0.2); border: 1px solid rgba(21,101,192,0.5);
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 10px; font-family: 'DM Mono', monospace;
-            font-size: 0.75rem; color: #90CAF9; font-weight: 600;
-        }
+        .flow-step-num { width: 40px; height: 40px; background: rgba(21,101,192,0.2); border: 1px solid rgba(21,101,192,0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; font-family: 'DM Mono', monospace; font-size: 0.75rem; color: #90CAF9; font-weight: 600; }
         .flow-step-label { font-size: 0.68rem; color: rgba(255,255,255,0.45); line-height: 1.4; }
 
         .sentinel-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-        .btn-sentinel {
-            background: var(--blue); color: white;
-            padding: 13px 28px; border-radius: 10px;
-            font-size: 0.88rem; font-weight: 700; text-decoration: none;
-            display: inline-flex; align-items: center; gap: 10px;
-            transition: all 0.2s; border: 2px solid var(--blue);
-        }
+        .btn-sentinel { background: var(--blue); color: white; padding: 13px 28px; border-radius: 10px; font-size: 0.88rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.2s; border: 2px solid var(--blue); }
         .btn-sentinel:hover { background: #1976D2; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(21,101,192,0.4); }
-        .btn-sentinel-outline {
-            background: transparent; color: rgba(255,255,255,0.7);
-            padding: 13px 28px; border-radius: 10px;
-            font-size: 0.88rem; font-weight: 700; text-decoration: none;
-            display: inline-flex; align-items: center; gap: 10px;
-            border: 2px solid rgba(255,255,255,0.15); transition: all 0.2s;
-        }
+        .btn-sentinel-outline { background: transparent; color: rgba(255,255,255,0.7); padding: 13px 28px; border-radius: 10px; font-size: 0.88rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; border: 2px solid rgba(255,255,255,0.15); transition: all 0.2s; }
         .btn-sentinel-outline:hover { border-color: rgba(255,255,255,0.4); color: white; }
 
         /* ── ABOUT ── */
@@ -526,114 +207,56 @@
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
         .skills-list { margin-top: 1.5rem; }
         .skill-item { margin-bottom: 1.25rem; }
-        .skill-header {
-            display: flex; justify-content: space-between;
-            margin-bottom: 6px; font-size: 0.85rem; font-weight: 600; color: var(--ink2);
-        }
+        .skill-header { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 0.85rem; font-weight: 600; color: var(--ink2); }
         .skill-pct { color: var(--blue); font-family: 'DM Mono', monospace; }
         .skill-bar { height: 4px; background: rgba(21,101,192,0.12); border-radius: 4px; overflow: hidden; }
-        .skill-fill { height: 100%; background: linear-gradient(90deg, var(--blue), #42A5F5); border-radius: 4px; }
+        .skill-fill { height: 100%; background: linear-gradient(90deg,var(--blue),#42A5F5); border-radius: 4px; }
         .spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
-        .spec-card {
-            background: var(--white); border: 1px solid var(--border);
-            border-radius: 12px; padding: 1.25rem; transition: all 0.2s;
-        }
+        .spec-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; transition: all 0.2s; }
         .spec-card:hover { border-color: rgba(21,101,192,0.3); box-shadow: 0 4px 16px rgba(21,101,192,0.08); }
-        .spec-num {
-            width: 34px; height: 34px; background: var(--blue); color: white;
-            border-radius: 8px; display: flex; align-items: center; justify-content: center;
-            font-weight: 800; font-size: 0.8rem; margin-bottom: 0.6rem;
-            font-family: 'DM Mono', monospace;
-        }
+        .spec-num { width: 34px; height: 34px; background: var(--blue); color: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.8rem; margin-bottom: 0.6rem; font-family: 'DM Mono', monospace; }
+        .spec-num-green { background: var(--green); }
         .spec-title { font-weight: 700; font-size: 0.88rem; color: var(--ink); margin-bottom: 3px; }
         .spec-desc { font-size: 0.75rem; color: var(--muted); }
 
         /* ── BCBS239 ── */
         #bcbs239 { background: var(--white); }
-        .kpi-row {
-            display: grid; grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem; margin: 2.5rem 0;
-        }
-        .kpi-box {
-            background: var(--surface); border: 1px solid var(--border);
-            border-radius: 16px; padding: 1.75rem 1.5rem;
-            text-align: center; transition: all 0.3s; position: relative; overflow: hidden;
-        }
-        .kpi-box::after {
-            content: ''; position: absolute;
-            bottom: 0; left: 0; right: 0; height: 3px;
-            background: var(--blue); transform: scaleX(0); transition: transform 0.3s;
-        }
+        .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin: 2.5rem 0; }
+        .kpi-box { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem 1.5rem; text-align: center; transition: all 0.3s; position: relative; overflow: hidden; }
+        .kpi-box::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--blue); transform: scaleX(0); transition: transform 0.3s; }
         .kpi-box:hover::after { transform: scaleX(1); }
         .kpi-box:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(21,101,192,0.12); }
-        .kpi-val {
-            font-family: 'DM Serif Display', serif; font-size: 2.5rem;
-            color: var(--blue); display: block; line-height: 1; margin-bottom: 8px;
-        }
+        .kpi-val { font-family: 'DM Serif Display', serif; font-size: 2.5rem; color: var(--blue); display: block; line-height: 1; margin-bottom: 8px; }
         .kpi-lbl { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
-
-        /* Alertes */
-        .alertes-box {
-            background: var(--surface); border: 1px solid var(--border);
-            border-radius: 20px; padding: 2rem; margin: 2.5rem 0;
-        }
-        .alertes-title {
-            display: flex; align-items: center; gap: 10px;
-            font-weight: 700; color: var(--ink); margin-bottom: 1.5rem; font-size: 1rem;
-        }
-        .alert-item {
-            display: flex; align-items: center; gap: 14px;
-            padding: 12px 14px; border-radius: 10px; margin-bottom: 10px; font-size: 0.85rem;
-        }
+        .alertes-box { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; margin: 2.5rem 0; }
+        .alertes-title { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--ink); margin-bottom: 1.5rem; font-size: 1rem; }
+        .alert-item { display: flex; align-items: center; gap: 14px; padding: 12px 14px; border-radius: 10px; margin-bottom: 10px; font-size: 0.85rem; }
         .alert-crit { background: #FFF0F0; border-left: 4px solid var(--red); }
         .alert-warn { background: #FFF8F0; border-left: 4px solid #EF6C00; }
         .alert-ok   { background: #F0FFF8; border-left: 4px solid var(--green); }
+        .alert-info { background: #F0F7FF; border-left: 4px solid var(--blue); }
         .alert-icon { font-size: 1rem; flex-shrink: 0; }
         .alert-body { flex: 1; min-width: 0; }
         .alert-body strong { display: block; margin-bottom: 2px; color: var(--ink); font-size: 0.85rem; }
         .alert-body span { color: var(--muted); font-size: 0.78rem; }
-        .alert-time {
-            padding: 3px 10px; border-radius: 100px;
-            font-size: 0.68rem; font-weight: 700;
-            font-family: 'DM Mono', monospace; white-space: nowrap; flex-shrink: 0;
-        }
+        .alert-time { padding: 3px 10px; border-radius: 100px; font-size: 0.68rem; font-weight: 700; font-family: 'DM Mono', monospace; white-space: nowrap; flex-shrink: 0; }
         .time-crit { background: var(--red); color: white; }
         .time-warn { background: #EF6C00; color: white; }
         .time-ok   { background: var(--green); color: white; }
-
-        /* Principes */
-        .principles-grid {
-            display: grid; grid-template-columns: repeat(7, 1fr);
-            gap: 10px; margin: 2rem 0;
-        }
-        .p-card {
-            background: var(--surface); border: 1px solid var(--border);
-            border-radius: 12px; padding: 1rem 0.75rem;
-            text-align: center; transition: all 0.2s; cursor: default;
-        }
+        .time-info { background: var(--blue); color: white; }
+        .principles-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; margin: 2rem 0; }
+        .p-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 0.75rem; text-align: center; transition: all 0.2s; cursor: default; }
         .p-card:hover { border-color: var(--blue); background: var(--blue-lt); transform: translateY(-2px); }
-        .p-num {
-            width: 32px; height: 32px; background: var(--blue); color: white;
-            border-radius: 8px; display: flex; align-items: center; justify-content: center;
-            font-weight: 800; font-size: 0.75rem; margin: 0 auto 8px;
-            font-family: 'DM Mono', monospace;
-        }
+        .p-num { width: 32px; height: 32px; background: var(--blue); color: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.75rem; margin: 0 auto 8px; font-family: 'DM Mono', monospace; }
         .p-title { font-weight: 700; font-size: 0.72rem; color: var(--ink); margin-bottom: 3px; }
         .p-desc  { font-size: 0.65rem; color: var(--muted); line-height: 1.4; }
 
         /* ── PROJECTS ── */
         #works { background: var(--surface); }
         .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
-        .project-card {
-            background: var(--white); border: 1px solid var(--border);
-            border-radius: 16px; overflow: hidden; transition: all 0.3s;
-            text-decoration: none; color: inherit; display: block;
-        }
+        .project-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; transition: all 0.3s; text-decoration: none; color: inherit; display: block; }
         .project-card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(21,101,192,0.12); border-color: rgba(21,101,192,0.3); }
-        .project-thumb {
-            height: 160px; display: flex; align-items: center;
-            justify-content: center; font-size: 2.5rem;
-        }
+        .project-thumb { height: 160px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
         .project-body { padding: 1.25rem; }
         .project-cat { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 5px; }
         .project-title { font-weight: 700; font-size: 0.95rem; color: var(--ink); margin-bottom: 5px; }
@@ -642,36 +265,15 @@
         /* ── CONTACT ── */
         #contact { background: var(--ink); padding: 6rem 3rem; text-align: center; }
         .contact-inner { max-width: 720px; margin: 0 auto; }
-        .contact-title {
-            font-family: 'DM Serif Display', serif;
-            font-size: clamp(1.8rem, 4vw, 3.5rem); color: var(--white); margin-bottom: 1rem;
-        }
+        .contact-title { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem,4vw,3.5rem); color: var(--white); margin-bottom: 1rem; }
         .contact-sub { color: rgba(255,255,255,0.5); font-size: 1rem; margin-bottom: 2.5rem; line-height: 1.7; }
-        .contact-links {
-            display: flex; justify-content: center; gap: 1rem;
-            flex-wrap: wrap; margin-bottom: 2rem;
-        }
-        .contact-link {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
-            color: rgba(255,255,255,0.75); padding: 10px 18px;
-            border-radius: 8px; font-size: 0.85rem; font-weight: 600;
-            text-decoration: none; transition: all 0.2s;
-        }
+        .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+        .contact-link { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.75); padding: 10px 18px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: all 0.2s; }
         .contact-link:hover { background: rgba(255,255,255,0.1); color: white; border-color: rgba(255,255,255,0.25); }
-        .contact-phone {
-            font-family: 'DM Mono', monospace; font-size: 1.4rem;
-            color: var(--gold); margin-bottom: 0.5rem; display: block;
-        }
+        .contact-phone { font-family: 'DM Mono', monospace; font-size: 1.4rem; color: var(--gold); margin-bottom: 0.5rem; display: block; }
 
         /* ── FOOTER ── */
-        footer {
-            background: #070C1A; padding: 1.5rem 3rem;
-            display: flex; align-items: center;
-            justify-content: space-between;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            flex-wrap: wrap; gap: 1rem;
-        }
+        footer { background: #070C1A; padding: 1.5rem 3rem; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.05); flex-wrap: wrap; gap: 1rem; }
         .footer-brand { font-family: 'DM Serif Display', serif; color: rgba(255,255,255,0.4); font-size: 0.9rem; }
         .footer-copy { color: rgba(255,255,255,0.25); font-size: 0.75rem; }
         .footer-links { display: flex; gap: 1rem; }
@@ -680,83 +282,57 @@
 
         /* ── RESPONSIVE ── */
         @media (max-width: 1100px) {
-            .sentinel-kpis { grid-template-columns: repeat(2, 1fr); }
+            .sentinel-kpis { grid-template-columns: repeat(3, 1fr); }
             .arch-grid { grid-template-columns: repeat(2, 1fr); }
+            .market-cats { grid-template-columns: 1fr 1fr; }
             .principles-grid { grid-template-columns: repeat(4, 1fr); }
         }
-
         @media (max-width: 900px) {
             .s-header { padding: 0 1.5rem; }
             .header-nav { display: none; }
             .header-menu-toggle { display: block; }
-
             .hero-content { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.5rem; }
             .hero-card { display: none; }
-
             .section-wrap { padding: 4rem 1.5rem; }
             .sentinel-inner { padding: 0 1.5rem; }
-
             .about-grid { grid-template-columns: 1fr; gap: 3rem; }
             .spec-grid { grid-template-columns: 1fr 1fr; }
-
             .kpi-row { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
             .principles-grid { grid-template-columns: repeat(3, 1fr); }
-
             .project-grid { grid-template-columns: repeat(2, 1fr); }
-
             .flow-steps { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
             .flow-steps::before { display: none; }
-
             .tech-row { grid-template-columns: 1fr 1fr; }
             .tech-layer { display: none; }
-
-            .sentinel-kpis { grid-template-columns: repeat(2, 1fr); }
-
+            .sentinel-kpis { grid-template-columns: repeat(3, 1fr); }
             .home-social { left: 1.5rem; bottom: 1.5rem; }
-
             #contact { padding: 4rem 1.5rem; }
             footer { padding: 1.5rem; justify-content: center; text-align: center; }
+            .market-cats { grid-template-columns: 1fr; }
         }
-
         @media (max-width: 600px) {
             .hero-name { font-size: 2.5rem; }
             .hero-ctas { flex-direction: column; }
             .hero-ctas a { justify-content: center; }
-
             .arch-grid { grid-template-columns: 1fr; }
             .project-grid { grid-template-columns: 1fr; }
             .spec-grid { grid-template-columns: 1fr; }
             .principles-grid { grid-template-columns: repeat(2, 1fr); }
             .kpi-row { grid-template-columns: 1fr 1fr; }
-
-            .alert-item { flex-wrap: wrap; }
-            .alert-time { margin-top: 4px; }
-
-            .sentinel-badges { justify-content: flex-start; }
-            .flow-steps { grid-template-columns: repeat(2, 1fr); }
-
-            .tech-row { grid-template-columns: 1fr auto; }
-            .sentinel-kpis { grid-template-columns: 1fr 1fr; }
-
-            .changelog-banner { flex-direction: column; align-items: flex-start; }
-
+            .sentinel-kpis { grid-template-columns: repeat(2, 1fr); }
             .sentinel-ctas { flex-direction: column; align-items: center; }
             .sentinel-ctas a { width: 100%; max-width: 320px; justify-content: center; }
-
             .contact-links { flex-direction: column; align-items: center; }
             .contact-link { width: 100%; max-width: 300px; justify-content: center; }
+            .flow-steps { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
-
 <body id="top">
 
 <!-- ── NAV ── -->
 <header class="s-header">
-    <a class="nav-brand" href="#home">
-        N'Douba <span>MÔH</span>
-        <span class="version-badge">v3.0.1</span>
-    </a>
+    <a class="nav-brand" href="#home">N'Douba <span>MÔH</span><span class="version-badge">v3.1</span></a>
     <nav>
         <ul class="header-nav">
             <li class="current"><a href="#home">Accueil</a></li>
@@ -765,14 +341,12 @@
             <li><a href="#bcbs239">BCBS 239</a></li>
             <li><a href="#works">Projets</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li class="bio-link"><a href="biographie.html">⭐ Biographie</a></li>
         </ul>
     </nav>
-    <button class="header-menu-toggle" id="menuToggle" aria-label="Menu">
-        <i class="fas fa-bars" id="menuIcon"></i>
-    </button>
+    <button class="header-menu-toggle" id="menuToggle" aria-label="Menu"><i class="fas fa-bars" id="menuIcon"></i></button>
 </header>
 
-<!-- Mobile nav -->
 <nav class="mobile-nav" id="mobileNav">
     <ul>
         <li><a href="#home" onclick="closeMobileNav()">Accueil</a></li>
@@ -781,6 +355,7 @@
         <li><a href="#bcbs239" onclick="closeMobileNav()">BCBS 239</a></li>
         <li><a href="#works" onclick="closeMobileNav()">Projets</a></li>
         <li><a href="#contact" onclick="closeMobileNav()">Contact</a></li>
+        <li><a href="biographie.html">⭐ Biographie / CV</a></li>
     </ul>
 </nav>
 
@@ -789,82 +364,52 @@
     <div class="hero-grid"></div>
     <div class="hero-glow"></div>
     <div class="hero-glow-2"></div>
-
     <div class="hero-content">
         <div>
-            <div class="hero-eyebrow">Éditeur Logiciel Bancaire · UEMOA</div>
+            <div class="hero-eyebrow">Éditeur Logiciel Bancaire · UEMOA · RegTech</div>
             <h1 class="hero-name">N'Douba<br><em>MÔH</em></h1>
-            <p class="hero-title">Créateur de <strong style="color:rgba(255,255,255,0.85)">Sentinel LCC v3.0</strong> — plateforme AML On-Premise certifiée BCBS 239 & BCEAO pour les institutions financières de l'UEMOA.</p>
+            <p class="hero-title">Créateur de <strong style="color:rgba(255,255,255,0.85)">Sentinel LCC v3.1</strong> — plateforme AML On-Premise certifiée BCBS 239 & BCEAO. Market Intelligence UEMOA. Réentraînement XGBoost gouverné.</p>
             <div class="hero-pills">
-                <span class="pill">Sentinel LCC v3.0.1</span>
+                <span class="pill">Sentinel LCC v3.1</span>
                 <span class="pill">BCBS 239 · 14 Principes</span>
+                <span class="pill pill-gold">🌍 Market Intel UEMOA</span>
+                <span class="pill pill-gold">🤖 ML Champion-Challenger</span>
                 <span class="pill">RSA-PSS SHA-256</span>
-                <span class="pill">Air-Gapped</span>
-                <span class="pill">Python · FastAPI · Streamlit</span>
-                <span class="pill">JWT Refresh Auto</span>
+                <span class="pill">Air-Gapped · Python</span>
             </div>
             <div class="hero-ctas">
-                <a href="#sentinel" class="btn-primary">
-                    <i class="fas fa-shield-alt"></i> Découvrir Sentinel LCC
-                </a>
-                <a href="mailto:ndoubajeanclaude@outlook.com" class="btn-outline">
-                    <i class="fas fa-paper-plane"></i> Contacter
-                </a>
+                <a href="#sentinel" class="btn-primary"><i class="fas fa-shield-alt"></i> Découvrir Sentinel LCC</a>
+                <a href="biographie.html" class="btn-outline btn-gold"><i class="fas fa-user"></i> Biographie</a>
+                <a href="mailto:ndoubajeanclaude@outlook.com" class="btn-outline"><i class="fas fa-paper-plane"></i> Contact</a>
             </div>
         </div>
-
         <div class="hero-card">
             <div class="hero-card-header">
                 <div class="sentinel-badge">🛡️</div>
                 <div>
-                    <div class="hero-card-title">Sentinel LCC v3.0.1</div>
-                    <div class="hero-card-sub">On-Premise Air-Gapped · BCBS239 · Port 8503</div>
+                    <div class="hero-card-title">Sentinel LCC v3.1</div>
+                    <div class="hero-card-sub">On-Premise Air-Gapped · BCBS239 · BCEAO</div>
                 </div>
             </div>
             <div class="metric-row">
-                <div class="metric-box">
-                    <span class="metric-val">14/14</span>
-                    <span class="metric-lbl">Principes BCBS</span>
-                </div>
-                <div class="metric-box">
-                    <span class="metric-val">96%</span>
-                    <span class="metric-lbl">Conformité</span>
-                </div>
-                <div class="metric-box">
-                    <span class="metric-val">~175MB</span>
-                    <span class="metric-lbl">Installeur .exe</span>
-                </div>
-                <div class="metric-box">
-                    <span class="metric-val">0</span>
-                    <span class="metric-lbl">Flux sortants</span>
-                </div>
+                <div class="metric-box"><span class="metric-val">14/14</span><span class="metric-lbl">Principes BCBS</span></div>
+                <div class="metric-box"><span class="metric-val">96%</span><span class="metric-lbl">Conformité</span></div>
+                <div class="metric-box"><span class="metric-val">22</span><span class="metric-lbl">Instruments Marché</span></div>
+                <div class="metric-box"><span class="metric-val">0</span><span class="metric-lbl">Flux sortants</span></div>
             </div>
             <div class="status-row">
-                <div class="status-item">
-                    <span class="status-item-label">Licence RSA-PSS + PIN 12 chiffres</span>
-                    <span class="status-ok">✓ ACTIF</span>
-                </div>
-                <div class="status-item">
-                    <span class="status-item-label">SQLite AES · BCBS239 P12</span>
-                    <span class="status-ok">✓ SÉCURISÉ</span>
-                </div>
-                <div class="status-item">
-                    <span class="status-item-label">JWT Refresh automatique</span>
-                    <span class="status-ok">✓ 8H + AUTO</span>
-                </div>
-                <div class="status-item">
-                    <span class="status-item-label">TOTP Souverain RFC 6238</span>
-                    <span class="status-ok">✓ OFFLINE</span>
-                </div>
+                <div class="status-item"><span class="status-item-label">Licence RSA-PSS + PIN 12 chiffres</span><span class="status-ok">✓ ACTIF</span></div>
+                <div class="status-item"><span class="status-item-label">Market Intel — WAR ROOM + GEO INTEL</span><span class="status-gold">✓ NOUVEAU</span></div>
+                <div class="status-item"><span class="status-item-label">ML Champion-Challenger Retrain</span><span class="status-gold">✓ NOUVEAU</span></div>
+                <div class="status-item"><span class="status-item-label">Drift Index auto-détection BCEAO</span><span class="status-ok">✓ CONFORME</span></div>
             </div>
         </div>
     </div>
-
     <ul class="home-social">
-        <li><a href="mailto:ndoubajeanclaude@outlook.com" title="Email"><i class="fa-solid fa-envelope"></i><span>Email</span></a></li>
-        <li><a href="https://www.linkedin.com/in/moh-adjonlin-jean-claude-n-douba-7737bb342/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a></li>
-        <li><a href="https://github.com/Genito922" target="_blank" title="GitHub"><i class="fab fa-github"></i><span>Github</span></a></li>
-        <li><a href="https://www.kaggle.com/jeanclaudem92" target="_blank" title="Kaggle"><i class="fab fa-kaggle"></i><span>Kaggle</span></a></li>
+        <li><a href="mailto:ndoubajeanclaude@outlook.com" title="Email"><i class="fa-solid fa-envelope"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/moh-adjonlin-jean-claude-n-douba-7737bb342/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+        <li><a href="https://github.com/Genito922" target="_blank" title="GitHub"><i class="fab fa-github"></i></a></li>
+        <li><a href="https://www.kaggle.com/jeanclaudem92" target="_blank" title="Kaggle"><i class="fab fa-kaggle"></i></a></li>
     </ul>
 </section>
 
@@ -873,10 +418,9 @@
     <div class="section-wrap">
         <div style="text-align:center;margin-bottom:4rem;">
             <div class="section-eyebrow">Profil</div>
-            <h2 class="section-title">Expertise BCBS 239<br>& Développement Logiciel Bancaire</h2>
-            <p class="section-lead" style="margin:0 auto;">Diplômé en Banque-Finance, je conçois et distribue des solutions logicielles certifiées pour la conformité réglementaire des institutions financières de l'UEMOA.</p>
+            <h2 class="section-title">Expertise BCBS 239, ML Governance<br>& Market Intelligence UEMOA</h2>
+            <p class="section-lead" style="margin:0 auto;">Diplômé en Banque-Finance, je conçois et distribue des solutions logicielles certifiées pour la conformité réglementaire des institutions financières de l'UEMOA, intégrant désormais l'intelligence de marché et la gouvernance ML.</p>
         </div>
-
         <div class="about-grid">
             <div>
                 <h3 style="font-weight:700;color:var(--ink);margin-bottom:0.5rem;font-size:1.05rem;">Stack Technique</h3>
@@ -891,57 +435,33 @@
                         <div class="skill-bar"><div class="skill-fill" style="width:96%"></div></div>
                     </div>
                     <div class="skill-item">
-                        <div class="skill-header"><span>Streamlit · PyInstaller · Distribution .exe</span><span class="skill-pct">90%</span></div>
-                        <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+                        <div class="skill-header"><span>ML Governance — Drift · Champion-Challenger</span><span class="skill-pct">88%</span></div>
+                        <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header"><span>Market Intelligence — yfinance · UEMOA</span><span class="skill-pct">85%</span></div>
+                        <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
                     </div>
                     <div class="skill-item">
                         <div class="skill-header"><span>Cryptographie RSA-PSS · JWT · PKI</span><span class="skill-pct">88%</span></div>
                         <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
                     </div>
                     <div class="skill-item">
-                        <div class="skill-header"><span>SQL · Power BI · Tableau</span><span class="skill-pct">90%</span></div>
+                        <div class="skill-header"><span>Streamlit · PyInstaller · Distribution .exe</span><span class="skill-pct">90%</span></div>
                         <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header"><span>CI/CD · GitHub · Git Bash</span><span class="skill-pct">85%</span></div>
-                        <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
                     </div>
                 </div>
             </div>
             <div>
                 <h3 style="font-weight:700;color:var(--ink);margin-bottom:0.5rem;font-size:1.05rem;">Spécialisations BCBS 239</h3>
-                <p style="color:var(--muted);font-size:0.85rem;margin-bottom:1.5rem;">Implémentées dans Sentinel LCC v3.0.1</p>
+                <p style="color:var(--muted);font-size:0.85rem;margin-bottom:1.5rem;">Implémentées dans Sentinel LCC v3.1</p>
                 <div class="spec-grid">
-                    <div class="spec-card">
-                        <div class="spec-num">P2</div>
-                        <div class="spec-title">Intégrité & Anti-Tampering</div>
-                        <div class="spec-desc">SHA256 chaîné · Manifest RSA signé · sys.exit(99)</div>
-                    </div>
-                    <div class="spec-card">
-                        <div class="spec-num">P3</div>
-                        <div class="spec-title">Complétude données</div>
-                        <div class="spec-desc">Score qualité 0-100% · Quarantaine &lt; 90%</div>
-                    </div>
-                    <div class="spec-card">
-                        <div class="spec-num">P7</div>
-                        <div class="spec-title">Anonymisation</div>
-                        <div class="spec-desc">SHA256(valeur + HASH_SALT) · RGPD</div>
-                    </div>
-                    <div class="spec-card">
-                        <div class="spec-num">P8</div>
-                        <div class="spec-title">Audit Trail</div>
-                        <div class="spec-desc">JSONL chaîné HMAC · Non répudiable</div>
-                    </div>
-                    <div class="spec-card">
-                        <div class="spec-num">P9</div>
-                        <div class="spec-title">Réconciliation</div>
-                        <div class="spec-desc">ML Monitoring · XGBoost drift · /health</div>
-                    </div>
-                    <div class="spec-card">
-                        <div class="spec-num">P11</div>
-                        <div class="spec-title">Distribution</div>
-                        <div class="spec-desc">TOTP souverain · JWT refresh auto · Air-Gapped</div>
-                    </div>
+                    <div class="spec-card"><div class="spec-num">P2</div><div class="spec-title">Intégrité & Anti-Tampering</div><div class="spec-desc">SHA256 chaîné · Manifest RSA signé · sys.exit(99)</div></div>
+                    <div class="spec-card"><div class="spec-num">P3</div><div class="spec-title">Complétude données</div><div class="spec-desc">Score qualité 0-100% · Quarantaine &lt;90%</div></div>
+                    <div class="spec-card"><div class="spec-num">P8</div><div class="spec-title">Audit Trail</div><div class="spec-desc">JSONL chaîné HMAC · Retrain archivé · 5 ans</div></div>
+                    <div class="spec-card"><div class="spec-num">P9</div><div class="spec-title">ML Governance</div><div class="spec-desc">Drift Index KS-test · Champion-Challenger · Deploy</div></div>
+                    <div class="spec-card"><div class="spec-num spec-num-green">MI</div><div class="spec-title">Market Intelligence</div><div class="spec-desc">22 instruments · WAR ROOM · GEO INTEL UEMOA</div></div>
+                    <div class="spec-card"><div class="spec-num">P11</div><div class="spec-title">Distribution</div><div class="spec-desc">TOTP souverain · JWT refresh auto · Air-Gapped</div></div>
                 </div>
             </div>
         </div>
@@ -952,152 +472,140 @@
 <section id="sentinel">
     <div class="sentinel-inner">
         <div class="sentinel-header">
-            <div class="sentinel-eyebrow">🛡️ Projet Phare — Éditeur Logiciel</div>
+            <div class="sentinel-eyebrow">🛡️ Projet Phare — Éditeur Logiciel RegTech</div>
             <h2 class="sentinel-title">Sentinel <em>LCC</em></h2>
-            <p class="sentinel-sub">Plateforme AML (Anti-Money Laundering) 100% On-Premise pour les institutions financières de l'UEMOA. Zéro dépendance cloud après installation. Activable en 60 secondes via PIN sécurisé.</p>
+            <p class="sentinel-sub">Plateforme AML (Anti-Money Laundering) 100% On-Premise pour les institutions financières de l'UEMOA. Market Intelligence en temps réel. Réentraînement ML gouverné BCBS239. Zéro dépendance cloud après installation.</p>
 
-            <!-- Changelog v3.0.1 -->
+            <!-- Changelog v3.1 -->
             <div class="changelog-banner">
-                <span class="changelog-title">v3.0.1 — Avril 2026</span>
+                <span class="changelog-title">v3.1 — Avril 2026</span>
+                <span class="changelog-item changelog-item-new">✅ fetch_market_data.py — 22 instruments</span>
+                <span class="changelog-item changelog-item-new">✅ GEO INTEL Banque Ivoirienne</span>
+                <span class="changelog-item changelog-item-new">✅ WAR ROOM Marchés Internationaux</span>
+                <span class="changelog-item changelog-item-new">✅ retrain_model.py Champion-Challenger</span>
+                <span class="changelog-item changelog-item-new">✅ Drift Index auto-détection BCEAO</span>
                 <span class="changelog-item">✅ Licence PIN 12 chiffres RSA-PSS</span>
                 <span class="changelog-item">✅ JWT Refresh auto (30min)</span>
-                <span class="changelog-item">✅ Dashboard port 8503</span>
-                <span class="changelog-item">✅ pins.json chemins relatifs</span>
-                <span class="changelog-item">✅ DB path abs (clé USB)</span>
-                <span class="changelog-item">✅ 14_ADMIN gestion users</span>
                 <span class="changelog-item">✅ Watchdog SFTP BCBS239</span>
-                <span class="changelog-item">✅ TTL configurable</span>
+                <span class="changelog-item">✅ 14_ADMIN gestion users</span>
             </div>
 
             <div class="sentinel-badges">
                 <span class="s-badge s-badge-blue">BCBS239 Conforme</span>
                 <span class="s-badge s-badge-green">BCEAO · UMOA</span>
                 <span class="s-badge s-badge-gold">RSA-PSS SHA-256</span>
+                <span class="s-badge s-badge-green">🌍 Market Intelligence</span>
+                <span class="s-badge s-badge-green">🤖 ML Retrain Gouverné</span>
                 <span class="s-badge s-badge-dark">Air-Gapped</span>
-                <span class="s-badge s-badge-dark">SQLite AES</span>
-                <span class="s-badge s-badge-dark">v3.0.1 · Avril 2026</span>
+                <span class="s-badge s-badge-dark">v3.1 · Avril 2026</span>
             </div>
         </div>
 
         <!-- KPIs -->
         <div class="sentinel-kpis">
-            <div class="skpi">
-                <span class="skpi-val"><span>14</span>/14</span>
-                <span class="skpi-lbl">Principes BCBS239</span>
-            </div>
-            <div class="skpi">
-                <span class="skpi-val"><span>96</span>%</span>
-                <span class="skpi-lbl">Score Conformité</span>
-            </div>
-            <div class="skpi">
-                <span class="skpi-val"><span>0</span></span>
-                <span class="skpi-lbl">Flux Réseau Sortant</span>
-            </div>
-            <div class="skpi">
-                <span class="skpi-val"><span>15</span></span>
-                <span class="skpi-lbl">Modules Dashboard</span>
+            <div class="skpi"><span class="skpi-val"><span>14</span>/14</span><span class="skpi-lbl">Principes BCBS239</span></div>
+            <div class="skpi"><span class="skpi-val"><span>96</span>%</span><span class="skpi-lbl">Score Conformité</span></div>
+            <div class="skpi"><span class="skpi-val skpi-val-gold"><span>22</span></span><span class="skpi-lbl">Instruments Marché</span></div>
+            <div class="skpi"><span class="skpi-val skpi-val-gold"><span>17</span></span><span class="skpi-lbl">Modules Dashboard</span></div>
+            <div class="skpi"><span class="skpi-val"><span>0</span></span><span class="skpi-lbl">Flux Réseau Sortant</span></div>
+        </div>
+
+        <!-- Market Intelligence box -->
+        <div class="market-intel-box">
+            <div class="market-intel-title">🌍 Module Market Intelligence — WAR ROOM + GEO INTEL UEMOA (22 instruments live)</div>
+            <div class="market-cats">
+                <div class="market-cat">
+                    <div class="market-cat-title">🏦 Exportations CI (EXPORT_CI)</div>
+                    <div class="market-cat-items">
+                        <div class="market-item">CC=F — Cacao · 3 304 USD/T</div>
+                        <div class="market-item">KC=F — Café Arabica · 288.45 c/LB</div>
+                        <div class="market-item">CT=F — Coton · 80.55 c/LB</div>
+                        <div class="market-item">ZL=F — Huile Palme · 71.64 c/LB</div>
+                    </div>
+                </div>
+                <div class="market-cat">
+                    <div class="market-cat-title">🌾 Importations CI (IMPORT_CI)</div>
+                    <div class="market-cat-items">
+                        <div class="market-item">ZW=F — Blé · 613.5 c/BU</div>
+                        <div class="market-item">ZC=F — Maïs · 462.0 c/BU</div>
+                        <div class="market-item">ZR=F — Riz · 11.35 USD/CWT</div>
+                        <div class="market-item">ZS=F — Soja · 1190.5 c/BU</div>
+                    </div>
+                </div>
+                <div class="market-cat">
+                    <div class="market-cat-title">💱 Change FCFA + Marchés Intl</div>
+                    <div class="market-cat-items">
+                        <div class="market-item">EUR/XOF — 655.957 (fixe BCEAO)</div>
+                        <div class="market-item">USD/XOF — live XOFUSD=X inversé</div>
+                        <div class="market-item">GBP/XOF · CNY/XOF — live</div>
+                        <div class="market-item">Brent · WTI · Gold · Silver · BTC</div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- Tech stack -->
         <div class="tech-stack" style="margin-bottom:2.5rem;">
-            <div class="tech-stack-title">Stack technique v3.0.1</div>
-            <div class="tech-row">
-                <span class="tech-layer">Launcher</span>
-                <span class="tech-detail">sentinel_launcher.py → PyInstaller .exe · 6 étapes · Watchdog SFTP</span>
-                <span class="tech-status">✓ STABLE</span>
-            </div>
-            <div class="tech-row">
-                <span class="tech-layer">API Backend</span>
-                <span class="tech-detail">FastAPI · uvicorn.run() · slowapi · JWT HS256 · refresh auto 30min</span>
-                <span class="tech-status">✓ PORT 8000</span>
-            </div>
-            <div class="tech-row">
-                <span class="tech-layer">Dashboard</span>
-                <span class="tech-detail">Streamlit · 15 pages · auth.py · 14_ADMIN · port 8503</span>
-                <span class="tech-status">✓ PORT 8503</span>
-            </div>
-            <div class="tech-row">
-                <span class="tech-layer">Licence</span>
-                <span class="tech-detail">RSA-PSS SHA-256 · PIN 12 chiffres · HWID · TTL configurable · pins.json relatif</span>
-                <span class="tech-status">✓ OFFLINE</span>
-            </div>
-            <div class="tech-row">
-                <span class="tech-layer">Base de données</span>
-                <span class="tech-detail">SQLite · path abs sys.executable · migrations auto · ingestions_log</span>
-                <span class="tech-status">✓ PORTABLE</span>
-            </div>
-            <div class="tech-row">
-                <span class="tech-layer">Sécurité</span>
-                <span class="tech-detail">bcrypt · HMAC SHA-256 · TOTP RFC 6238 · audit chain JSONL · CORS 127.0.0.1</span>
-                <span class="tech-status">✓ BCBS239 P8</span>
-            </div>
+            <div class="tech-stack-title">Stack technique v3.1 — Scripts & Modules</div>
+            <div class="tech-row"><span class="tech-layer">Launcher</span><span class="tech-detail">sentinel_launcher.py → PyInstaller .exe · 6 étapes · Watchdog SFTP</span><span class="tech-status">✓ STABLE</span></div>
+            <div class="tech-row"><span class="tech-layer">API Backend</span><span class="tech-detail">FastAPI · uvicorn.run() · slowapi · JWT HS256 · refresh auto 30min</span><span class="tech-status">✓ PORT 8000</span></div>
+            <div class="tech-row"><span class="tech-layer">Dashboard</span><span class="tech-detail">Streamlit · 17 pages · auth.py · 14_ADMIN · port 8503</span><span class="tech-status">✓ PORT 8503</span></div>
+            <div class="tech-row tech-row-new"><span class="tech-layer">Market Intel</span><span class="tech-detail">fetch_market_data.py · yfinance · 22 instruments · WAR_ROOM + GEO_INTEL Excel</span><span class="tech-status tech-status-new">✓ NOUVEAU</span></div>
+            <div class="tech-row tech-row-new"><span class="tech-layer">ML Retrain</span><span class="tech-detail">retrain_model.py · Champion-Challenger · XGBoost · Drift Index KS-test · BCBS239 P8</span><span class="tech-status tech-status-new">✓ NOUVEAU</span></div>
+            <div class="tech-row"><span class="tech-layer">Licence</span><span class="tech-detail">RSA-PSS SHA-256 · PIN 12 chiffres · HWID · TTL configurable · pins.json relatif</span><span class="tech-status">✓ OFFLINE</span></div>
+            <div class="tech-row"><span class="tech-layer">Base de données</span><span class="tech-detail">SQLite · path abs sys.executable · migrations auto · ingestions_log</span><span class="tech-status">✓ PORTABLE</span></div>
+            <div class="tech-row"><span class="tech-layer">Sécurité</span><span class="tech-detail">bcrypt · HMAC SHA-256 · TOTP RFC 6238 · audit chain JSONL · CORS 127.0.0.1</span><span class="tech-status">✓ BCBS239 P8</span></div>
         </div>
 
-        <!-- Architecture cards -->
+        <!-- Architecture cards 4x2 -->
         <div class="arch-grid">
             <div class="arch-card">
                 <div class="arch-icon arch-icon-blue">🔐</div>
                 <div class="arch-card-title">Système Licence PIN RSA-PSS</div>
-                <div class="arch-card-desc">HWID lié à la machine. PIN 12 chiffres (XXXX-XXXX-XXXX). pins.json en chemins relatifs — portable sur toute clé USB (D:, E:, F:...). TTL configurable. Anti-replay nonce.</div>
-                <div class="arch-tags">
-                    <span class="arch-tag">hwid.py</span>
-                    <span class="arch-tag">license_validator.py</span>
-                    <span class="arch-tag">RSA-PSS</span>
-                    <span class="arch-tag">pins.json relatif</span>
-                </div>
+                <div class="arch-card-desc">HWID lié à la machine. PIN 12 chiffres (XXXX-XXXX-XXXX). pins.json en chemins relatifs — portable sur toute clé USB. TTL configurable. Anti-replay nonce.</div>
+                <div class="arch-tags"><span class="arch-tag">hwid.py</span><span class="arch-tag">license_validator.py</span><span class="arch-tag">RSA-PSS</span></div>
             </div>
             <div class="arch-card">
                 <div class="arch-icon arch-icon-green">⚙️</div>
                 <div class="arch-card-title">API FastAPI + JWT Auto-Refresh</div>
-                <div class="arch-card-desc">uvicorn.run() embarqué. SECRET_KEY auto-généré si absent. Token access 8h + refresh 7 jours. Renouvellement automatique à 30min d'expiration. Endpoints /api/v1.</div>
-                <div class="arch-tags">
-                    <span class="arch-tag">uvicorn</span>
-                    <span class="arch-tag">JWT HS256</span>
-                    <span class="arch-tag">refresh auto</span>
-                    <span class="arch-tag">port 8000</span>
-                </div>
+                <div class="arch-card-desc">uvicorn.run() embarqué. SECRET_KEY auto-généré si absent. Token access 8h + refresh 7 jours. Renouvellement automatique à 30min d'expiration.</div>
+                <div class="arch-tags"><span class="arch-tag">uvicorn</span><span class="arch-tag">JWT HS256</span><span class="arch-tag">refresh auto</span></div>
             </div>
             <div class="arch-card">
                 <div class="arch-icon arch-icon-gold">📱</div>
                 <div class="arch-card-title">TOTP Souverain (RFC 6238)</div>
-                <div class="arch-card-desc">Authentification 2 facteurs 100% locale. Secret TOTP en DB. QR Code par scan optique. Zéro Wi-Fi, zéro ping serveur. Désactivable en mode DEMO.</div>
-                <div class="arch-tags">
-                    <span class="arch-tag">pyotp</span>
-                    <span class="arch-tag">Google Authenticator</span>
-                    <span class="arch-tag">RFC 6238</span>
-                </div>
+                <div class="arch-card-desc">Authentification 2FA 100% locale. Secret TOTP en DB. QR Code par scan optique. Zéro Wi-Fi, zéro ping serveur externe. Désactivable en mode DEMO.</div>
+                <div class="arch-tags"><span class="arch-tag">pyotp</span><span class="arch-tag">RFC 6238</span><span class="arch-tag">offline</span></div>
             </div>
             <div class="arch-card">
                 <div class="arch-icon arch-icon-blue">🗄️</div>
                 <div class="arch-card-title">DB Portable Multi-Environnements</div>
-                <div class="arch-card-desc">SQLite résolu depuis sys.executable.parent. Compatible clé USB toute lettre de lecteur. Migrations auto (locked_until, password_changed_at). Deux env DEMO/PROD isolés.</div>
-                <div class="arch-tags">
-                    <span class="arch-tag">sentinel.db</span>
-                    <span class="arch-tag">sentinel_prod.db</span>
-                    <span class="arch-tag">path absolu</span>
-                </div>
+                <div class="arch-card-desc">SQLite résolu depuis sys.executable.parent. Compatible clé USB toute lettre. Migrations auto. Deux env DEMO/PROD isolés.</div>
+                <div class="arch-tags"><span class="arch-tag">sentinel.db</span><span class="arch-tag">path absolu</span><span class="arch-tag">DEMO/PROD</span></div>
             </div>
             <div class="arch-card">
                 <div class="arch-icon arch-icon-green">📊</div>
                 <div class="arch-card-title">Watchdog SFTP On-Premise</div>
-                <div class="arch-card-desc">Détection temps réel GL/Balance/SWIFT. detect_input_type · ingest_file · archive_file · log_ingestion. Quarantaine si qualité &lt; 90%. Audit trail chaîné BCBS239 P3.</div>
-                <div class="arch-tags">
-                    <span class="arch-tag">watchdog_sftp.py</span>
-                    <span class="arch-tag">ingestions_log</span>
-                    <span class="arch-tag">BCBS239 P3</span>
-                </div>
+                <div class="arch-card-desc">Détection temps réel GL/Balance/SWIFT. Quarantaine si qualité &lt;90%. Audit trail chaîné BCBS239 P3. Ingestion WAR_ROOM et GEO_INTEL Excel.</div>
+                <div class="arch-tags"><span class="arch-tag">watchdog_sftp.py</span><span class="arch-tag">ingestions_log</span><span class="arch-tag">BCBS239 P3</span></div>
             </div>
             <div class="arch-card">
                 <div class="arch-icon arch-icon-gold">👥</div>
                 <div class="arch-card-title">Gestion Utilisateurs Admin</div>
-                <div class="arch-card-desc">Page 14_ADMIN.py — 6 rôles BCEAO. Créer/désactiver comptes. Limite max_users depuis la licence. Audit trail connexions. DB path résolu depuis executable (clé USB).</div>
-                <div class="arch-tags">
-                    <span class="arch-tag">14_ADMIN.py</span>
-                    <span class="arch-tag">6 rôles</span>
-                    <span class="arch-tag">max_users</span>
-                    <span class="arch-tag">bcrypt</span>
-                </div>
+                <div class="arch-card-desc">Page 14_ADMIN.py — 6 rôles BCEAO. Créer/désactiver comptes. Limite max_users depuis la licence. Audit trail connexions.</div>
+                <div class="arch-tags"><span class="arch-tag">14_ADMIN.py</span><span class="arch-tag">6 rôles</span><span class="arch-tag">bcrypt</span></div>
+            </div>
+            <div class="arch-card arch-card-new">
+                <div class="arch-icon arch-icon-green">🌍</div>
+                <div class="arch-card-title">Market Intelligence UEMOA <span class="new-badge">NEW</span></div>
+                <div class="arch-card-desc">Collecte quotidienne de 22 instruments via yfinance. WAR ROOM (marchés internationaux) + GEO INTEL (portefeuille banque ivoirienne). Conversion XOF live. Export Excel automatique.</div>
+                <div class="arch-tags"><span class="arch-tag arch-tag-green">fetch_market_data.py</span><span class="arch-tag">CC=F ZW=F ZC=F</span><span class="arch-tag">WAR_ROOM</span><span class="arch-tag">GEO_INTEL</span></div>
+            </div>
+            <div class="arch-card arch-card-new">
+                <div class="arch-icon arch-icon-red">🤖</div>
+                <div class="arch-card-title">ML Retrain Champion-Challenger <span class="new-badge">NEW</span></div>
+                <div class="arch-card-desc">Drift Index 0.75 → déclenchement réentraînement BCEAO. Golden Dataset 90 jours. Labels Case Management. XGBoost Challenger vs Champion. Archivage BCBS239 P8 auditable 5 ans.</div>
+                <div class="arch-tags"><span class="arch-tag arch-tag-green">retrain_model.py</span><span class="arch-tag">KS-test</span><span class="arch-tag">AUC-ROC</span><span class="arch-tag">BCBS239 P8</span></div>
             </div>
         </div>
 
@@ -1105,40 +613,19 @@
         <div class="sentinel-flow">
             <div class="flow-title">Flux d'activation client — 6 étapes · 100% offline après l'étape 3</div>
             <div class="flow-steps">
-                <div class="flow-step">
-                    <div class="flow-step-num">01</div>
-                    <div class="flow-step-label">Double-clic<br>Sentinel_LCC.exe</div>
-                </div>
-                <div class="flow-step">
-                    <div class="flow-step-num">02</div>
-                    <div class="flow-step-label">Copier le CODE<br>(HWID Machine)</div>
-                </div>
-                <div class="flow-step">
-                    <div class="flow-step-num">03</div>
-                    <div class="flow-step-label">Recevoir PIN<br>par email</div>
-                </div>
-                <div class="flow-step">
-                    <div class="flow-step-num">04</div>
-                    <div class="flow-step-label">Saisir PIN<br>→ Activé offline</div>
-                </div>
-                <div class="flow-step">
-                    <div class="flow-step-num">05</div>
-                    <div class="flow-step-label">Login email<br>+ mot de passe</div>
-                </div>
-                <div class="flow-step">
-                    <div class="flow-step-num">06</div>
-                    <div class="flow-step-label">Dashboard AML<br>opérationnel ✓</div>
-                </div>
+                <div class="flow-step"><div class="flow-step-num">01</div><div class="flow-step-label">Double-clic<br>Sentinel_LCC.exe</div></div>
+                <div class="flow-step"><div class="flow-step-num">02</div><div class="flow-step-label">Copier le CODE<br>(HWID Machine)</div></div>
+                <div class="flow-step"><div class="flow-step-num">03</div><div class="flow-step-label">Recevoir PIN<br>par email</div></div>
+                <div class="flow-step"><div class="flow-step-num">04</div><div class="flow-step-label">Saisir PIN<br>→ Activé offline</div></div>
+                <div class="flow-step"><div class="flow-step-num">05</div><div class="flow-step-label">Login email<br>+ mot de passe</div></div>
+                <div class="flow-step"><div class="flow-step-num">06</div><div class="flow-step-label">Dashboard AML<br>opérationnel ✓</div></div>
             </div>
         </div>
 
         <div class="sentinel-ctas">
-            <a href="https://ndouba-moh.site/" target="_blank" class="btn-sentinel">
-                <i class="fas fa-usb"></i> Support USB disponible sur demande
-            </a>
-            <a href="mailto:ndoubajeanclaude@outlook.com" class="btn-sentinel-outline">
-                <i class="fas fa-envelope"></i> Demander une démo
-            </a>
+            <a href="https://ndouba-moh.site/" target="_blank" class="btn-sentinel"><i class="fas fa-usb"></i> Support USB disponible sur demande</a>
+            <a href="mailto:ndoubajeanclaude@outlook.com" class="btn-sentinel-outline"><i class="fas fa-envelope"></i> Demander une démo</a>
+            <a href="biographie.html" class="btn-sentinel-outline"><i class="fas fa-user"></i> Voir ma Biographie</a>
         </div>
     </div>
 </section>
@@ -1149,7 +636,7 @@
         <div style="text-align:center;max-width:680px;margin:0 auto;">
             <div class="section-eyebrow">Conformité</div>
             <h2 class="section-title">Dashboard BCBS 239<br>Temps Réel</h2>
-            <p class="section-lead" style="margin:0 auto;">14 principes couverts avec preuves techniques vérifiables par un auditeur BCEAO.</p>
+            <p class="section-lead" style="margin:0 auto;">14 principes couverts avec preuves techniques vérifiables par un auditeur BCEAO. ML Drift Index surveillé en continu.</p>
         </div>
 
         <div class="kpi-row">
@@ -1160,40 +647,30 @@
         </div>
 
         <div class="alertes-box">
-            <div class="alertes-title">
-                <i class="fas fa-bell" style="color:var(--blue)"></i>
-                Alertes Temps Réel — Simulation Live
-            </div>
+            <div class="alertes-title"><i class="fas fa-bell" style="color:var(--blue)"></i> Alertes Temps Réel — Simulation Live</div>
             <div class="alert-item alert-crit">
                 <div class="alert-icon">⛔</div>
-                <div class="alert-body">
-                    <strong>BCBS239 P2 — Exactitude — CRITIQUE</strong>
-                    <span>Écart de 2.5M XOF sur compte 301 · Comptes chèques clientèle</span>
-                </div>
+                <div class="alert-body"><strong>BCBS239 P2 — Exactitude — CRITIQUE</strong><span>Écart de 2.5M XOF sur compte 301 · Comptes chèques clientèle</span></div>
                 <span class="alert-time time-crit">2 min</span>
             </div>
             <div class="alert-item alert-crit">
-                <div class="alert-icon">📅</div>
-                <div class="alert-body">
-                    <strong>BCBS239 P3 — Dates futures — CRITIQUE</strong>
-                    <span>15 opérations avec date comptable &gt; aujourd'hui (J+3 à J+15)</span>
-                </div>
-                <span class="alert-time time-crit">5 min</span>
+                <div class="alert-icon">🤖</div>
+                <div class="alert-body"><strong>ML Monitoring — Drift Index 0.75 — RÉENTRAÎNEMENT REQUIS</strong><span>KS-test : montant_abs, nb_ops_jour, flag_velocite en dérive · Champion-Challenger déclenché</span></div>
+                <span class="alert-time time-crit">Auto</span>
             </div>
             <div class="alert-item alert-warn">
                 <div class="alert-icon">⚠️</div>
-                <div class="alert-body">
-                    <strong>BCBS239 P3 — Complétude — ATTENTION</strong>
-                    <span>23 lignes sans libellé contrepartie · Données manquantes</span>
-                </div>
+                <div class="alert-body"><strong>BCBS239 P3 — Complétude — ATTENTION</strong><span>23 lignes sans libellé contrepartie · Données manquantes</span></div>
                 <span class="alert-time time-warn">12 min</span>
+            </div>
+            <div class="alert-item alert-info">
+                <div class="alert-icon">🌍</div>
+                <div class="alert-body"><strong>GEO INTEL — Cacao CC=F — 3 304 USD/T · −2.68%</strong><span>Alerte portefeuille : exposition clients agro-industrie cacao · Impact potentiel créances</span></div>
+                <span class="alert-time time-info">08h00</span>
             </div>
             <div class="alert-item alert-ok">
                 <div class="alert-icon">✅</div>
-                <div class="alert-body">
-                    <strong>BCBS239 P8 — Audit Trail HMAC — CONFORME</strong>
-                    <span>Hash chaîné SHA256 vérifié · 98.5% traçabilité documentée</span>
-                </div>
+                <div class="alert-body"><strong>BCBS239 P8 — Audit Trail HMAC — CONFORME</strong><span>Hash chaîné SHA256 vérifié · retrain_audit.jsonl archivé · 98.5% traçabilité</span></div>
                 <span class="alert-time time-ok">Auto</span>
             </div>
         </div>
@@ -1203,17 +680,17 @@
             <div class="p-card"><div class="p-num">P1</div><div class="p-title">Gouvernance</div><div class="p-desc">Data Steward</div></div>
             <div class="p-card"><div class="p-num">P2</div><div class="p-title">Intégrité</div><div class="p-desc">Anti-Tampering RSA</div></div>
             <div class="p-card"><div class="p-num">P3</div><div class="p-title">Exactitude</div><div class="p-desc">Score qualité 0-100%</div></div>
-            <div class="p-card"><div class="p-num">P4</div><div class="p-title">Complétude</div><div class="p-desc">Quarantaine &lt; 90%</div></div>
+            <div class="p-card"><div class="p-num">P4</div><div class="p-title">Complétude</div><div class="p-desc">Quarantaine &lt;90%</div></div>
             <div class="p-card"><div class="p-num">P5</div><div class="p-title">Actualité</div><div class="p-desc">Données J-1</div></div>
             <div class="p-card"><div class="p-num">P6</div><div class="p-title">Flexibilité</div><div class="p-desc">CSV·Excel·MT940</div></div>
             <div class="p-card"><div class="p-num">P7</div><div class="p-title">Anonymisation</div><div class="p-desc">SHA256 + SALT</div></div>
             <div class="p-card"><div class="p-num">P8</div><div class="p-title">Audit Trail</div><div class="p-desc">JSONL HMAC chaîné</div></div>
-            <div class="p-card"><div class="p-num">P9</div><div class="p-title">Réconciliation</div><div class="p-desc">ML Monitoring</div></div>
+            <div class="p-card"><div class="p-num">P9</div><div class="p-title">Réconciliation</div><div class="p-desc">ML Drift · KS-test</div></div>
             <div class="p-card"><div class="p-num">P10</div><div class="p-title">Fréquence</div><div class="p-desc">Watchdog temps réel</div></div>
             <div class="p-card"><div class="p-num">P11</div><div class="p-title">Distribution</div><div class="p-desc">TOTP souverain</div></div>
             <div class="p-card"><div class="p-num">P12</div><div class="p-title">Stockage</div><div class="p-desc">SQLite AES isolé</div></div>
             <div class="p-card"><div class="p-num">P13</div><div class="p-title">Transit</div><div class="p-desc">127.0.0.1 only</div></div>
-            <div class="p-card"><div class="p-num">P14</div><div class="p-title">ML Governance</div><div class="p-desc">Model Cards</div></div>
+            <div class="p-card"><div class="p-num">P14</div><div class="p-title">ML Governance</div><div class="p-desc">Champion-Challenger</div></div>
         </div>
     </div>
 </section>
@@ -1223,8 +700,7 @@
     <div class="section-wrap">
         <div class="section-eyebrow">Projets</div>
         <h2 class="section-title">Autres Réalisations</h2>
-        <p class="section-lead">Analyses de données sectorielles et solutions de pilotage.</p>
-
+        <p class="section-lead">Analyses de données sectorielles et solutions de pilotage décisionnel.</p>
         <div class="project-grid">
             <a href="images/portfolio/ANALYSE_DE_DONNEES_INDUSTRIE_LAITIERE.pdf" target="_blank" class="project-card">
                 <div class="project-thumb" style="background:linear-gradient(135deg,#E3F0FF,#BBDEFB);">🥛</div>
@@ -1259,32 +735,21 @@
     <div class="contact-inner">
         <div class="section-eyebrow" style="justify-content:center;color:rgba(255,255,255,0.4);">Contact</div>
         <h2 class="contact-title">Déployons Sentinel LCC<br>dans votre institution</h2>
-        <p class="contact-sub">Solution sur mesure pour les banques et établissements financiers de l'UEMOA. Activation en 60 secondes via PIN sécurisé.</p>
+        <p class="contact-sub">Solution sur mesure pour les banques et établissements financiers de l'UEMOA. Market Intelligence intégrée. Réentraînement ML gouverné. Activation en 60 secondes via PIN sécurisé.</p>
         <span class="contact-phone">(+225) 07-48-97-78-12</span>
         <div class="contact-links">
-            <a href="mailto:ndoubajeanclaude@outlook.com" class="contact-link">
-                <i class="fas fa-envelope"></i> ndoubajeanclaude@outlook.com
-            </a>
-            <a href="https://www.linkedin.com/in/moh-adjonlin-jean-claude-n-douba-7737bb342/" target="_blank" class="contact-link">
-                <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-            <a href="https://github.com/Genito922" target="_blank" class="contact-link">
-                <i class="fab fa-github"></i> GitHub — Genito922
-            </a>
-            <a href="https://www.kaggle.com/jeanclaudem92" target="_blank" class="contact-link">
-                <i class="fab fa-kaggle"></i> Kaggle
-            </a>
+            <a href="mailto:ndoubajeanclaude@outlook.com" class="contact-link"><i class="fas fa-envelope"></i> ndoubajeanclaude@outlook.com</a>
+            <a href="https://www.linkedin.com/in/moh-adjonlin-jean-claude-n-douba-7737bb342/" target="_blank" class="contact-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/Genito922" target="_blank" class="contact-link"><i class="fab fa-github"></i> GitHub — Genito922</a>
+            <a href="biographie.html" class="contact-link"><i class="fas fa-user"></i> Biographie / CV</a>
         </div>
-        <p style="color:rgba(255,255,255,0.2);font-size:0.75rem;margin-top:1rem;">
-            <i class="fas fa-shield-alt"></i> &nbsp;Conforme RGPD · BCBS239 P2/P3/P8 · Audit Trail 5 ans · Air-Gapped
-        </p>
+        <p style="color:rgba(255,255,255,0.2);font-size:0.75rem;margin-top:1rem;"><i class="fas fa-shield-alt"></i> &nbsp;Conforme RGPD · BCBS239 P2/P3/P8 · Audit Trail 5 ans · Air-Gapped</p>
     </div>
 </section>
 
-<!-- ── FOOTER ── -->
 <footer>
     <div class="footer-brand">N'Douba <span style="color:var(--gold)">MÔH</span></div>
-    <div class="footer-copy">© 2026 · Éditeur de Sentinel LCC v3.0.1</div>
+    <div class="footer-copy">© 2026 · Éditeur de Sentinel LCC v3.1 · RegTech UEMOA</div>
     <div class="footer-links">
         <a href="https://www.linkedin.com/in/moh-adjonlin-jean-claude-n-douba-7737bb342/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
         <a href="https://github.com/Genito922" title="GitHub"><i class="fab fa-github"></i></a>
@@ -1293,7 +758,6 @@
 </footer>
 
 <script>
-// Mobile nav toggle
 const menuToggle = document.getElementById('menuToggle');
 const menuIcon   = document.getElementById('menuIcon');
 const mobileNav  = document.getElementById('mobileNav');
@@ -1302,50 +766,29 @@ menuToggle.addEventListener('click', () => {
     const isOpen = mobileNav.classList.toggle('open');
     menuIcon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
 });
-
-function closeMobileNav() {
-    mobileNav.classList.remove('open');
-    menuIcon.className = 'fas fa-bars';
-}
-
-// Close on outside click
+function closeMobileNav() { mobileNav.classList.remove('open'); menuIcon.className = 'fas fa-bars'; }
 document.addEventListener('click', (e) => {
-    if (!menuToggle.contains(e.target) && !mobileNav.contains(e.target)) {
-        mobileNav.classList.remove('open');
-        menuIcon.className = 'fas fa-bars';
-    }
+    if (!menuToggle.contains(e.target) && !mobileNav.contains(e.target)) { mobileNav.classList.remove('open'); menuIcon.className = 'fas fa-bars'; }
 });
-
-// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
         const target = document.querySelector(a.getAttribute('href'));
-        if (target) {
-            e.preventDefault();
-            const top = target.getBoundingClientRect().top + window.scrollY - 64;
-            window.scrollTo({ top, behavior: 'smooth' });
-        }
+        if (target) { e.preventDefault(); window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 64, behavior: 'smooth' }); }
     });
 });
-
-// Animate skill bars on scroll
 let skillsAnimated = false;
 const skillFills = document.querySelectorAll('.skill-fill');
-
 const observeSkills = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting && !skillsAnimated) {
             skillsAnimated = true;
             skillFills.forEach(el => {
-                const width = el.style.width;
-                el.style.width = '0';
-                el.style.transition = 'width 1.2s ease';
+                const width = el.style.width; el.style.width = '0'; el.style.transition = 'width 1.2s ease';
                 requestAnimationFrame(() => { el.style.width = width; });
             });
         }
     });
 }, { threshold: 0.3 });
-
 const aboutSection = document.getElementById('about');
 if (aboutSection) observeSkills.observe(aboutSection);
 </script>
