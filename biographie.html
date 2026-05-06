@@ -27,6 +27,10 @@
             display: inline-block;
             padding-bottom: 5px;
         }
+        h2 {
+            color: #4FC3F7;
+            margin-top: 30px;
+        }
         .badge {
             background: #1E2A3A;
             padding: 6px 12px;
@@ -49,6 +53,42 @@
             margin: 20px 0;
             border-radius: 8px;
         }
+        .projet-card {
+            background: #0D1B2A;
+            border: 1px solid rgba(21,101,192,0.4);
+            border-left: 4px solid #1565C0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        .projet-card h3 {
+            color: #C9A84C;
+            margin-top: 0;
+        }
+        .tag {
+            display: inline-block;
+            background: #1565C0;
+            color: white;
+            font-size: 0.75em;
+            padding: 3px 10px;
+            border-radius: 12px;
+            margin: 3px 2px;
+        }
+        .tag-green  { background: #2FA572; }
+        .tag-orange { background: #EF6C00; }
+        .tag-red    { background: #C62828; }
+        .skill-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 10px;
+        }
+        .skill-item {
+            background: #1A2530;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 0.9em;
+        }
         .btn {
             display: inline-block;
             background: #1565C0;
@@ -62,6 +102,22 @@
             background: #0D47A1;
             text-decoration: none;
         }
+        .metric-row {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin: 12px 0;
+        }
+        .metric {
+            background: #0D1B2A;
+            border: 1px solid rgba(21,101,192,0.3);
+            border-radius: 8px;
+            padding: 10px 16px;
+            text-align: center;
+            min-width: 120px;
+        }
+        .metric-val { font-size: 1.4em; font-weight: 700; color: #4FC3F7; }
+        .metric-lbl { font-size: 0.72em; color: rgba(255,255,255,0.5); text-transform: uppercase; }
         footer {
             margin-top: 30px;
             font-size: 0.8em;
@@ -73,17 +129,87 @@
 <body>
 <div class="container">
     <h1>N'DOUBA MÔH-ADJONLIN Jean-Claude</h1>
-    <div class="badge">📊 Data Scientist | 💡 Expert données & conformité | 🌍 Abidjan</div>
+    <div class="badge">📊 Data Scientist</div>
+    <div class="badge">💡 Expert données & conformité bancaire</div>
+    <div class="badge">🏦 Ingénieur AML / LCC</div>
+    <div class="badge">🌍 Abidjan, Côte d'Ivoire</div>
 
     <h2>🔹 Biographie</h2>
-    <p>Jean-Claude est spécialiste en analyse de données et conception d’outils décisionnels. 
-    Fort d’une double compétence <strong>Finance-Assurances</strong> et <strong>Data Science</strong>, 
-    il conçoit des solutions logicielles pour la conformité bancaire (BCBS 239, BCEAO) 
+    <p>N'DOUBA MÔH est un spécialiste en analyse de données et conception d'outils décisionnels.
+    Fort d'une double compétence <strong>Finance-Assurances</strong> et <strong>Data Science</strong>,
+    il conçoit des solutions logicielles pour la conformité bancaire (BCBS 239, BCEAO)
     et le suivi-évaluation de projets.</p>
 
-    <p>Il est le créateur de <strong>Sentinel LCC</strong>, une plateforme AML On-Premise. 
-    Il maîtrise également <strong>mWater</strong>, <strong>Excel avancé</strong>, <strong>Power BI</strong> 
+    <p>Il est le créateur de <strong>Sentinel LCC</strong>, une plateforme AML On-Premise de surveillance
+    des risques de blanchiment de capitaux et financement du terrorisme (LBC/FT), déployée pour
+    <strong>Afrika Banque CI</strong> en conformité avec les normes <strong>BCBS239, BCEAO et Basel III</strong>.
+    Il maîtrise également <strong>mWater</strong>, <strong>Excel avancé</strong>, <strong>Power BI</strong>
     et les outils de <strong>suivi-évaluation (S&E)</strong> pour les projets agricoles et humanitaires.</p>
+
+    <h2>🚀 Projet phare — Sentinel LCC v3.0.1</h2>
+
+    <div class="projet-card">
+        <h3>🛡️ Sentinel LCC — Plateforme AML On-Premise</h3>
+        <p><em>Développement complet d'un système de surveillance AML/LBC-FT pour Afrika Banque CI</em></p>
+
+        <div class="metric-row">
+            <div class="metric">
+                <div class="metric-val">4,3M</div>
+                <div class="metric-lbl">Transactions scorées</div>
+            </div>
+            <div class="metric">
+                <div class="metric-val">17</div>
+                <div class="metric-lbl">Modules dashboard</div>
+            </div>
+            <div class="metric">
+                <div class="metric-val">185 MB</div>
+                <div class="metric-lbl">EXE standalone</div>
+            </div>
+            <div class="metric">
+                <div class="metric-val">BCBS239</div>
+                <div class="metric-lbl">Conformité P1-P14</div>
+            </div>
+        </div>
+
+        <p><strong>Architecture technique :</strong></p>
+        <ul>
+            <li>🔧 <strong>Backend</strong> : FastAPI + Uvicorn — 8 routers REST (alertes, scoring, cases, graph, monitoring, metadata)</li>
+            <li>📊 <strong>Dashboard</strong> : Streamlit — 17 modules (KPIs, Alertes, Transactions, Benford, IFRS9, Risk Matrix, WAR ROOM…)</li>
+            <li>🤖 <strong>ML</strong> : XGBoost réentraîné sur données réelles Afrika Banque CI — scoring heuristique sur 4,3M transactions</li>
+            <li>🗄️ <strong>DB</strong> : SQLite — schéma 20+ tables, vue v_gl normalisée, migration automatique</li>
+            <li>⚙️ <strong>Watchdog</strong> : Surveillance automatique inbox → ingestion → scoring → alertes → archive 5 ans</li>
+            <li>📦 <strong>Déploiement</strong> : PyInstaller EXE standalone 185MB — zéro installation, air-gapped</li>
+        </ul>
+
+        <p><strong>Fonctionnalités clés :</strong></p>
+        <ul>
+            <li>✅ Ingestion automatique GL/Balance/GEO_INTEL/WAR_ROOM (CSV/XLSX Afrika Banque)</li>
+            <li>✅ Scoring ML XGBoost — 4 niveaux (NORMAL/MOYEN/ÉLEVÉ/CRITIQUE)</li>
+            <li>✅ 12 ratios prudentiels BCEAO/Basel III (Tier1, LCR, NPL, ROA/ROE, NIM…)</li>
+            <li>✅ Pseudonymisation BCBS239 P7 — SHA256 + SALT</li>
+            <li>✅ Audit trail HMAC-SHA256 chaîné — traçabilité totale</li>
+            <li>✅ RBAC 6 rôles BCEAO (admin, analyste, auditeur, compliance, direction, bceao)</li>
+            <li>✅ Déclarations STR/CENTIF automatiques — délai ≤48h</li>
+            <li>✅ IFRS9 — ECL + Staging + Forward-Looking UEMOA</li>
+            <li>✅ Analyse Benford forensique AML</li>
+            <li>✅ Graph fraude — détection réseaux pivots blanchiment</li>
+        </ul>
+
+        <div style="margin-top:12px">
+            <span class="tag">Python 3.10</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Streamlit</span>
+            <span class="tag">XGBoost</span>
+            <span class="tag">SQLite</span>
+            <span class="tag">PyInstaller</span>
+            <span class="tag tag-green">BCBS239</span>
+            <span class="tag tag-green">BCEAO</span>
+            <span class="tag tag-green">Basel III</span>
+            <span class="tag tag-orange">AML/LBC-FT</span>
+            <span class="tag tag-orange">IFRS9</span>
+            <span class="tag tag-red">XGBoost ML</span>
+        </div>
+    </div>
 
     <h2>📘 Formation & Certificat</h2>
     <ul>
@@ -92,7 +218,7 @@
 
     <div class="certificat">
         📜 <strong>Curriculum Vitae</strong><br>
-        Formation scolaire, universitaire & parcours professionel : Finance, Banque et Assurances.<br>
+        Formation scolaire, universitaire & parcours professionnel : Finance, Banque et Assurances.<br>
         🔗 <a href="CV_NDOUBA_MOH_ADJONLIN_JEAN_CLAUDE.pdf" target="_blank">Cliquez ici pour consulter le CV (PDF)</a>
     </div>
 
@@ -103,12 +229,21 @@
     </div>
 
     <h2>💼 Compétences clés</h2>
-    <ul>        
-        <li>✅ Excel avancé / Power BI / Analyse données</li>
-        <li>✅ Suivi-évaluation (S&E), collecte terrain</li>
-        <li>✅ Python, SQL, FastAPI, Streamlit, Docker</li>
-        <li>✅ Conformité BCBS 239, BCEAO</li>
-    </ul>
+
+    <div class="skill-grid">
+        <div class="skill-item">📊 Excel avancé / Power BI / Analyse données</div>
+        <div class="skill-item">🌍 Suivi-évaluation (S&E), collecte terrain, mWater</div>
+        <div class="skill-item">🐍 Python, SQL, FastAPI, Streamlit, Docker</div>
+        <div class="skill-item">🏦 Conformité BCBS239, BCEAO, Basel III</div>
+        <div class="skill-item">🤖 Machine Learning — XGBoost, scikit-learn, scoring AML</div>
+        <div class="skill-item">🗄️ SQLite, PostgreSQL — modélisation & migration DB</div>
+        <div class="skill-item">📦 PyInstaller — packaging EXE standalone Windows</div>
+        <div class="skill-item">🔐 Sécurité bancaire — JWT, RBAC, HMAC, RSA-PSS</div>
+        <div class="skill-item">⚙️ Architecture ETL — watchdog, ingestion, pipeline ML</div>
+        <div class="skill-item">📈 Ratios prudentiels — Tier1/2, LCR, NPL, ROE, IFRS9</div>
+        <div class="skill-item">🕷️ Détection fraude — Graph Analysis, Benford forensics</div>
+        <div class="skill-item">🛡️ AML/LBC-FT — STR, CENTIF, déclarations BCEAO</div>
+    </div>
 
     <h2>🌍 Contact</h2>
     <p>📞 +225 07 48 97 78 12<br>
@@ -120,7 +255,7 @@
     </p>
 
     <footer>
-        🔒 Mise à jour : avril 2026
+        🔒 Mise à jour : mai 2026 — Sentinel LCC v3.0.1 livré
     </footer>
 </div>
 </body>
