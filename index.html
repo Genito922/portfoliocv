@@ -2,8 +2,8 @@
 <html class="no-js" lang="fr">
 <head>
     <meta charset="utf-8">
-    <title>N'DOUBA MÔH — Éditeur Logiciel Bancaire | Sentinel LCC v3.1 | BCBS 239</title>
-    <meta name="description" content="Créateur de Sentinel LCC v3.1 — plateforme AML On-Premise certifiée BCBS239 et BCEAO. Market Intelligence UEMOA. Expert conformité bancaire.">
+    <title>N'DOUBA MÔH — Éditeur Logiciel Bancaire | Sentinel LCC v3.2 | BCBS 239 | Afrika Markets</title>
+    <meta name="description" content="Créateur de Sentinel LCC v3.2 — plateforme AML On-Premise certifiée BCBS239 et BCEAO — et d'Afrika Markets Intelligence, plateforme multi-bourses pour la diaspora africaine. Market Intelligence UEMOA. Expert conformité bancaire.">
     <meta name="author" content="N'DOUBA MÔH">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -251,9 +251,52 @@
         .p-title { font-weight: 700; font-size: 0.72rem; color: var(--ink); margin-bottom: 3px; }
         .p-desc  { font-size: 0.65rem; color: var(--muted); line-height: 1.4; }
 
-        /* ── PROJECTS ── */
+        /* ── PROJETS PHARES ── */
         #works { background: var(--surface); }
-        .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+        .flagship-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 3rem; margin-bottom: 3rem; }
+        .flagship-card { background: var(--white); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; transition: all 0.3s; }
+        .flagship-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(21,101,192,0.12); border-color: rgba(21,101,192,0.3); }
+        .flagship-card-sentinel { border-color: rgba(21,101,192,0.25); }
+        .flagship-card-africa { border-color: rgba(201,168,76,0.25); }
+        .flagship-card-africa:hover { border-color: rgba(201,168,76,0.5); box-shadow: 0 16px 48px rgba(201,168,76,0.1); }
+        .flagship-thumb { height: 180px; display: flex; align-items: center; justify-content: center; gap: 1rem; position: relative; overflow: hidden; }
+        .flagship-thumb-sentinel { background: linear-gradient(135deg,#0A0F1E,#1C2540); }
+        .flagship-thumb-africa { background: linear-gradient(135deg,#0A0C0F,#1A1E24); }
+        .flagship-thumb-icon { font-size: 3rem; position: relative; z-index: 2; }
+        .flagship-thumb-glow-blue { position: absolute; width: 200px; height: 200px; background: radial-gradient(ellipse,rgba(21,101,192,0.3),transparent 70%); top: 50%; left: 30%; transform: translate(-50%,-50%); }
+        .flagship-thumb-glow-gold { position: absolute; width: 200px; height: 200px; background: radial-gradient(ellipse,rgba(201,168,76,0.25),transparent 70%); top: 50%; left: 50%; transform: translate(-50%,-50%); }
+        .flagship-thumb-badge { position: absolute; top: 12px; right: 12px; padding: 4px 12px; border-radius: 100px; font-size: 0.68rem; font-weight: 700; font-family: 'DM Mono', monospace; }
+        .flagship-thumb-badge-blue  { background: rgba(21,101,192,0.3); color: #90CAF9; border: 1px solid rgba(21,101,192,0.5); }
+        .flagship-thumb-badge-gold  { background: rgba(201,168,76,0.3); color: #F0D080; border: 1px solid rgba(201,168,76,0.5); }
+        .flagship-body { padding: 1.75rem; }
+        .flagship-cat { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+        .flagship-cat-blue { color: var(--blue); }
+        .flagship-cat-gold { color: var(--gold); }
+        .flagship-title { font-family: 'DM Serif Display', serif; font-weight: 700; font-size: 1.3rem; color: var(--ink); margin-bottom: 8px; }
+        .flagship-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.25rem; }
+        .flagship-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.25rem; }
+        .flagship-pill { padding: 3px 10px; border-radius: 100px; font-size: 0.7rem; font-weight: 600; }
+        .flagship-pill-blue { background: var(--blue-lt); color: var(--blue); }
+        .flagship-pill-gold { background: var(--gold-lt); color: #7A5C1E; }
+        .flagship-pill-green { background: #E8F5E9; color: #1B5E20; }
+        .flagship-kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 1.25rem; }
+        .flagship-kpi { background: var(--surface); border-radius: 8px; padding: 10px; text-align: center; }
+        .flagship-kpi-val { font-family: 'DM Mono', monospace; font-size: 1.1rem; font-weight: 700; display: block; margin-bottom: 2px; }
+        .flagship-kpi-val-blue { color: var(--blue); }
+        .flagship-kpi-val-gold { color: var(--gold); }
+        .flagship-kpi-val-green { color: var(--green); }
+        .flagship-kpi-lbl { font-size: 0.62rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+        .flagship-ctas { display: flex; gap: 8px; flex-wrap: wrap; }
+        .flagship-btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 18px; border-radius: 8px; font-size: 0.82rem; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+        .flagship-btn-blue { background: var(--blue); color: white; }
+        .flagship-btn-blue:hover { background: #1976D2; }
+        .flagship-btn-gold { background: var(--gold); color: white; }
+        .flagship-btn-gold:hover { background: #A07828; }
+        .flagship-btn-outline { background: transparent; color: var(--muted); border: 1px solid var(--border); }
+        .flagship-btn-outline:hover { border-color: var(--blue); color: var(--blue); }
+
+        /* Autres projets (grille secondaire) */
+        .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
         .project-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; transition: all 0.3s; text-decoration: none; color: inherit; display: block; }
         .project-card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(21,101,192,0.12); border-color: rgba(21,101,192,0.3); }
         .project-thumb { height: 160px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
@@ -286,6 +329,7 @@
             .arch-grid { grid-template-columns: repeat(2, 1fr); }
             .market-cats { grid-template-columns: 1fr 1fr; }
             .principles-grid { grid-template-columns: repeat(4, 1fr); }
+            .flagship-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 900px) {
             .s-header { padding: 0 1.5rem; }
@@ -325,6 +369,7 @@
             .contact-links { flex-direction: column; align-items: center; }
             .contact-link { width: 100%; max-width: 300px; justify-content: center; }
             .flow-steps { grid-template-columns: repeat(2, 1fr); }
+            .flagship-kpis { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
@@ -332,7 +377,7 @@
 
 <!-- ── NAV ── -->
 <header class="s-header">
-    <a class="nav-brand" href="#home">N'Douba <span>MÔH</span><span class="version-badge">v3.1</span></a>
+    <a class="nav-brand" href="#home">N'Douba <span>MÔH</span><span class="version-badge">v3.2</span></a>
     <nav>
         <ul class="header-nav">
             <li class="current"><a href="#home">Accueil</a></li>
@@ -366,20 +411,20 @@
     <div class="hero-glow-2"></div>
     <div class="hero-content">
         <div>
-            <div class="hero-eyebrow">Éditeur Logiciel Bancaire · UEMOA · RegTech</div>
+            <div class="hero-eyebrow">Éditeur Logiciel Bancaire · RegTech · FinTech UEMOA</div>
             <h1 class="hero-name">N'Douba<br><em>MÔH</em></h1>
-            <p class="hero-title">Créateur de <strong style="color:rgba(255,255,255,0.85)">Sentinel LCC v3.1</strong> — plateforme AML On-Premise certifiée BCBS 239 & BCEAO. Market Intelligence UEMOA. Réentraînement XGBoost gouverné.</p>
+            <p class="hero-title">Créateur de <strong style="color:rgba(255,255,255,0.85)">Sentinel LCC v3.2</strong> — plateforme AML On-Premise certifiée BCBS 239 & BCEAO — et d'<strong style="color:#F0D080">Afrika Markets Intelligence</strong>, plateforme multi-bourses pour la diaspora africaine.</p>
             <div class="hero-pills">
-                <span class="pill">Sentinel LCC v3.1</span>
+                <span class="pill">Sentinel LCC v3.2</span>
                 <span class="pill">BCBS 239 · 14 Principes</span>
-                <span class="pill pill-gold">🌍 Market Intel UEMOA</span>
-                <span class="pill pill-gold">🤖 ML Champion-Challenger</span>
+                <span class="pill pill-gold">🌍 Afrika Markets Intelligence</span>
+                <span class="pill pill-gold">📈 10 Bourses Africaines</span>
                 <span class="pill">RSA-PSS SHA-256</span>
                 <span class="pill">Air-Gapped · Python</span>
             </div>
             <div class="hero-ctas">
                 <a href="#sentinel" class="btn-primary"><i class="fas fa-shield-alt"></i> Découvrir Sentinel LCC</a>
-                <a href="biographie.html" class="btn-outline btn-gold"><i class="fas fa-user"></i> Biographie</a>
+                <a href="#works" class="btn-outline btn-gold"><i class="fas fa-chart-line"></i> Afrika Markets</a>
                 <a href="mailto:ndoubajeanclaude@outlook.com" class="btn-outline"><i class="fas fa-paper-plane"></i> Contact</a>
             </div>
         </div>
@@ -387,7 +432,7 @@
             <div class="hero-card-header">
                 <div class="sentinel-badge">🛡️</div>
                 <div>
-                    <div class="hero-card-title">Sentinel LCC v3.1</div>
+                    <div class="hero-card-title">Sentinel LCC v3.2</div>
                     <div class="hero-card-sub">On-Premise Air-Gapped · BCBS239 · BCEAO</div>
                 </div>
             </div>
@@ -454,7 +499,7 @@
             </div>
             <div>
                 <h3 style="font-weight:700;color:var(--ink);margin-bottom:0.5rem;font-size:1.05rem;">Spécialisations BCBS 239</h3>
-                <p style="color:var(--muted);font-size:0.85rem;margin-bottom:1.5rem;">Implémentées dans Sentinel LCC v3.1</p>
+                <p style="color:var(--muted);font-size:0.85rem;margin-bottom:1.5rem;">Implémentées dans Sentinel LCC v3.2</p>
                 <div class="spec-grid">
                     <div class="spec-card"><div class="spec-num">P2</div><div class="spec-title">Intégrité & Anti-Tampering</div><div class="spec-desc">SHA256 chaîné · Manifest RSA signé · sys.exit(99)</div></div>
                     <div class="spec-card"><div class="spec-num">P3</div><div class="spec-title">Complétude données</div><div class="spec-desc">Score qualité 0-100% · Quarantaine &lt;90%</div></div>
@@ -476,9 +521,9 @@
             <h2 class="sentinel-title">Sentinel <em>LCC</em></h2>
             <p class="sentinel-sub">Plateforme AML (Anti-Money Laundering) 100% On-Premise pour les institutions financières de l'UEMOA. Market Intelligence en temps réel. Réentraînement ML gouverné BCBS239. Zéro dépendance cloud après installation.</p>
 
-            <!-- Changelog v3.1 -->
+            <!-- Changelog v3.2 -->
             <div class="changelog-banner">
-                <span class="changelog-title">v3.1 — Avril 2026</span>
+                <span class="changelog-title">v3.2 — Juin 2026</span>
                 <span class="changelog-item changelog-item-new">✅ fetch_market_data.py — 22 instruments</span>
                 <span class="changelog-item changelog-item-new">✅ GEO INTEL Banque Ivoirienne</span>
                 <span class="changelog-item changelog-item-new">✅ WAR ROOM Marchés Internationaux</span>
@@ -497,7 +542,7 @@
                 <span class="s-badge s-badge-green">🌍 Market Intelligence</span>
                 <span class="s-badge s-badge-green">🤖 ML Retrain Gouverné</span>
                 <span class="s-badge s-badge-dark">Air-Gapped</span>
-                <span class="s-badge s-badge-dark">v3.1 · Avril 2026</span>
+                <span class="s-badge s-badge-dark">v3.2 · Juin 2026</span>
             </div>
         </div>
 
@@ -546,7 +591,7 @@
 
         <!-- Tech stack -->
         <div class="tech-stack" style="margin-bottom:2.5rem;">
-            <div class="tech-stack-title">Stack technique v3.1 — Scripts & Modules</div>
+            <div class="tech-stack-title">Stack technique v3.2 — Scripts & Modules</div>
             <div class="tech-row"><span class="tech-layer">Launcher</span><span class="tech-detail">sentinel_launcher.py → PyInstaller .exe · 6 étapes · Watchdog SFTP</span><span class="tech-status">✓ STABLE</span></div>
             <div class="tech-row"><span class="tech-layer">API Backend</span><span class="tech-detail">FastAPI · uvicorn.run() · slowapi · JWT HS256 · refresh auto 30min</span><span class="tech-status">✓ PORT 8000</span></div>
             <div class="tech-row"><span class="tech-layer">Dashboard</span><span class="tech-detail">Streamlit · 17 pages · auth.py · 14_ADMIN · port 8503</span><span class="tech-status">✓ PORT 8503</span></div>
@@ -695,12 +740,80 @@
     </div>
 </section>
 
-<!-- ── PROJECTS ── -->
+<!-- ── PROJETS ── -->
 <section id="works" style="background:var(--surface);">
     <div class="section-wrap">
         <div class="section-eyebrow">Projets</div>
-        <h2 class="section-title">Autres Réalisations</h2>
-        <p class="section-lead">Analyses de données sectorielles et solutions de pilotage décisionnel.</p>
+        <h2 class="section-title">Projets Phares & Réalisations</h2>
+        <p class="section-lead">Deux produits logiciels en production, plus des analyses de données sectorielles.</p>
+
+        <!-- PROJETS PHARES -->
+        <div class="flagship-grid">
+
+            <!-- SENTINEL LCC -->
+            <div class="flagship-card flagship-card-sentinel">
+                <div class="flagship-thumb flagship-thumb-sentinel">
+                    <div class="flagship-thumb-glow-blue"></div>
+                    <span class="flagship-thumb-icon">🛡️</span>
+                    <span class="flagship-thumb-badge flagship-thumb-badge-blue">RegTech · AML · On-Premise</span>
+                </div>
+                <div class="flagship-body">
+                    <div class="flagship-cat flagship-cat-blue">Logiciel Bancaire · BCBS239 · BCEAO</div>
+                    <div class="flagship-title">Sentinel LCC v3.2</div>
+                    <div class="flagship-desc">Plateforme AML On-Premise 100% air-gapped pour institutions financières UEMOA. Market Intelligence temps réel, réentraînement ML gouverné Champion-Challenger, 17 modules dashboard conformes BCBS239, déploiement clé USB.</div>
+                    <div class="flagship-pills">
+                        <span class="flagship-pill flagship-pill-blue">Python · FastAPI</span>
+                        <span class="flagship-pill flagship-pill-blue">XGBoost · SQLite</span>
+                        <span class="flagship-pill flagship-pill-green">BCBS239 14/14</span>
+                        <span class="flagship-pill flagship-pill-blue">Streamlit · PyInstaller</span>
+                        <span class="flagship-pill flagship-pill-green">Air-Gapped · USB</span>
+                    </div>
+                    <div class="flagship-kpis">
+                        <div class="flagship-kpi"><span class="flagship-kpi-val flagship-kpi-val-blue">14/14</span><span class="flagship-kpi-lbl">BCBS239</span></div>
+                        <div class="flagship-kpi"><span class="flagship-kpi-val flagship-kpi-val-blue">22</span><span class="flagship-kpi-lbl">Instruments</span></div>
+                        <div class="flagship-kpi"><span class="flagship-kpi-val flagship-kpi-val-green">17</span><span class="flagship-kpi-lbl">Modules</span></div>
+                    </div>
+                    <div class="flagship-ctas">
+                        <a href="#sentinel" class="flagship-btn flagship-btn-blue"><i class="fas fa-shield-alt"></i> Voir détails</a>
+                        <a href="mailto:ndoubajeanclaude@outlook.com" class="flagship-btn flagship-btn-outline"><i class="fas fa-envelope"></i> Demander démo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AFRIKA MARKETS -->
+            <div class="flagship-card flagship-card-africa">
+                <div class="flagship-thumb flagship-thumb-africa">
+                    <div class="flagship-thumb-glow-gold"></div>
+                    <span class="flagship-thumb-icon">📈</span>
+                    <span style="font-size:2rem;">🌍</span>
+                    <span class="flagship-thumb-badge flagship-thumb-badge-gold">FinTech · SaaS · Diaspora</span>
+                </div>
+                <div class="flagship-body">
+                    <div class="flagship-cat flagship-cat-gold">Plateforme SaaS · Multi-Bourses · Diaspora Africaine</div>
+                    <div class="flagship-title">Afrika Markets Intelligence</div>
+                    <div class="flagship-desc">Plateforme d'analyse boursière pour la diaspora africaine. Cours et données macro de 10 bourses africaines (BRVM, NGX, JSE, EGX, GSE...), Research Hub avec 1325 rapports analystes, et exécution multi-brokers (Binance, Exness, Deriv) via une architecture Factory unifiée.</div>
+                    <div class="flagship-pills">
+                        <span class="flagship-pill flagship-pill-gold">React · FastAPI</span>
+                        <span class="flagship-pill flagship-pill-gold">WebSocket · Async</span>
+                        <span class="flagship-pill flagship-pill-green">Binance · Exness · Deriv</span>
+                        <span class="flagship-pill flagship-pill-gold">TradingView Charts</span>
+                    </div>
+                    <div class="flagship-kpis">
+                        <div class="flagship-kpi"><span class="flagship-kpi-val flagship-kpi-val-gold">10</span><span class="flagship-kpi-lbl">Bourses Africa</span></div>
+                        <div class="flagship-kpi"><span class="flagship-kpi-val flagship-kpi-val-gold">1325</span><span class="flagship-kpi-lbl">Rapports PDF</span></div>
+                        <div class="flagship-kpi"><span class="flagship-kpi-val flagship-kpi-val-green">3</span><span class="flagship-kpi-lbl">Brokers connectés</span></div>
+                    </div>
+                    <div class="flagship-ctas">
+                        <a href="https://sentinel-lccafrika.space/" target="_blank" class="flagship-btn flagship-btn-gold"><i class="fas fa-chart-line"></i> Voir la plateforme</a>
+                        <a href="https://github.com/Genito922/afrikamarkets-dashboard" target="_blank" class="flagship-btn flagship-btn-outline"><i class="fab fa-github"></i> Dashboard</a>
+                        <a href="https://github.com/Genito922/afrikamarkets-site" target="_blank" class="flagship-btn flagship-btn-outline"><i class="fab fa-github"></i> Site</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AUTRES PROJETS -->
+        <h3 style="font-weight:700;color:var(--ink);margin-bottom:1.5rem;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);">Analyses de données</h3>
         <div class="project-grid">
             <a href="images/portfolio/ANALYSE_DE_DONNEES_INDUSTRIE_LAITIERE.pdf" target="_blank" class="project-card">
                 <div class="project-thumb" style="background:linear-gradient(135deg,#E3F0FF,#BBDEFB);">🥛</div>
@@ -734,8 +847,8 @@
 <section id="contact">
     <div class="contact-inner">
         <div class="section-eyebrow" style="justify-content:center;color:rgba(255,255,255,0.4);">Contact</div>
-        <h2 class="contact-title">Déployons Sentinel LCC<br>dans votre institution</h2>
-        <p class="contact-sub">Solution sur mesure pour les banques et établissements financiers de l'UEMOA. Market Intelligence intégrée. Réentraînement ML gouverné. Activation en 60 secondes via PIN sécurisé.</p>
+        <h2 class="contact-title">Deux produits,<br>une expertise unique</h2>
+        <p class="contact-sub">Sentinel LCC pour les banques de l'UEMOA. Afrika Markets Intelligence pour la diaspora africaine. Disponible pour collaboration, partenariat ou démo.</p>
         <span class="contact-phone">(+225) 07-48-97-78-12</span>
         <div class="contact-links">
             <a href="mailto:ndoubajeanclaude@outlook.com" class="contact-link"><i class="fas fa-envelope"></i> ndoubajeanclaude@outlook.com</a>
@@ -743,13 +856,13 @@
             <a href="https://github.com/Genito922" target="_blank" class="contact-link"><i class="fab fa-github"></i> GitHub — Genito922</a>
             <a href="biographie.html" class="contact-link"><i class="fas fa-user"></i> Biographie / CV</a>
         </div>
-        <p style="color:rgba(255,255,255,0.2);font-size:0.75rem;margin-top:1rem;"><i class="fas fa-shield-alt"></i> &nbsp;Conforme RGPD · BCBS239 P2/P3/P8 · Audit Trail 5 ans · Air-Gapped</p>
+        <p style="color:rgba(255,255,255,0.2);font-size:0.75rem;margin-top:1rem;"><i class="fas fa-shield-alt"></i> &nbsp;Sentinel : BCBS239 · Air-Gapped · 5 ans audit &nbsp;|&nbsp; Afrika Markets : SaaS diaspora · 10 bourses africaines</p>
     </div>
 </section>
 
 <footer>
     <div class="footer-brand">N'Douba <span style="color:var(--gold)">MÔH</span></div>
-    <div class="footer-copy">© 2026 · Éditeur de Sentinel LCC v3.1 · RegTech UEMOA</div>
+    <div class="footer-copy">© 2026 · Sentinel LCC v3.2 · Afrika Markets Intelligence · RegTech & FinTech UEMOA</div>
     <div class="footer-links">
         <a href="https://www.linkedin.com/in/moh-adjonlin-jean-claude-n-douba-7737bb342/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
         <a href="https://github.com/Genito922" title="GitHub"><i class="fab fa-github"></i></a>
