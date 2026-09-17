@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biographie | N'DOUBA MÔH-ADJONLIN Jean-Claude</title>
+    <meta name="description" content="Biographie de N'DOUBA MÔH — Éditeur logiciel bancaire, Data Scientist et expert conformité BCBS 239. Créateur de Sentinel LCC, Afrika Markets Intelligence et Jeniffa Trade.">
     <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            margin: 0;
             padding: 20px;
             background: #0A0F1E;
             color: #e0e0e0;
@@ -17,7 +18,7 @@
             max-width: 900px;
             margin: auto;
             background: #111827;
-            padding: 30px;
+            padding: 40px;
             border-radius: 16px;
             box-shadow: 0 8px 24px rgba(0,0,0,0.3);
         }
@@ -25,149 +26,205 @@
             color: #C9A84C;
             border-bottom: 2px solid #C9A84C;
             display: inline-block;
-            padding-bottom: 5px;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
         }
         h2 {
             color: #4FC3F7;
-            margin-top: 30px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 10px;
         }
         .badge {
             background: #1E2A3A;
-            padding: 6px 12px;
+            padding: 6px 14px;
             border-radius: 20px;
-            font-size: 0.85em;
+            font-size: 0.82em;
             display: inline-block;
-            margin: 10px 0;
         }
-        a {
-            color: #4FC3F7;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
+        .badge-gold { background: rgba(201,168,76,0.15); color: #F0D080; border: 1px solid rgba(201,168,76,0.35); }
+        .badge-green { background: rgba(47,165,114,0.15); color: #6FCF97; border: 1px solid rgba(47,165,114,0.35); }
+        .badge-blue { background: rgba(21,101,192,0.15); color: #90CAF9; border: 1px solid rgba(21,101,192,0.35); }
+        a { color: #4FC3F7; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        p { margin-bottom: 15px; }
+        ul { margin-left: 20px; margin-bottom: 15px; }
+        li { margin-bottom: 6px; }
+
+        /* Certificats */
         .certificat {
             background: #1A2530;
             border-left: 4px solid #C9A84C;
-            padding: 15px;
+            padding: 18px;
             margin: 20px 0;
             border-radius: 8px;
         }
+        .certificat strong { color: #F0D080; }
+
+        /* Projets cards */
         .projet-card {
             background: #0D1B2A;
             border: 1px solid rgba(21,101,192,0.4);
             border-left: 4px solid #1565C0;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 10px;
+            padding: 24px;
+            margin: 25px 0;
+            border-radius: 12px;
+        }
+        .projet-card.gold {
+            border-left-color: #C9A84C;
+            border-color: rgba(201,168,76,0.4);
+        }
+        .projet-card.green {
+            border-left-color: #2FA572;
+            border-color: rgba(47,165,114,0.4);
         }
         .projet-card h3 {
             color: #C9A84C;
             margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 1.15rem;
         }
+        .projet-card .subtitle {
+            color: rgba(255,255,255,0.5);
+            font-style: italic;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        /* Tags */
+        .tags { margin-top: 15px; }
         .tag {
             display: inline-block;
             background: #1565C0;
             color: white;
-            font-size: 0.75em;
+            font-size: 0.72em;
             padding: 3px 10px;
             border-radius: 12px;
             margin: 3px 2px;
         }
-        .tag-green  { background: #2FA572; }
+        .tag-green { background: #2FA572; }
         .tag-orange { background: #EF6C00; }
-        .tag-red    { background: #C62828; }
+        .tag-red { background: #C62828; }
+        .tag-gold { background: #C9A84C; color: #0A0F1E; }
+
+        /* Skills grid */
         .skill-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 12px;
-            margin-top: 10px;
+            margin-top: 15px;
         }
         .skill-item {
             background: #1A2530;
-            padding: 10px 14px;
+            padding: 12px 16px;
             border-radius: 8px;
-            font-size: 0.9em;
+            font-size: 0.88em;
         }
-        .btn {
-            display: inline-block;
-            background: #1565C0;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            margin-top: 10px;
-        }
-        .btn:hover {
-            background: #0D47A1;
-            text-decoration: none;
-        }
+
+        /* Metrics */
         .metric-row {
             display: flex;
             gap: 16px;
             flex-wrap: wrap;
-            margin: 12px 0;
+            margin: 15px 0;
         }
         .metric {
             background: #0D1B2A;
             border: 1px solid rgba(21,101,192,0.3);
             border-radius: 8px;
-            padding: 10px 16px;
+            padding: 12px 18px;
             text-align: center;
-            min-width: 120px;
+            min-width: 130px;
         }
-        .metric-val { font-size: 1.4em; font-weight: 700; color: #4FC3F7; }
-        .metric-lbl { font-size: 0.72em; color: rgba(255,255,255,0.5); text-transform: uppercase; }
+        .metric.gold { border-color: rgba(201,168,76,0.4); }
+        .metric.green { border-color: rgba(47,165,114,0.4); }
+        .metric-val { font-size: 1.4em; font-weight: 700; color: #4FC3F7; display: block; margin-bottom: 3px; }
+        .metric-val.gold { color: #F0D080; }
+        .metric-val.green { color: #6FCF97; }
+        .metric-lbl { font-size: 0.7em; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.5px; }
+
+        /* Boutons */
+        .btn {
+            display: inline-block;
+            background: #1565C0;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 15px;
+            margin-right: 10px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .btn:hover { background: #0D47A1; text-decoration: none; }
+        .btn-gold { background: #C9A84C; color: #0A0F1E; }
+        .btn-gold:hover { background: #A07828; }
+
         footer {
-            margin-top: 30px;
+            margin-top: 40px;
             font-size: 0.8em;
             text-align: center;
             color: #6c757d;
+            border-top: 1px solid #1E2A3A;
+            padding-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 25px 20px; }
+            .skill-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 1.4rem; }
         }
     </style>
 </head>
 <body>
 <div class="container">
     <h1>N'DOUBA MÔH-ADJONLIN Jean-Claude</h1>
-    <div class="badge">📊 Data Scientist</div>
-    <div class="badge">💡 Expert données & conformité bancaire</div>
-    <div class="badge">🏦 Technicien AML / LCC</div>
-    <div class="badge">🌍 Abidjan, Côte d'Ivoire</div>
+    
+    <div class="badges">
+        <div class="badge badge-gold">📊 Data Scientist</div>
+        <div class="badge badge-gold">🛡️ Éditeur Logiciel Bancaire</div>
+        <div class="badge badge-blue">🏦 Expert Conformité BCBS 239</div>
+        <div class="badge badge-green">🌍 FinTech & Market Intelligence</div>
+        <div class="badge">🇨🇮 Abidjan, Côte d'Ivoire</div>
+    </div>
 
     <h2>🔹 Biographie</h2>
-    <p>N'DOUBA MÔH est un spécialiste en analyse de données et conception d'outils décisionnels.
-    Fort d'une double compétence <strong>Finance-Assurances</strong> et <strong>Data Science</strong>,
-    il conçoit des solutions logicielles pour la conformité bancaire (BCBS 239, BCEAO)
-    et le suivi-évaluation de projets.</p>
+    <p>N'DOUBA MÔH est un <strong>éditeur logiciel et Data Scientist</strong> spécialisé dans la conception de solutions pour la conformité bancaire et l'intelligence de marché. Fort d'une double compétence <strong>Finance-Assurances</strong> et <strong>Data Science</strong>, il conçoit des outils qui transforment des données complexes en décisions actionnables.</p>
 
-    <p>Il est le créateur de <strong>Sentinel LCC</strong>, une plateforme AML On-Premise de surveillance
-    des risques de blanchiment de capitaux et financement du terrorisme (LBC/FT), déployée pour
-    <strong> Les établissements financiers et Banque </strong> en conformité avec les normes <strong>BCBS239, BCEAO et Basel III</strong>.
-    Il maîtrise également <strong>mWater</strong>, <strong>Excel avancé</strong>, <strong>Power BI</strong>
-    et les outils de <strong>suivi-évaluation (S&E)</strong> pour les projets agricoles et humanitaires.</p>
+    <p>Il est le créateur de <strong>Sentinel LCC</strong> — plateforme AML (Anti-Money Laundering) On-Premise 100% air-gapped, déployée pour des institutions financières UEMOA en conformité avec les normes <strong>BCBS 239, BCEAO et Bâle III</strong>. Il a également conçu <strong>Afrika Markets Intelligence</strong>, plateforme SaaS d'intelligence boursière multi-bourses pour la diaspora africaine, et développé <strong>Jeniffa Trade</strong>, plateforme e-commerce complète, en freelance.</p>
 
-    <h2>🚀 Projet phare — Sentinel LCC v3.0.1</h2>
+    <p>Il maîtrise <strong>Python, FastAPI, Streamlit, React, SQL</strong>, ainsi que les méthodologies de <strong>MLOps</strong> (Champion-Challenger, Drift Index), la cryptographie appliquée (RSA-PSS, HMAC, SHA-256) et les référentiels réglementaires africains et internationaux.</p>
+
+    <!-- ═══ PROJET 1 : SENTINEL LCC ═══ -->
+    <h2>🚀 Projet phare — Sentinel LCC v3.2</h2>
 
     <div class="projet-card">
         <h3>🛡️ Sentinel LCC — Plateforme AML On-Premise</h3>
-        <p><em>Développement complet d'un système de surveillance AML/LBC-FT</em></p>
+        <p class="subtitle">Développement complet d'un système de surveillance AML/LBC-FT — 100% air-gapped</p>
 
         <div class="metric-row">
             <div class="metric">
-                <div class="metric-val">4,3M</div>
-                <div class="metric-lbl">Transactions scorées</div>
+                <div class="metric-val">14/14</div>
+                <div class="metric-lbl">Principes BCBS 239</div>
+            </div>
+            <div class="metric">
+                <div class="metric-val">22</div>
+                <div class="metric-lbl">Instruments marché</div>
             </div>
             <div class="metric">
                 <div class="metric-val">17</div>
                 <div class="metric-lbl">Modules dashboard</div>
             </div>
             <div class="metric">
-                <div class="metric-val">185 MB</div>
-                <div class="metric-lbl">EXE standalone</div>
-            </div>
-            <div class="metric">
-                <div class="metric-val">BCBS239</div>
-                <div class="metric-lbl">Conformité P1-P14</div>
+                <div class="metric-val">0</div>
+                <div class="metric-lbl">Flux sortants</div>
             </div>
         </div>
 
@@ -175,7 +232,7 @@
         <ul>
             <li>🔧 <strong>Backend</strong> : FastAPI + Uvicorn — 8 routers REST (alertes, scoring, cases, graph, monitoring, metadata)</li>
             <li>📊 <strong>Dashboard</strong> : Streamlit — 17 modules (KPIs, Alertes, Transactions, Benford, IFRS9, Risk Matrix, WAR ROOM…)</li>
-            <li>🤖 <strong>ML</strong> : XGBoost réentraîné sur données simulées — scoring heuristique sur 4,3M transactions</li>
+            <li>🤖 <strong>ML</strong> : XGBoost + Champion-Challenger + Drift Index KS-test — scoring sur 4,3M transactions</li>
             <li>🗄️ <strong>DB</strong> : SQLite — schéma 20+ tables, vue v_gl normalisée, migration automatique</li>
             <li>⚙️ <strong>Watchdog</strong> : Surveillance automatique inbox → ingestion → scoring → alertes → archive 5 ans</li>
             <li>📦 <strong>Déploiement</strong> : PyInstaller EXE standalone 185MB — zéro installation, air-gapped</li>
@@ -185,7 +242,7 @@
         <ul>
             <li>✅ Ingestion automatique GL/Balance/GEO_INTEL/WAR_ROOM (CSV/XLSX)</li>
             <li>✅ Scoring ML XGBoost — 4 niveaux (NORMAL/MOYEN/ÉLEVÉ/CRITIQUE)</li>
-            <li>✅ 12 ratios prudentiels BCEAO/Basel III (Tier1, LCR, NPL, ROA/ROE, NIM…)</li>
+            <li>✅ 12 ratios prudentiels BCEAO/Bâle III (Tier1, LCR, NPL, ROA/ROE, NIM…)</li>
             <li>✅ Pseudonymisation BCBS239 P7 — SHA256 + SALT</li>
             <li>✅ Audit trail HMAC-SHA256 chaîné — traçabilité totale</li>
             <li>✅ RBAC 6 rôles BCEAO (admin, analyste, auditeur, compliance, direction, bceao)</li>
@@ -195,7 +252,7 @@
             <li>✅ Graph fraude — détection réseaux pivots blanchiment</li>
         </ul>
 
-        <div style="margin-top:12px">
+        <div class="tags">
             <span class="tag">Python 3.10</span>
             <span class="tag">FastAPI</span>
             <span class="tag">Streamlit</span>
@@ -204,37 +261,145 @@
             <span class="tag">PyInstaller</span>
             <span class="tag tag-green">BCBS239</span>
             <span class="tag tag-green">BCEAO</span>
-            <span class="tag tag-green">Basel III</span>
+            <span class="tag tag-green">Bâle III</span>
             <span class="tag tag-orange">AML/LBC-FT</span>
             <span class="tag tag-orange">IFRS9</span>
             <span class="tag tag-red">XGBoost ML</span>
         </div>
     </div>
 
-    <h2>📘 Formation & Certificat</h2>
+    <!-- ═══ PROJET 2 : AFRIKA MARKETS ═══ -->
+    <div class="projet-card gold">
+        <h3>📈 Afrika Markets Intelligence — Plateforme SaaS Multi-Bourses</h3>
+        <p class="subtitle">Intelligence boursière pour la diaspora africaine — 10 bourses, 1325 rapports analystes, 3 brokers connectés</p>
+
+        <div class="metric-row">
+            <div class="metric gold">
+                <div class="metric-val gold">10</div>
+                <div class="metric-lbl">Bourses africaines</div>
+            </div>
+            <div class="metric gold">
+                <div class="metric-val gold">1325</div>
+                <div class="metric-lbl">Rapports PDF</div>
+            </div>
+            <div class="metric green">
+                <div class="metric-val green">3</div>
+                <div class="metric-lbl">Brokers connectés</div>
+            </div>
+            <div class="metric gold">
+                <div class="metric-val gold">LIVE</div>
+                <div class="metric-lbl">Production</div>
+            </div>
+        </div>
+
+        <p><strong>Architecture technique :</strong></p>
+        <ul>
+            <li>⚛️ <strong>Frontend</strong> : React + TradingView Charts — interface d'analyse boursière</li>
+            <li>🔧 <strong>Backend</strong> : FastAPI + WebSocket + Async — données temps réel</li>
+            <li>🔗 <strong>Multi-brokers</strong> : Architecture Factory unifiée (Binance, Exness, Deriv)</li>
+            <li>📊 <strong>Research Hub</strong> : Indexation et recherche avancée sur 1325 rapports analystes</li>
+            <li>🌍 <strong>Couverture</strong> : BRVM, NGX, JSE, EGX, GSE et 5 autres marchés africains</li>
+        </ul>
+
+        <p><strong>Fonctionnalités clés :</strong></p>
+        <ul>
+            <li>✅ Cours et données macro de 10 bourses africaines en temps réel</li>
+            <li>✅ Research Hub avec 1325 rapports analystes indexés</li>
+            <li>✅ Exécution multi-brokers via une architecture Factory unifiée</li>
+            <li>✅ Interface diaspora (Canada, France, USA) — accès aux marchés africains</li>
+            <li>✅ Intégration API REST & WebSocket pour données temps réel</li>
+        </ul>
+
+        <div class="tags">
+            <span class="tag tag-gold">React</span>
+            <span class="tag tag-gold">FastAPI</span>
+            <span class="tag tag-gold">WebSocket</span>
+            <span class="tag tag-gold">TradingView</span>
+            <span class="tag tag-green">Binance</span>
+            <span class="tag tag-green">Exness</span>
+            <span class="tag tag-green">Deriv</span>
+            <span class="tag tag-orange">SaaS</span>
+            <span class="tag tag-orange">Diaspora</span>
+        </div>
+
+        <p style="margin-top:15px;">
+            <a href="https://sentinel-lccafrika.space/" target="_blank" class="btn btn-gold">Voir la plateforme →</a>
+        </p>
+    </div>
+
+    <!-- ═══ PROJET 3 : JENIFFA TRADE ═══ -->
+    <div class="projet-card green">
+        <h3>🛒 Jeniffa Trade — Plateforme E-commerce</h3>
+        <p class="subtitle">Développement full-stack, design et intégration paiements — géré en freelance</p>
+
+        <div class="metric-row">
+            <div class="metric green">
+                <div class="metric-val green">LIVE</div>
+                <div class="metric-lbl">Production</div>
+            </div>
+            <div class="metric green">
+                <div class="metric-val green">100%</div>
+                <div class="metric-lbl">Freelance</div>
+            </div>
+            <div class="metric green">
+                <div class="metric-val green">Full-Stack</div>
+                <div class="metric-lbl">Développement</div>
+            </div>
+        </div>
+
+        <p><strong>Responsabilités :</strong></p>
+        <ul>
+            <li>⚛️ Développement full-stack (React)</li>
+            <li>🎨 Design de l'interface utilisateur</li>
+            <li>💳 Intégration des paiements en ligne</li>
+            <li>📦 Gestion de stock</li>
+            <li>🚀 Gestion complète du projet en autonomie — de la conception à la production</li>
+        </ul>
+
+        <div class="tags">
+            <span class="tag tag-green">React</span>
+            <span class="tag tag-green">E-commerce</span>
+            <span class="tag tag-green">Gestion de stock</span>
+            <span class="tag tag-green">Paiements</span>
+            <span class="tag tag-green">Design UI</span>
+            <span class="tag tag-orange">Freelance</span>
+        </div>
+
+        <p style="margin-top:15px;">
+            <a href="https://jeniffatrade.online/" target="_blank" class="btn">Voir la plateforme →</a>
+        </p>
+    </div>
+
+    <!-- ═══ FORMATION ═══ -->
+    <h2>📘 Formation & Certificats</h2>
     <ul>
-        <li><strong>Data Science avec Python, SQL, FastAPI, Streamlit & Docker</strong> – Udemy (17 août 2025, 9h)</li>
+        <li><strong>Data Science avec Python, SQL, FastAPI, Streamlit & Docker</strong> — Udemy (17 août 2025, 9h)</li>
+        <li><strong>Licence Professionnelle Finance & Comptabilité</strong> — Institut CERCO, option Banque & Assurance (Juillet 2020)</li>
+        <li><strong>BTS Finance & Assurances</strong> — Groupe LOKO (Avril 2015)</li>
+        <li><strong>Baccalauréat Série D</strong> — Collège Sainte Thérèse (Juillet 2012)</li>
     </ul>
 
     <div class="certificat">
-        📜 <strong>Curriculum Vitae</strong><br>
-        Formation scolaire, universitaire & parcours professionnel : Finance, Banque et Assurances.<br>
-        🔗 <a href="CV_NDOUBA_MOH_ADJONLIN_JEAN_CLAUDE.pdf" target="_blank">Cliquez ici pour consulter le CV (PDF)</a>
+        📜 <strong>Curriculum Vitae complet</strong><br>
+        Parcours scolaire, universitaire et professionnel — Finance, Banque et Assurances.<br>
+        🔗 <a href="CV_NDOUBA_MOH_ADJONLIN_JEAN_CLAUDE.pdf" target="_blank">Consulter le CV (PDF)</a>
     </div>
 
     <div class="certificat">
         📜 <strong>Certificat Data Science</strong><br>
         Formation complète : Python, SQL, FastAPI, Streamlit, Docker.<br>
-        🔗 <a href="certificat_udemy_data_science.pdf" target="_blank">Cliquez ici pour consulter le Certificat (PDF)</a>
+        🔗 <a href="certificat_udemy_data_science.pdf" target="_blank">Consulter le Certificat (PDF)</a>
     </div>
 
+    <!-- ═══ COMPÉTENCES ═══ -->
     <h2>💼 Compétences clés</h2>
 
     <div class="skill-grid">
         <div class="skill-item">📊 Excel avancé / Power BI / Analyse données</div>
         <div class="skill-item">🌍 Suivi-évaluation (S&E), collecte terrain, mWater</div>
         <div class="skill-item">🐍 Python, SQL, FastAPI, Streamlit, Docker</div>
-        <div class="skill-item">🏦 Conformité BCBS239, BCEAO, Basel III</div>
+        <div class="skill-item">⚛️ React, WebSocket, TradingView Charts</div>
+        <div class="skill-item">🏦 Conformité BCBS239, BCEAO, Bâle III</div>
         <div class="skill-item">🤖 Machine Learning — XGBoost, scikit-learn, scoring AML</div>
         <div class="skill-item">🗄️ SQLite, PostgreSQL — modélisation & migration DB</div>
         <div class="skill-item">📦 PyInstaller — packaging EXE standalone Windows</div>
@@ -243,19 +408,28 @@
         <div class="skill-item">📈 Ratios prudentiels — Tier1/2, LCR, NPL, ROE, IFRS9</div>
         <div class="skill-item">🕷️ Détection fraude — Graph Analysis, Benford forensics</div>
         <div class="skill-item">🛡️ AML/LBC-FT — STR, CENTIF, déclarations BCEAO</div>
+        <div class="skill-item">🌍 Market Intelligence — 10 bourses africaines</div>
+        <div class="skill-item">🔗 Intégration API — multi-brokers (Binance, Exness, Deriv)</div>
+        <div class="skill-item">🎨 Design UI / UX — interfaces React & Streamlit</div>
     </div>
 
+    <!-- ═══ CONTACT ═══ -->
     <h2>🌍 Contact</h2>
-    <p>📞 +225 07 48 97 78 12<br>
-    ✉️ <a href="mailto:ndoubajeanclaude@outlook.com">ndoubajeanclaude@outlook.com</a><br>
-    🌐 <a href="https://ndouba-moh.site">ndouba-moh.site</a></p>
+    <p>
+        📞 +225 07 48 97 78 12<br>
+        ✉️ <a href="mailto:ndoubajeanclaude@outlook.com">ndoubajeanclaude@outlook.com</a><br>
+        🌐 <a href="https://ndouba-moh.site">ndouba-moh.site</a><br>
+        💼 <a href="https://www.linkedin.com/in/moh-adjonlin-jean-claude-n-douba-7737bb342/" target="_blank">LinkedIn</a> · 
+        🐙 <a href="https://github.com/Genito922" target="_blank">GitHub</a>
+    </p>
 
-    <p style="margin-top:20px">
+    <p style="margin-top:25px;">
         <a href="index.html" class="btn">← Retour à l'accueil</a>
+        <a href="mailto:ndoubajeanclaude@outlook.com" class="btn btn-gold">✉️ Me contacter</a>
     </p>
 
     <footer>
-        🔒 Mise à jour : mai 2026 — Sentinel LCC v3.0.1 livré
+        🔒 Mise à jour : septembre 2026 — Sentinel LCC v3.2 · Afrika Markets Intelligence · Jeniffa Trade
     </footer>
 </div>
 </body>
