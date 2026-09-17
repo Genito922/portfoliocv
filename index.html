@@ -113,6 +113,17 @@
         .section-title { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem,3.5vw,3rem); color: var(--ink); line-height: 1.15; margin-bottom: 1rem; }
         .section-lead { font-size: 1rem; color: var(--muted); line-height: 1.7; max-width: 640px; }
 
+        /* ── SERVICES ── */
+        #services { background: var(--white); }
+        .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        .service-card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; transition: all 0.3s; }
+        .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(21,101,192,0.08); }
+        .service-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.25rem; }
+        .service-title { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--ink); margin-bottom: 0.75rem; }
+        .service-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.25rem; }
+        .service-list { list-style: none; font-size: 0.82rem; color: var(--ink2); line-height: 1.9; }
+        .service-list li::before { content: '✓ '; color: var(--green); font-weight: 700; }
+
         /* ── SENTINEL SECTION ── */
         #sentinel { background: var(--ink); padding: 5rem 0; position: relative; overflow: hidden; }
         #sentinel::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(21,101,192,0.05) 1px,transparent 1px), linear-gradient(90deg,rgba(21,101,192,0.05) 1px,transparent 1px); background-size: 80px 80px; }
@@ -123,7 +134,6 @@
         .sentinel-title em { font-style: italic; color: var(--gold); }
         .sentinel-sub { font-size: 1rem; color: rgba(255,255,255,0.5); max-width: 680px; margin: 0 auto 2rem; line-height: 1.7; }
 
-        /* Changelog banner */
         .changelog-banner { background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.25); border-radius: 12px; padding: 1rem 1.5rem; margin-bottom: 2.5rem; display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
         .changelog-title { color: #F0D080; font-weight: 700; font-size: 0.85rem; font-family: 'DM Mono', monospace; flex-shrink: 0; }
         .changelog-item { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.6); padding: 3px 10px; border-radius: 100px; font-size: 0.72rem; font-family: 'DM Mono', monospace; }
@@ -136,7 +146,6 @@
         .s-badge-gold  { background: rgba(201,168,76,0.2);  color: #F0D080; border: 1px solid rgba(201,168,76,0.4); }
         .s-badge-dark  { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.12); }
 
-        /* KPIs Sentinel */
         .sentinel-kpis { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: rgba(255,255,255,0.06); border-radius: 16px; overflow: hidden; margin-bottom: 3rem; }
         .skpi { background: rgba(255,255,255,0.03); padding: 1.5rem 1rem; text-align: center; transition: background 0.2s; }
         .skpi:hover { background: rgba(255,255,255,0.06); }
@@ -145,7 +154,6 @@
         .skpi-val-gold span { color: #F0D080; }
         .skpi-lbl { font-size: 0.68rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
 
-        /* Architecture cards */
         .arch-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-bottom: 2.5rem; }
         .arch-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; transition: all 0.3s; }
         .arch-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(21,101,192,0.4); transform: translateY(-4px); }
@@ -163,7 +171,6 @@
         .arch-tag-green { background: rgba(47,165,114,0.1); color: #6FCF97; }
         .new-badge { display: inline-block; background: rgba(47,165,114,0.2); color: #6FCF97; border: 1px solid rgba(47,165,114,0.4); padding: 1px 7px; border-radius: 100px; font-size: 0.62rem; font-weight: 700; font-family: 'DM Mono', monospace; margin-left: 6px; vertical-align: middle; }
 
-        /* Market Intelligence sub-section */
         .market-intel-box { background: rgba(47,165,114,0.05); border: 1px solid rgba(47,165,114,0.2); border-radius: 16px; padding: 2rem; margin-bottom: 2.5rem; }
         .market-intel-title { color: #6FCF97; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 8px; }
         .market-intel-title::before { content: ''; width: 20px; height: 1px; background: rgba(47,165,114,0.5); }
@@ -174,7 +181,6 @@
         .market-item { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: rgba(255,255,255,0.45); font-family: 'DM Mono', monospace; }
         .market-item::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: #4FC3F7; flex-shrink: 0; }
 
-        /* Tech stack table */
         .tech-stack { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; overflow: hidden; margin-bottom: 2.5rem; }
         .tech-stack-title { padding: 1rem 1.5rem; color: rgba(255,255,255,0.6); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.06); }
         .tech-row { display: grid; grid-template-columns: 160px 1fr auto; gap: 1rem; padding: 0.85rem 1.5rem; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.04); transition: background 0.15s; }
@@ -186,7 +192,6 @@
         .tech-status { background: rgba(47,165,114,0.15); color: #6FCF97; padding: 2px 10px; border-radius: 100px; font-size: 0.68rem; font-weight: 700; white-space: nowrap; }
         .tech-status-new { background: rgba(201,168,76,0.15); color: #F0D080; }
 
-        /* Flow */
         .sentinel-flow { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 2rem; margin-bottom: 2rem; }
         .flow-title { color: rgba(255,255,255,0.6); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 8px; }
         .flow-title::before { content: ''; width: 20px; height: 1px; background: rgba(255,255,255,0.3); }
@@ -253,25 +258,31 @@
 
         /* ── PROJETS PHARES ── */
         #works { background: var(--surface); }
-        .flagship-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 3rem; margin-bottom: 3rem; }
+        .flagship-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; margin-bottom: 3rem; }
         .flagship-card { background: var(--white); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; transition: all 0.3s; }
         .flagship-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(21,101,192,0.12); border-color: rgba(21,101,192,0.3); }
         .flagship-card-sentinel { border-color: rgba(21,101,192,0.25); }
         .flagship-card-africa { border-color: rgba(201,168,76,0.25); }
         .flagship-card-africa:hover { border-color: rgba(201,168,76,0.5); box-shadow: 0 16px 48px rgba(201,168,76,0.1); }
+        .flagship-card-jeniffa { border-color: rgba(47,165,114,0.25); }
+        .flagship-card-jeniffa:hover { border-color: rgba(47,165,114,0.5); box-shadow: 0 16px 48px rgba(47,165,114,0.1); }
         .flagship-thumb { height: 180px; display: flex; align-items: center; justify-content: center; gap: 1rem; position: relative; overflow: hidden; }
         .flagship-thumb-sentinel { background: linear-gradient(135deg,#0A0F1E,#1C2540); }
         .flagship-thumb-africa { background: linear-gradient(135deg,#0A0C0F,#1A1E24); }
+        .flagship-thumb-jeniffa { background: linear-gradient(135deg,#0A1F14,#1A3A24); }
         .flagship-thumb-icon { font-size: 3rem; position: relative; z-index: 2; }
         .flagship-thumb-glow-blue { position: absolute; width: 200px; height: 200px; background: radial-gradient(ellipse,rgba(21,101,192,0.3),transparent 70%); top: 50%; left: 30%; transform: translate(-50%,-50%); }
         .flagship-thumb-glow-gold { position: absolute; width: 200px; height: 200px; background: radial-gradient(ellipse,rgba(201,168,76,0.25),transparent 70%); top: 50%; left: 50%; transform: translate(-50%,-50%); }
+        .flagship-thumb-glow-green { position: absolute; width: 200px; height: 200px; background: radial-gradient(ellipse,rgba(47,165,114,0.3),transparent 70%); top: 50%; left: 50%; transform: translate(-50%,-50%); }
         .flagship-thumb-badge { position: absolute; top: 12px; right: 12px; padding: 4px 12px; border-radius: 100px; font-size: 0.68rem; font-weight: 700; font-family: 'DM Mono', monospace; }
         .flagship-thumb-badge-blue  { background: rgba(21,101,192,0.3); color: #90CAF9; border: 1px solid rgba(21,101,192,0.5); }
         .flagship-thumb-badge-gold  { background: rgba(201,168,76,0.3); color: #F0D080; border: 1px solid rgba(201,168,76,0.5); }
+        .flagship-thumb-badge-green { background: rgba(47,165,114,0.3); color: #6FCF97; border: 1px solid rgba(47,165,114,0.5); }
         .flagship-body { padding: 1.75rem; }
         .flagship-cat { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
         .flagship-cat-blue { color: var(--blue); }
         .flagship-cat-gold { color: var(--gold); }
+        .flagship-cat-green { color: var(--green); }
         .flagship-title { font-family: 'DM Serif Display', serif; font-weight: 700; font-size: 1.3rem; color: var(--ink); margin-bottom: 8px; }
         .flagship-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.25rem; }
         .flagship-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.25rem; }
@@ -292,10 +303,11 @@
         .flagship-btn-blue:hover { background: #1976D2; }
         .flagship-btn-gold { background: var(--gold); color: white; }
         .flagship-btn-gold:hover { background: #A07828; }
+        .flagship-btn-green { background: var(--green); color: white; }
+        .flagship-btn-green:hover { background: #248A5E; }
         .flagship-btn-outline { background: transparent; color: var(--muted); border: 1px solid var(--border); }
         .flagship-btn-outline:hover { border-color: var(--blue); color: var(--blue); }
 
-        /* Autres projets (grille secondaire) */
         .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
         .project-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; transition: all 0.3s; text-decoration: none; color: inherit; display: block; }
         .project-card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(21,101,192,0.12); border-color: rgba(21,101,192,0.3); }
@@ -309,6 +321,22 @@
         .project-tag-green { background: #E8F5E9; color: #1B5E20; }
         .project-badge-progress { display: inline-flex; align-items: center; gap: 5px; background: rgba(201,168,76,0.12); color: #A07828; padding: 2px 10px; border-radius: 100px; font-size: 0.66rem; font-weight: 700; margin-top: 0.6rem; }
         .project-badge-progress::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: #C9A84C; }
+
+        /* ── RÉFÉRENCES CLIENTS ── */
+        #references { background: var(--ink); padding: 5rem 0; }
+        .references-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .reference-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 2rem; transition: all 0.3s; }
+        .reference-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.15); transform: translateY(-4px); }
+        .reference-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .reference-cat { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+        .reference-cat-gold { color: #F0D080; }
+        .reference-cat-blue { color: #90CAF9; }
+        .reference-cat-green { color: #6FCF97; }
+        .reference-title { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--white); margin-bottom: 0.75rem; }
+        .reference-desc { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.6; margin-bottom: 1rem; }
+        .reference-link { font-size: 0.82rem; color: #F0D080; text-decoration: none; font-weight: 600; }
+        .reference-link:hover { text-decoration: underline; }
+        .reference-meta { font-size: 0.82rem; color: rgba(255,255,255,0.3); }
 
         /* ── CONTACT ── */
         #contact { background: var(--ink); padding: 6rem 3rem; text-align: center; }
@@ -335,6 +363,7 @@
             .market-cats { grid-template-columns: 1fr 1fr; }
             .principles-grid { grid-template-columns: repeat(4, 1fr); }
             .flagship-grid { grid-template-columns: 1fr; }
+            .references-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 900px) {
             .s-header { padding: 0 1.5rem; }
@@ -358,6 +387,7 @@
             #contact { padding: 4rem 1.5rem; }
             footer { padding: 1.5rem; justify-content: center; text-align: center; }
             .market-cats { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 600px) {
             .hero-name { font-size: 2.5rem; }
@@ -387,9 +417,11 @@
         <ul class="header-nav">
             <li class="current"><a href="#home">Accueil</a></li>
             <li><a href="#about">Profil</a></li>
+            <li><a href="#services">Services</a></li>
             <li><a href="#sentinel">🛡️ Sentinel LCC</a></li>
             <li><a href="#bcbs239">BCBS 239</a></li>
             <li><a href="#works">Projets</a></li>
+            <li><a href="#references">Références</a></li>
             <li><a href="#contact">Contact</a></li>
             <li class="bio-link"><a href="biographie.html">⭐ Biographie</a></li>
         </ul>
@@ -401,9 +433,11 @@
     <ul>
         <li><a href="#home" onclick="closeMobileNav()">Accueil</a></li>
         <li><a href="#about" onclick="closeMobileNav()">Profil</a></li>
+        <li><a href="#services" onclick="closeMobileNav()">Services</a></li>
         <li><a href="#sentinel" onclick="closeMobileNav()">🛡️ Sentinel LCC</a></li>
         <li><a href="#bcbs239" onclick="closeMobileNav()">BCBS 239</a></li>
         <li><a href="#works" onclick="closeMobileNav()">Projets</a></li>
+        <li><a href="#references" onclick="closeMobileNav()">Références</a></li>
         <li><a href="#contact" onclick="closeMobileNav()">Contact</a></li>
         <li><a href="biographie.html">⭐ Biographie / CV</a></li>
     </ul>
@@ -416,43 +450,43 @@
     <div class="hero-glow-2"></div>
     <div class="hero-content">
         <div>
-            <div class="hero-eyebrow">Éditeur Logiciel Bancaire · RegTech · FinTech UEMOA</div>
+            <div class="hero-eyebrow">Éditeur Logiciel · Risk & Compliance · Market Intelligence</div>
             <h1 class="hero-name">N'Douba<br><em>MÔH</em></h1>
-            <p class="hero-title">Créateur de <strong style="color:rgba(255,255,255,0.85)">Sentinel LCC v3.2</strong> — plateforme AML On-Premise certifiée BCBS 239 & BCEAO — <strong style="color:#F0D080">Afrika Markets Intelligence</strong>, plateforme multi-bourses pour la diaspora africaine et de Computeur Vision - OCR Comparatif- DeepLearning pour les rapports annuels BRVM.</p>
+            <p class="hero-title">
+                Je construis des <strong style="color:rgba(255,255,255,0.85)">solutions logicielles</strong> pour les institutions financières africaines et la diaspora.
+            </p>
             <div class="hero-pills">
-                <span class="pill">Sentinel LCC v3.2</span>
-                <span class="pill">BCBS 239 · 14 Principes</span>
-                <span class="pill pill-gold">🌍 Afrika Markets Intelligence</span>
-                <span class="pill pill-gold">📈 10 Bourses Africaines</span>
-                <span class="pill pill-gold">Computer Vision - OCR - Deep Learning</span>
-                <span class="pill">RSA-PSS SHA-256</span>
-                <span class="pill">Air-Gapped · Python</span>
+                <span class="pill pill-gold">🛡️ Sentinel LCC — Conformité bancaire BCBS 239</span>
+                <span class="pill pill-gold">📈 Afrika Markets — Intelligence boursière panafricaine</span>
+                <span class="pill">🌐 Jeniffa Trade — Plateforme e-commerce</span>
+                <span class="pill">Python · FastAPI · React</span>
+                <span class="pill">BCBS 239 · BCEAO · AML/LCB-FT</span>
             </div>
             <div class="hero-ctas">
-                <a href="#sentinel" class="btn-primary"><i class="fas fa-shield-alt"></i> Découvrir Sentinel LCC</a>
-                <a href="#works" class="btn-outline btn-gold"><i class="fas fa-chart-line"></i> Afrika Markets</a>
-                <a href="mailto:ndoubajeanclaude@outlook.com" class="btn-outline"><i class="fas fa-paper-plane"></i> Contact</a>
+                <a href="#works" class="btn-primary"><i class="fas fa-briefcase"></i> Voir mes projets</a>
+                <a href="#services" class="btn-outline btn-gold"><i class="fas fa-cogs"></i> Mes services</a>
+                <a href="mailto:ndoubajeanclaude@outlook.com" class="btn-outline"><i class="fas fa-paper-plane"></i> Discutons de votre projet</a>
             </div>
         </div>
         <div class="hero-card">
             <div class="hero-card-header">
-                <div class="sentinel-badge">🛡️</div>
+                <div class="sentinel-badge">📊</div>
                 <div>
-                    <div class="hero-card-title">Sentinel LCC v3.2</div>
-                    <div class="hero-card-sub">On-Premise Air-Gapped · BCBS239 · BCEAO</div>
+                    <div class="hero-card-title">Portfolio 2026</div>
+                    <div class="hero-card-sub">3 produits · 2 secteurs · 1 expertise</div>
                 </div>
             </div>
             <div class="metric-row">
-                <div class="metric-box"><span class="metric-val">14/14</span><span class="metric-lbl">Principes BCBS</span></div>
-                <div class="metric-box"><span class="metric-val">96%</span><span class="metric-lbl">Conformité</span></div>
-                <div class="metric-box"><span class="metric-val">22</span><span class="metric-lbl">Instruments Marché</span></div>
+                <div class="metric-box"><span class="metric-val">3</span><span class="metric-lbl">Produits livrés</span></div>
+                <div class="metric-box"><span class="metric-val">14/14</span><span class="metric-lbl">BCBS 239</span></div>
+                <div class="metric-box"><span class="metric-val">10</span><span class="metric-lbl">Bourses Africa</span></div>
                 <div class="metric-box"><span class="metric-val">0</span><span class="metric-lbl">Flux sortants</span></div>
             </div>
             <div class="status-row">
-                <div class="status-item"><span class="status-item-label">Licence RSA-PSS + PIN 12 chiffres</span><span class="status-ok">✓ ACTIF</span></div>
-                <div class="status-item"><span class="status-item-label">Market Intel — WAR ROOM + GEO INTEL</span><span class="status-gold">✓ NOUVEAU</span></div>
-                <div class="status-item"><span class="status-item-label">ML Champion-Challenger Retrain</span><span class="status-gold">✓ NOUVEAU</span></div>
-                <div class="status-item"><span class="status-item-label">Drift Index auto-détection BCEAO</span><span class="status-ok">✓ CONFORME</span></div>
+                <div class="status-item"><span class="status-item-label">🛡️ Sentinel LCC v3.2</span><span class="status-ok">✓ LIVE</span></div>
+                <div class="status-item"><span class="status-item-label">📈 Afrika Markets Intelligence</span><span class="status-ok">✓ LIVE</span></div>
+                <div class="status-item"><span class="status-item-label">🌐 Jeniffa Trade</span><span class="status-ok">✓ LIVE</span></div>
+                <div class="status-item"><span class="status-item-label">🤖 OCR Comparatif BRVM</span><span class="status-gold">✓ EN COURS</span></div>
             </div>
         </div>
     </div>
@@ -523,6 +557,77 @@
     </div>
 </section>
 
+<!-- ── SERVICES ── -->
+<section id="services">
+    <div class="section-wrap">
+        <div style="text-align:center;max-width:680px;margin:0 auto 3rem;">
+            <div class="section-eyebrow">Services</div>
+            <h2 class="section-title">Ce que je peux faire<br>pour votre organisation</h2>
+            <p class="section-lead" style="margin:0 auto;">Une double compétence Finance & Data au service de vos projets de conformité, d'intelligence de marché et de développement logiciel.</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon" style="background:var(--blue);color:white;">🏦</div>
+                <h3 class="service-title">Conformité Bancaire</h3>
+                <p class="service-desc">Implémentation et audit de dispositifs de conformité réglementaire pour banques, assurances et fintechs.</p>
+                <ul class="service-list">
+                    <li>Implémentation BCBS 239 (14 principes)</li>
+                    <li>Dispositif AML/LCB-FT (scoring, déclarations)</li>
+                    <li>Audit trail inaltérable (HMAC, SHA-256)</li>
+                    <li>Reporting réglementaire BCEAO</li>
+                    <li>Cartographie des risques & KRI</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon" style="background:var(--gold);color:white;">📈</div>
+                <h3 class="service-title">Intelligence de Marché</h3>
+                <p class="service-desc">Conception de plateformes d'analyse boursière et de suivi des marchés financiers africains.</p>
+                <ul class="service-list">
+                    <li>Plateformes multi-bourses (BRVM, NGX, JSE)</li>
+                    <li>Intégration multi-brokers (API, WebSocket)</li>
+                    <li>Dashboards temps réel (TradingView)</li>
+                    <li>Research Hub & analyse sectorielle</li>
+                    <li>Veille macro-économique UEMOA</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon" style="background:var(--green);color:white;">🤖</div>
+                <h3 class="service-title">Data Science & IA</h3>
+                <p class="service-desc">Développement de modèles prédictifs, de pipelines de données et de solutions d'IA appliquée.</p>
+                <ul class="service-list">
+                    <li>Scoring ML (XGBoost, scikit-learn)</li>
+                    <li>Pipelines ETL & automatisation</li>
+                    <li>Computer Vision & OCR (Tesseract, EasyOCR)</li>
+                    <li>MLOps & gouvernance des modèles</li>
+                    <li>Data visualisation (Power BI, Streamlit)</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon" style="background:var(--ink2);color:white;">💻</div>
+                <h3 class="service-title">Développement Full-Stack</h3>
+                <p class="service-desc">Conception et développement d'applications web, d'APIs et de plateformes SaaS sur mesure.</p>
+                <ul class="service-list">
+                    <li>Applications web (React, FastAPI)</li>
+                    <li>APIs REST & WebSocket</li>
+                    <li>Bases de données (SQLite, PostgreSQL)</li>
+                    <li>Déploiement air-gapped & SaaS</li>
+                    <li>Intégration de paiements & e-commerce</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="text-align:center;margin-top:3rem;">
+            <a href="mailto:ndoubajeanclaude@outlook.com" class="btn-primary" style="padding:14px 32px;font-size:0.95rem;">
+                <i class="fas fa-paper-plane"></i> Discutons de votre projet
+            </a>
+        </div>
+    </div>
+</section>
+
 <!-- ── SENTINEL LCC ── -->
 <section id="sentinel">
     <div class="sentinel-inner">
@@ -531,7 +636,6 @@
             <h2 class="sentinel-title">Sentinel <em>LCC</em></h2>
             <p class="sentinel-sub">Plateforme AML (Anti-Money Laundering) 100% On-Premise pour les institutions financières de l'UEMOA. Market Intelligence en temps réel. Réentraînement ML gouverné BCBS239. Zéro dépendance cloud après installation.</p>
 
-            <!-- Changelog v3.2 -->
             <div class="changelog-banner">
                 <span class="changelog-title">v3.2 — Juin 2026</span>
                 <span class="changelog-item changelog-item-new">✅ fetch_market_data.py — 22 instruments</span>
@@ -556,7 +660,6 @@
             </div>
         </div>
 
-        <!-- KPIs -->
         <div class="sentinel-kpis">
             <div class="skpi"><span class="skpi-val"><span>14</span>/14</span><span class="skpi-lbl">Principes BCBS239</span></div>
             <div class="skpi"><span class="skpi-val"><span>96</span>%</span><span class="skpi-lbl">Score Conformité</span></div>
@@ -565,7 +668,6 @@
             <div class="skpi"><span class="skpi-val"><span>0</span></span><span class="skpi-lbl">Flux Réseau Sortant</span></div>
         </div>
 
-        <!-- Market Intelligence box -->
         <div class="market-intel-box">
             <div class="market-intel-title">🌍 Module Market Intelligence — WAR ROOM + GEO INTEL UEMOA (22 instruments live)</div>
             <div class="market-cats">
@@ -599,8 +701,7 @@
             </div>
         </div>
 
-        <!-- Tech stack -->
-        <div class="tech-stack" style="margin-bottom:2.5rem;">
+        <div class="tech-stack">
             <div class="tech-stack-title">Stack technique v3.2 — Scripts & Modules</div>
             <div class="tech-row"><span class="tech-layer">Launcher</span><span class="tech-detail">sentinel_launcher.py → PyInstaller .exe · 6 étapes · Watchdog SFTP</span><span class="tech-status">✓ STABLE</span></div>
             <div class="tech-row"><span class="tech-layer">API Backend</span><span class="tech-detail">FastAPI · uvicorn.run() · slowapi · JWT HS256 · refresh auto 30min</span><span class="tech-status">✓ PORT 8000</span></div>
@@ -612,7 +713,6 @@
             <div class="tech-row"><span class="tech-layer">Sécurité</span><span class="tech-detail">bcrypt · HMAC SHA-256 · TOTP RFC 6238 · audit chain JSONL · CORS 127.0.0.1</span><span class="tech-status">✓ BCBS239 P8</span></div>
         </div>
 
-        <!-- Architecture cards 4x2 -->
         <div class="arch-grid">
             <div class="arch-card">
                 <div class="arch-icon arch-icon-blue">🔐</div>
@@ -664,7 +764,6 @@
             </div>
         </div>
 
-        <!-- Flux UX -->
         <div class="sentinel-flow">
             <div class="flow-title">Flux d'activation client — 6 étapes · 100% offline après l'étape 3</div>
             <div class="flow-steps">
@@ -755,9 +854,8 @@
     <div class="section-wrap">
         <div class="section-eyebrow">Projets</div>
         <h2 class="section-title">Projets Phares & Réalisations</h2>
-        <p class="section-lead">Des produits logiciels en production, plus des analyses de données sectorielles et des projets techniques exploratoires.</p>
+        <p class="section-lead">Trois produits logiciels en production, plus des analyses de données sectorielles et des projets techniques exploratoires.</p>
 
-        <!-- PROJETS PHARES -->
         <div class="flagship-grid">
 
             <!-- SENTINEL LCC -->
@@ -776,7 +874,6 @@
                         <span class="flagship-pill flagship-pill-blue">XGBoost · SQLite</span>
                         <span class="flagship-pill flagship-pill-green">BCBS239 14/14</span>
                         <span class="flagship-pill flagship-pill-blue">Streamlit · PyInstaller</span>
-                        <span class="flagship-pill flagship-pill-green">Air-Gapped · USB</span>
                     </div>
                     <div class="flagship-kpis">
                         <div class="flagship-kpi"><span class="flagship-kpi-val flagship-kpi-val-blue">14/14</span><span class="flagship-kpi-lbl">BCBS239</span></div>
@@ -785,7 +882,7 @@
                     </div>
                     <div class="flagship-ctas">
                         <a href="#sentinel" class="flagship-btn flagship-btn-blue"><i class="fas fa-shield-alt"></i> Voir détails</a>
-                        <a href="mailto:ndoubajeanclaude@outlook.com" class="flagship-btn flagship-btn-outline"><i class="fas fa-envelope"></i> Demander démo</a>
+                        <a href="mailto:ndoubajeanclaude@outlook.com" class="flagship-btn flagship-btn-outline"><i class="fas fa-envelope"></i> Démo</a>
                     </div>
                 </div>
             </div>
@@ -795,7 +892,6 @@
                 <div class="flagship-thumb flagship-thumb-africa">
                     <div class="flagship-thumb-glow-gold"></div>
                     <span class="flagship-thumb-icon">📈</span>
-                    <span style="font-size:2rem;">🌍</span>
                     <span class="flagship-thumb-badge flagship-thumb-badge-gold">FinTech · SaaS · Diaspora</span>
                 </div>
                 <div class="flagship-body">
@@ -816,26 +912,52 @@
                     <div class="flagship-ctas">
                         <a href="https://sentinel-lccafrika.space/" target="_blank" class="flagship-btn flagship-btn-gold"><i class="fas fa-chart-line"></i> Voir la plateforme</a>
                         <a href="https://github.com/Genito922/afrikamarkets-dashboard" target="_blank" class="flagship-btn flagship-btn-outline"><i class="fab fa-github"></i> Dashboard</a>
-                        <a href="https://github.com/Genito922/afrikamarkets-site" target="_blank" class="flagship-btn flagship-btn-outline"><i class="fab fa-github"></i> Site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JENIFFA TRADE -->
+            <div class="flagship-card flagship-card-jeniffa">
+                <div class="flagship-thumb flagship-thumb-jeniffa">
+                    <div class="flagship-thumb-glow-green"></div>
+                    <span class="flagship-thumb-icon">🛒</span>
+                    <span class="flagship-thumb-badge flagship-thumb-badge-green">E-commerce · Freelance</span>
+                </div>
+                <div class="flagship-body">
+                    <div class="flagship-cat flagship-cat-green">Plateforme E-commerce · React · Paiement</div>
+                    <div class="flagship-title">Jeniffa Trade</div>
+                    <div class="flagship-desc">Plateforme e-commerce complète conçue en freelance : développement full-stack, design de l'interface, gestion de stock et intégration des paiements. Gestion du projet en autonomie, de la conception à la mise en production.</div>
+                    <div class="flagship-pills">
+                        <span class="flagship-pill flagship-pill-green">React</span>
+                        <span class="flagship-pill flagship-pill-green">Gestion de stock</span>
+                        <span class="flagship-pill flagship-pill-green">Intégration paiements</span>
+                        <span class="flagship-pill flagship-pill-green">Design UI</span>
+                    </div>
+                    <div class="flagship-kpis">
+                        <div class="flagship-kpi"><span class="flagship-kpi-val flagship-kpi-val-green">LIVE</span><span class="flagship-kpi-lbl">Production</span></div>
+                        <div class="flagship-kpi"><span class="flagship-kpi-val flagship-kpi-val-green">100%</span><span class="flagship-kpi-lbl">Freelance</span></div>
+                        <div class="flagship-kpi"><span class="flagship-kpi-val flagship-kpi-val-green">1</span><span class="flagship-kpi-lbl">Client</span></div>
+                    </div>
+                    <div class="flagship-ctas">
+                        <a href="https://jeniffatrade.online/" target="_blank" class="flagship-btn flagship-btn-green"><i class="fas fa-external-link-alt"></i> Voir la plateforme</a>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- AUTRES PROJETS -->
-        <h3 style="font-weight:700;color:var(--ink);margin-bottom:1.5rem;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);">Analyses de données & Projets techniques</h3>
+        <h3 style="font-weight:700;color:var(--muted);margin-bottom:1.5rem;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.08em;">Analyses de données & Projets techniques</h3>
         <div class="project-grid">
             <a href="https://github.com/Genito922/gestions_risques_marches_financiers" target="_blank" class="project-card">
                 <div class="project-thumb" style="background:linear-gradient(135deg,#EDE7F6,#D1C4E9);">🔍</div>
                 <div class="project-body">
                     <div class="project-cat">Computer Vision · OCR · Deep Learning</div>
                     <div class="project-title">OCR Comparatif — Rapports Annuels BRVM</div>
-                    <div class="project-desc">Extraction automatisée de données depuis les rapports PDF scannés de la BRVM. Comparaison méthodique entre OCR heuristique (Tesseract) et OCR par deep learning (EasyOCR) : vitesse, robustesse sur tableaux financiers et mises en page complexes.</div>
+                    <div class="project-desc">Extraction automatisée de données depuis les rapports PDF scannés de la BRVM. Comparaison entre OCR heuristique (Tesseract) et OCR par deep learning (EasyOCR).</div>
                     <div class="project-tags">
                         <span class="project-tag">Python</span>
                         <span class="project-tag">Tesseract</span>
                         <span class="project-tag project-tag-green">EasyOCR</span>
-                        <span class="project-tag">OpenCV</span>
                     </div>
                     <div class="project-badge-progress">En cours</div>
                 </div>
@@ -868,12 +990,50 @@
     </div>
 </section>
 
+<!-- ── RÉFÉRENCES CLIENTS ── -->
+<section id="references">
+    <div class="section-wrap">
+        <div style="text-align:center;max-width:680px;margin:0 auto 3rem;">
+            <div class="section-eyebrow" style="color:#90CAF9;">Références</div>
+            <h2 class="section-title" style="color:var(--white);">Ils m'ont fait confiance</h2>
+            <p class="section-lead" style="color:rgba(255,255,255,0.5);margin:0 auto;">Des clients dans la banque, l'agro-industrie et le e-commerce.</p>
+        </div>
+
+        <div class="references-grid">
+            
+            <div class="reference-card">
+                <div class="reference-icon">🌐</div>
+                <div class="reference-cat reference-cat-gold">E-commerce · Trading</div>
+                <h3 class="reference-title">Jeniffa Trade</h3>
+                <p class="reference-desc">Plateforme e-commerce et trading en ligne. Développement full-stack, design et intégration des paiements. Gestion du projet en freelance.</p>
+                <a href="https://jeniffatrade.online/" target="_blank" class="reference-link">Voir le site →</a>
+            </div>
+
+            <div class="reference-card">
+                <div class="reference-icon">🏦</div>
+                <div class="reference-cat reference-cat-blue">Banque · UEMOA</div>
+                <h3 class="reference-title">Institution Financière</h3>
+                <p class="reference-desc">Déploiement de Sentinel LCC pour la conformité AML et le scoring des risques. 14/14 principes BCBS 239, audit trail HMAC.</p>
+                <span class="reference-meta">Déploiement réalisé · 2025-2026</span>
+            </div>
+
+            <div class="reference-card">
+                <div class="reference-icon">📊</div>
+                <div class="reference-cat reference-cat-green">Agro-industrie</div>
+                <h3 class="reference-title">CAFPM SARL · SANIA Cie</h3>
+                <p class="reference-desc">Administration de données, fiabilisation des bases distributeurs et conception de tableaux de bord décisionnels.</p>
+                <span class="reference-meta">Réduction des écarts de 20% · 2024</span>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- ── CONTACT ── -->
 <section id="contact">
     <div class="contact-inner">
         <div class="section-eyebrow" style="justify-content:center;color:rgba(255,255,255,0.4);">Contact</div>
         <h2 class="contact-title">Trois produits,<br>une expertise unique</h2>
-        <p class="contact-sub">Sentinel LCCpour les banques de l'UEMOA. Afrika Markets Intelligence & Computeur Vison pour le marché boursier Africain. Disponible pour collaboration, partenariat ou démo.</p>
+        <p class="contact-sub">Sentinel LCC pour les banques de l'UEMOA. Afrika Markets Intelligence & Computer Vision pour le marché boursier africain. Disponible pour collaboration, partenariat ou démo.</p>
         <span class="contact-phone">(+225) 07-48-97-78-12</span>
         <div class="contact-links">
             <a href="mailto:ndoubajeanclaude@outlook.com" class="contact-link"><i class="fas fa-envelope"></i> ndoubajeanclaude@outlook.com</a>
@@ -887,7 +1047,7 @@
 
 <footer>
     <div class="footer-brand">N'Douba <span style="color:var(--gold)">MÔH</span></div>
-    <div class="footer-copy">© 2026 · Sentinel LCC v3.2 · Afrika Markets Intelligence · RegTech & FinTech UEMOA</div>
+    <div class="footer-copy">© 2026 · Sentinel LCC v3.2 · Afrika Markets Intelligence · Jeniffa Trade · RegTech & FinTech UEMOA</div>
     <div class="footer-links">
         <a href="https://www.linkedin.com/in/moh-adjonlin-jean-claude-n-douba-7737bb342/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
         <a href="https://github.com/Genito922" title="GitHub"><i class="fab fa-github"></i></a>
